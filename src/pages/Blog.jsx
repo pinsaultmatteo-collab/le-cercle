@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 import PageWrapper from '../components/PageWrapper'
 import PageHero from '../components/PageHero'
@@ -9,77 +10,7 @@ import { SectionLabel } from '../components/Section'
 import { ArrowRight, CircleMark } from '../components/Icons'
 import { useModal } from '../context/ModalContext'
 import { IMG } from '../data/site'
-
-const CATEGORIES = ['Tout', 'Performance', 'Nutrition', 'Récupération', 'État d\'esprit']
-
-const POSTS = [
-  {
-    id: 1,
-    title: 'La progression n\'est pas linéaire — et c\'est tant mieux',
-    excerpt:
-      'Pourquoi les plateaux font partie du chemin, et comment Le Cercle transforme la stagnation en tremplin.',
-    category: 'Performance',
-    date: '12 Mars 2025',
-    read: '6 min',
-    img: IMG.trackNight,
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'Manger pour performer : en finir avec les régimes',
-    excerpt:
-      'L\'assiette d\'un athlète ne se prive pas, elle se construit. Les principes que nos coachs nutrition appliquent au quotidien.',
-    category: 'Nutrition',
-    date: '28 Février 2025',
-    read: '8 min',
-    img: IMG.coachPortrait,
-    featured: false,
-  },
-  {
-    id: 3,
-    title: 'Le sommeil, votre entraînement invisible',
-    excerpt:
-      'Ce qui se joue la nuit détermine ce que vous réalisez le jour. Comprendre la récupération comme un levier de performance.',
-    category: 'Récupération',
-    date: '15 Février 2025',
-    read: '5 min',
-    img: IMG.gymInterior,
-    featured: false,
-  },
-  {
-    id: 4,
-    title: 'La discipline n\'est pas une punition',
-    excerpt:
-      'Redéfinir la rigueur comme un acte de respect envers soi-même. Une réflexion sur l\'état d\'esprit des membres du Cercle.',
-    category: 'État d\'esprit',
-    date: '02 Février 2025',
-    read: '7 min',
-    img: IMG.athleteGrayscale,
-    featured: false,
-  },
-  {
-    id: 5,
-    title: 'Puissance au seuil : décoder vos watts',
-    excerpt:
-      'Pour le cycliste, la donnée est une boussole. Comment lire et exploiter votre puissance pour progresser intelligemment.',
-    category: 'Performance',
-    date: '20 Janvier 2025',
-    read: '9 min',
-    img: IMG.cyclist,
-    featured: false,
-  },
-  {
-    id: 6,
-    title: 'Mobilité : le chaînon trop souvent oublié',
-    excerpt:
-      'Avant la force, l\'amplitude. Pourquoi nos protocoles commencent toujours par libérer le mouvement.',
-    category: 'Récupération',
-    date: '08 Janvier 2025',
-    read: '6 min',
-    img: IMG.coachAthlete,
-    featured: false,
-  },
-]
+import { POSTS, CATEGORIES } from '../data/blogPosts'
 
 export default function Blog() {
   const { openModal } = useModal()
@@ -109,44 +40,46 @@ export default function Blog() {
       {featured && (
         <section className="mx-auto max-w-container px-6 py-24 md:px-12 md:py-32">
           <Reveal>
-            <article className="group grid overflow-hidden border border-border-gold bg-bg-card transition-colors duration-500 hover:border-accent lg:grid-cols-2">
-              <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto lg:min-h-[480px]">
-                <img
-                  src={featured.img}
-                  alt={featured.title}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-luxe group-hover:scale-105"
-                  style={{ filter: 'brightness(0.7)' }}
-                />
-                <span className="absolute left-6 top-6 bg-accent px-4 py-1 text-label text-[0.55rem] text-bg-primary">
-                  À la une
-                </span>
-              </div>
-              <div className="flex flex-col justify-center p-9 md:p-14">
-                <div className="flex items-center gap-4 text-label text-[0.58rem] text-text-secondary">
-                  <span className="text-accent">{featured.category}</span>
-                  <span className="h-px w-4 bg-border-gold" />
-                  <span>{featured.date}</span>
-                  <span className="h-px w-4 bg-border-gold" />
-                  <span>{featured.read} de lecture</span>
-                </div>
-                <h2 className="mt-6 font-display text-3xl font-light leading-[1.12] text-text-primary md:text-5xl">
-                  {featured.title}
-                </h2>
-                <p className="mt-5 text-sm font-light leading-relaxed text-text-secondary md:text-base">
-                  {featured.excerpt}
-                </p>
-                <button
-                  type="button"
-                  className="mt-9 inline-flex w-fit items-center gap-3 text-label text-[0.6rem] text-accent transition-colors hover:text-accent-light"
-                >
-                  Lire l'article
-                  <ArrowRight
-                    size={15}
-                    className="transition-transform duration-500 ease-luxe group-hover:translate-x-1"
+            <Link
+              to={`/blog/${featured.slug}`}
+              className="group block"
+            >
+              <article className="grid overflow-hidden border border-border-gold bg-bg-card transition-colors duration-500 group-hover:border-accent lg:grid-cols-2">
+                <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto lg:min-h-[480px]">
+                  <img
+                    src={featured.img}
+                    alt={featured.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-luxe group-hover:scale-105"
+                    style={{ filter: 'brightness(0.7)' }}
                   />
-                </button>
-              </div>
-            </article>
+                  <span className="absolute left-6 top-6 bg-accent px-4 py-1 text-label text-[0.55rem] text-bg-primary">
+                    À la une
+                  </span>
+                </div>
+                <div className="flex flex-col justify-center p-9 md:p-14">
+                  <div className="flex items-center gap-4 text-label text-[0.58rem] text-text-secondary">
+                    <span className="text-accent">{featured.category}</span>
+                    <span className="h-px w-4 bg-border-gold" />
+                    <span>{featured.date}</span>
+                    <span className="h-px w-4 bg-border-gold" />
+                    <span>{featured.read} de lecture</span>
+                  </div>
+                  <h2 className="mt-6 font-display text-3xl font-normal leading-[1.15] text-text-primary md:text-5xl">
+                    {featured.title}
+                  </h2>
+                  <p className="mt-5 text-sm font-light leading-relaxed text-text-secondary md:text-base">
+                    {featured.excerpt}
+                  </p>
+                  <span className="mt-9 inline-flex w-fit items-center gap-3 text-label text-[0.6rem] text-accent transition-colors group-hover:text-accent-light">
+                    Lire l'article
+                    <ArrowRight
+                      size={15}
+                      className="transition-transform duration-500 ease-luxe group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
+              </article>
+            </Link>
           </Reveal>
         </section>
       )}
@@ -183,47 +116,46 @@ export default function Blog() {
           >
             <Stagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((post) => (
-                <StaggerItem key={post.id}>
-                  <motion.article
-                    whileHover={{ y: -6 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="group flex h-full flex-col border border-border-gold bg-bg-card transition-colors duration-500 hover:border-accent"
-                  >
-                    <div className="relative aspect-[3/2] overflow-hidden">
-                      <img
-                        src={post.img}
-                        alt={post.title}
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-luxe group-hover:scale-105"
-                        style={{ filter: 'brightness(0.72) grayscale(15%)' }}
-                      />
-                      <span className="absolute left-4 top-4 bg-bg-primary/85 px-3 py-1 text-label text-[0.5rem] text-accent backdrop-blur-sm">
-                        {post.category}
-                      </span>
-                    </div>
-                    <div className="flex flex-1 flex-col p-7">
-                      <div className="flex items-center gap-3 text-label text-[0.52rem] text-text-secondary">
-                        <span>{post.date}</span>
-                        <span className="h-px w-3 bg-border-gold" />
-                        <span>{post.read}</span>
-                      </div>
-                      <h3 className="mt-4 font-display text-2xl font-light leading-tight text-text-primary">
-                        {post.title}
-                      </h3>
-                      <p className="mt-3 flex-1 text-sm font-light leading-relaxed text-text-secondary">
-                        {post.excerpt}
-                      </p>
-                      <button
-                        type="button"
-                        className="mt-6 inline-flex w-fit items-center gap-2 text-label text-[0.56rem] text-accent transition-colors hover:text-accent-light"
-                      >
-                        Lire
-                        <ArrowRight
-                          size={13}
-                          className="transition-transform duration-500 ease-luxe group-hover:translate-x-1"
+                <StaggerItem key={post.slug}>
+                  <Link to={`/blog/${post.slug}`} className="group block h-full">
+                    <motion.article
+                      whileHover={{ y: -6 }}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                      className="flex h-full flex-col border border-border-gold bg-bg-card transition-colors duration-500 group-hover:border-accent"
+                    >
+                      <div className="relative aspect-[3/2] overflow-hidden">
+                        <img
+                          src={post.img}
+                          alt={post.title}
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-luxe group-hover:scale-105"
+                          style={{ filter: 'brightness(0.72) grayscale(15%)' }}
                         />
-                      </button>
-                    </div>
-                  </motion.article>
+                        <span className="absolute left-4 top-4 bg-bg-primary/85 px-3 py-1 text-label text-[0.5rem] text-accent backdrop-blur-sm">
+                          {post.category}
+                        </span>
+                      </div>
+                      <div className="flex flex-1 flex-col p-7">
+                        <div className="flex items-center gap-3 text-label text-[0.52rem] text-text-secondary">
+                          <span>{post.date}</span>
+                          <span className="h-px w-3 bg-border-gold" />
+                          <span>{post.read}</span>
+                        </div>
+                        <h3 className="mt-4 font-display text-xl font-normal leading-tight text-text-primary md:text-2xl">
+                          {post.title}
+                        </h3>
+                        <p className="mt-3 flex-1 text-sm font-light leading-relaxed text-text-secondary">
+                          {post.excerpt}
+                        </p>
+                        <span className="mt-6 inline-flex w-fit items-center gap-2 text-label text-[0.56rem] text-accent transition-colors group-hover:text-accent-light">
+                          Lire
+                          <ArrowRight
+                            size={13}
+                            className="transition-transform duration-500 ease-luxe group-hover:translate-x-1"
+                          />
+                        </span>
+                      </div>
+                    </motion.article>
+                  </Link>
                 </StaggerItem>
               ))}
             </Stagger>
@@ -246,14 +178,14 @@ export default function Blog() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-light leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
+            <h2 className="mx-auto mt-10 max-w-2xl font-display text-3xl font-normal leading-[1.15] text-text-primary md:text-5xl">
               Ces idées vous parlent ?
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-7 max-w-lg text-base font-light leading-relaxed text-text-secondary">
-              Le meilleur du carnet se vit sur le terrain. Venez transformer
-              la théorie en résultats.
+              Le meilleur du carnet se vit sur le terrain. Venez transformer la
+              théorie en résultats.
             </p>
           </Reveal>
           <Reveal delay={0.3}>

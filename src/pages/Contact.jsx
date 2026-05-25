@@ -68,7 +68,7 @@ export default function Contact() {
           <div className="lg:col-span-5">
             <SectionLabel>Coordonnées</SectionLabel>
             <Reveal delay={0.1}>
-              <h2 className="mt-8 font-display text-4xl font-light leading-[1.1] text-text-primary md:text-5xl">
+              <h2 className="mt-8 font-display text-4xl font-normal leading-[1.1] text-text-primary md:text-5xl">
                 Le Cercle,
                 <br />
                 au cœur des Carmes.
@@ -164,7 +164,7 @@ export default function Contact() {
               {!submitted ? (
                 <>
                   <SectionLabel>Écrivez-nous</SectionLabel>
-                  <h3 className="mt-7 font-display text-3xl font-light text-text-primary md:text-4xl">
+                  <h3 className="mt-7 font-display text-3xl font-normal text-text-primary md:text-4xl">
                     Votre message
                   </h3>
                   <p className="mt-4 text-sm font-light leading-relaxed text-text-secondary">
@@ -292,7 +292,7 @@ export default function Contact() {
                   >
                     <CircleMark size={56} />
                   </motion.div>
-                  <h3 className="mt-8 font-display text-4xl font-light text-text-primary">
+                  <h3 className="mt-8 font-display text-4xl font-normal text-text-primary">
                     Message envoyé
                   </h3>
                   <p className="mt-4 max-w-sm text-sm font-light leading-relaxed text-text-secondary">

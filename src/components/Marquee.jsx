@@ -29,11 +29,11 @@ export default function Marquee({
         }}
       >
         {loop.map((item, i) => (
-          <span key={i} className="flex items-center gap-10">
-            <span className="font-display text-3xl font-light text-text-primary/80 md:text-5xl">
+          <span key={i} className="flex items-center gap-7">
+            <span className="text-label text-[0.85rem] text-text-primary/80 md:text-base">
               {item}
             </span>
-            <span className="text-accent/70 text-2xl md:text-4xl">·</span>
+            <span className="text-accent/60 text-sm md:text-base">·</span>
           </span>
         ))}
       </motion.div>

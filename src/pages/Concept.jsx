@@ -81,7 +81,7 @@ export default function Concept() {
           <div className="lg:col-span-8">
             <SectionLabel>Notre raison d'être</SectionLabel>
             <Reveal delay={0.1}>
-              <p className="mt-9 font-display text-3xl font-light leading-[1.22] text-text-primary sm:text-4xl md:text-[2.9rem]">
+              <p className="mt-9 font-display text-3xl font-normal leading-[1.22] text-text-primary sm:text-4xl md:text-[2.9rem]">
                 Nous avons créé Le Cercle parce que la performance mérite{' '}
                 <span className="text-accent">mieux</span> que des
                 salles bondées et des programmes interchangeables. Ici, chaque
@@ -117,7 +117,7 @@ export default function Concept() {
         <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/70 to-transparent" />
         <div className="relative z-10 mx-auto flex h-full max-w-container items-center px-6 md:px-12">
           <Reveal>
-            <p className="max-w-lg font-display text-3xl font-light leading-snug text-text-primary md:text-4xl">
+            <p className="max-w-lg font-display text-3xl font-normal leading-snug text-text-primary md:text-4xl">
               « Le luxe, ce n'est pas l'abondance. C'est la justesse. »
             </p>
           </Reveal>
@@ -154,7 +154,7 @@ export default function Concept() {
                     className="text-text-secondary/30 transition-colors duration-500 group-hover:text-accent"
                   />
                 </div>
-                <h3 className="mt-10 font-display text-3xl font-light text-text-primary">
+                <h3 className="mt-10 font-display text-3xl font-normal text-text-primary">
                   {p.title}
                 </h3>
                 <p className="mt-4 text-sm font-light leading-relaxed text-text-secondary">
@@ -182,7 +182,7 @@ export default function Concept() {
                   <span className="font-display text-5xl font-light text-accent">
                     {a.step}
                   </span>
-                  <h3 className="mt-6 font-display text-2xl font-light text-text-primary">
+                  <h3 className="mt-6 font-display text-2xl font-normal text-text-primary">
                     {a.title}
                   </h3>
                   <p className="mt-3 text-sm font-light leading-relaxed text-text-secondary">
@@ -222,7 +222,7 @@ export default function Concept() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-light leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
+          <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
             Le Cercle vous ressemble ?
           </h2>
         </Reveal>

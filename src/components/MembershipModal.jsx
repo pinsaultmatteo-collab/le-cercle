@@ -111,7 +111,7 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                     </span>
                   </div>
 
-                  <h3 className="mt-6 font-display text-4xl font-light leading-tight text-text-primary">
+                  <h3 className="mt-6 font-display text-4xl font-normal leading-tight text-text-primary">
                     Rejoindre Le Cercle
                   </h3>
                   <p className="mt-4 text-sm font-light leading-relaxed text-text-secondary">
@@ -254,7 +254,7 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                   >
                     <CircleMark size={56} />
                   </motion.div>
-                  <h3 className="mt-8 font-display text-4xl font-light text-text-primary">
+                  <h3 className="mt-8 font-display text-4xl font-normal text-text-primary">
                     Demande reçue
                   </h3>
                   <p className="mt-4 max-w-sm text-sm font-light leading-relaxed text-text-secondary">

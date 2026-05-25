@@ -128,63 +128,147 @@ export default function Home() {
       {/* ============ HERO ============ */}
       <section
         ref={heroRef}
-        className="relative flex h-[100svh] min-h-[640px] items-center overflow-hidden"
+        className="relative flex h-[100svh] min-h-[680px] items-center justify-center overflow-hidden"
       >
+        {/* background photo */}
         <motion.div className="absolute inset-0 z-0" style={{ y: imgY }}>
           <img
             src={IMG.hero}
             alt="Athlète à l'entraînement"
             className="h-[118%] w-full object-cover"
-            style={{ filter: 'brightness(0.5)' }}
+            style={{ filter: 'brightness(0.32) grayscale(40%)' }}
           />
         </motion.div>
 
-        {/* gradient veils */}
+        {/* vignettes */}
         <motion.div
-          className="absolute inset-0 z-10 bg-gradient-to-b from-bg-primary/70 via-bg-primary/20 to-bg-primary"
+          className="absolute inset-0 z-10 bg-gradient-to-b from-bg-primary/85 via-bg-primary/55 to-bg-primary"
           style={{ opacity: overlayOpacity }}
         />
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-bg-primary/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(8,8,8,0.6)_70%,rgba(8,8,8,0.92)_100%)]" />
 
+        {/* inner frame — corner brackets */}
+        <div className="pointer-events-none absolute inset-x-5 inset-y-20 z-20 md:inset-x-12 md:inset-y-24">
+          {/* top-left */}
+          <span className="absolute left-0 top-0 h-5 w-px bg-accent/50" />
+          <span className="absolute left-0 top-0 h-px w-5 bg-accent/50" />
+          {/* top-right */}
+          <span className="absolute right-0 top-0 h-5 w-px bg-accent/50" />
+          <span className="absolute right-0 top-0 h-px w-5 bg-accent/50" />
+          {/* bottom-left */}
+          <span className="absolute bottom-0 left-0 h-5 w-px bg-accent/50" />
+          <span className="absolute bottom-0 left-0 h-px w-5 bg-accent/50" />
+          {/* bottom-right */}
+          <span className="absolute bottom-0 right-0 h-5 w-px bg-accent/50" />
+          <span className="absolute bottom-0 right-0 h-px w-5 bg-accent/50" />
+        </div>
+
+        {/* side rails — desktop only, rotated text */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.4, delay: 1.2 }}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-7 z-20 hidden items-center md:flex"
+        >
+          <div className="flex items-center gap-4 [writing-mode:vertical-rl] rotate-180">
+            <span className="h-12 w-px bg-border-gold" />
+            <span className="text-label text-[0.55rem] text-text-secondary">
+              Admission sur entretien
+            </span>
+            <span className="h-12 w-px bg-border-gold" />
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.4, delay: 1.2 }}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-7 z-20 hidden items-center md:flex"
+        >
+          <div className="flex items-center gap-4 [writing-mode:vertical-rl]">
+            <span className="h-12 w-px bg-border-gold" />
+            <span className="text-label text-[0.55rem] text-text-secondary">
+              Club de sport privé · Toulouse
+            </span>
+            <span className="h-12 w-px bg-border-gold" />
+          </div>
+        </motion.div>
+
+        {/* main centered composition */}
         <motion.div
           style={{ y: heroTextY }}
-          className="relative z-20 mx-auto w-full max-w-container px-6 md:px-12"
+          className="relative z-30 mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center md:px-12"
         >
+          {/* giant faint outlined circle echoing the logo, behind the title */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            aria-hidden="true"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[34rem] w-[34rem] max-w-[92vw] -translate-x-1/2 -translate-y-1/2 sm:h-[40rem] sm:w-[40rem]"
           >
-            <SectionLabel>Club de sport privé · Toulouse</SectionLabel>
+            <div className="absolute inset-0 rounded-full border border-accent/15" />
+            <div className="absolute inset-6 rounded-full border border-accent/8" />
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+          {/* metadata trio */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-4xl font-display text-[3.2rem] font-light leading-[1.02] tracking-tight text-text-primary sm:text-6xl md:text-7xl lg:text-[6.2rem]"
+            transition={{ duration: 1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-label text-[0.55rem] text-text-secondary"
+          >
+            <span className="text-accent">Est · MMXXVI</span>
+            <span className="h-px w-6 bg-border-gold" />
+            <span>Carmes · Toulouse</span>
+            <span className="h-px w-6 bg-border-gold" />
+            <span>43.60°N · 01.44°E</span>
+          </motion.div>
+
+          {/* headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-10 font-display text-[3.4rem] font-light leading-[0.95] tracking-[-0.015em] text-text-primary sm:text-7xl md:text-[6.4rem]"
           >
             L'exigence
+            <span className="mx-2 inline-block text-accent">—</span>
             <br />
-            <span className="text-accent">a son cercle.</span>
+            a son <span className="text-accent">cercle.</span>
           </motion.h1>
 
+          {/* gold rule + circle mark divider */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 1, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-12 flex w-full max-w-sm origin-center items-center gap-4"
+          >
+            <span className="h-px flex-1 bg-gradient-to-r from-transparent via-accent/50 to-accent/40" />
+            <CircleMark size={20} className="text-accent" />
+            <span className="h-px flex-1 bg-gradient-to-l from-transparent via-accent/50 to-accent/40" />
+          </motion.div>
+
+          {/* tagline */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-md text-base font-light leading-relaxed text-text-secondary md:text-lg"
+            transition={{ duration: 1, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="mx-auto mt-10 max-w-md text-[0.98rem] font-light leading-relaxed text-text-secondary md:text-lg"
           >
             Un club de coaching sportif confidentiel au cœur des Carmes.
-            L'accompagnement d'exception, réservé à celles et ceux qui ne
+            L'accompagnement d'exception — réservé à celles et ceux qui ne
             transigent pas.
           </motion.p>
 
+          {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-12 flex flex-col gap-5 sm:flex-row sm:items-center"
+            transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-12 flex flex-col items-center gap-5 sm:flex-row sm:justify-center"
           >
             <Button variant="solid" onClick={() => openModal()}>
               Demander une adhésion
@@ -193,22 +277,32 @@ export default function Home() {
               Découvrir le concept
             </Button>
           </motion.div>
+
+          {/* admission micro-note */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="mt-10 text-label text-[0.52rem] text-text-secondary/70"
+          >
+            Places limitées · Entrée sur entretien
+          </motion.p>
         </motion.div>
 
         {/* scroll cue */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 1 }}
-          className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2"
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-7 left-1/2 z-30 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             className="flex flex-col items-center gap-3 text-text-secondary"
           >
-            <span className="text-label text-[0.55rem]">Défiler</span>
-            <ArrowDown size={16} className="text-accent" />
+            <span className="text-label text-[0.5rem]">Défiler</span>
+            <ArrowDown size={14} className="text-accent" />
           </motion.div>
         </motion.div>
       </section>
@@ -240,7 +334,7 @@ export default function Home() {
             <div className="lg:col-span-7">
               <SectionLabel>Le manifeste</SectionLabel>
               <Reveal delay={0.1}>
-                <p className="mt-9 font-display text-3xl font-light leading-[1.25] text-text-primary sm:text-4xl md:text-[2.9rem]">
+                <p className="mt-9 font-display text-3xl font-normal leading-[1.25] text-text-primary sm:text-4xl md:text-[2.9rem]">
                   Le Cercle n'est pas une salle de sport. C'est un{' '}
                   <span className="text-accent">cercle restreint</span> où
                   chaque membre est accompagné comme un athlète — avec rigueur,
@@ -342,7 +436,7 @@ export default function Home() {
                     </span>
                   </div>
                   <div className="p-7">
-                    <h3 className="font-display text-2xl font-light text-text-primary">
+                    <h3 className="font-display text-2xl font-normal text-text-primary">
                       {s.title}
                     </h3>
                     <p className="mt-3 text-sm font-light leading-relaxed text-text-secondary">
@@ -381,7 +475,7 @@ export default function Home() {
           <div className="flex flex-col justify-center bg-bg-secondary px-6 py-20 md:px-16 md:py-28 lg:px-20">
             <SectionLabel>Le concept</SectionLabel>
             <Reveal delay={0.1}>
-              <h2 className="mt-8 font-display text-4xl font-light leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
+              <h2 className="mt-8 font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
                 Un environnement
                 <br />
                 pensé pour la <span className="text-accent">progression.</span>
@@ -447,7 +541,7 @@ export default function Home() {
                     <span className="absolute -inset-2 -z-10 rounded-full border border-border-gold" />
                   </div>
 
-                  <h3 className="mt-8 font-display text-3xl font-light text-text-primary">
+                  <h3 className="mt-8 font-display text-3xl font-normal text-text-primary">
                     {coach.name}
                   </h3>
                   <p className="mt-2 text-label text-[0.58rem] text-accent">
@@ -464,7 +558,7 @@ export default function Home() {
 
           <Reveal delay={0.2}>
             <blockquote className="mx-auto mt-16 max-w-2xl border-l border-accent pl-8 md:pl-10">
-              <p className="font-display text-2xl font-light leading-snug text-text-primary md:text-3xl">
+              <p className="font-display text-2xl font-normal leading-snug text-text-primary md:text-3xl">
                 « On ne vend pas des séances. On construit des athlètes, une
                 décision à la fois. »
               </p>
@@ -505,7 +599,7 @@ export default function Home() {
                   </p>
                   <div className="rule-gold my-7" />
                   <div className="flex items-center gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-bg-primary font-display text-lg font-light text-accent">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-bg-primary font-display text-lg font-normal text-accent">
                       {avis.name.charAt(0)}
                     </span>
                     <div>
@@ -574,7 +668,7 @@ export default function Home() {
                           <span className="text-label text-[0.6rem] text-accent">
                             0{i + 1}
                           </span>
-                          <span className="font-display text-xl font-light text-text-primary md:text-2xl">
+                          <span className="font-display text-xl font-normal text-text-primary md:text-2xl">
                             {item.q}
                           </span>
                         </span>
@@ -635,7 +729,7 @@ export default function Home() {
                 <div className="flex items-start gap-4">
                   <MapPin size={18} className="mt-1 shrink-0 text-accent" />
                   <div>
-                    <p className="font-display text-lg font-light text-text-primary">
+                    <p className="font-display text-lg font-normal text-text-primary">
                       {ADDRESS.street}
                     </p>
                     <p className="mt-1 text-sm font-light text-text-secondary">
@@ -701,7 +795,7 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mx-auto mt-10 max-w-3xl font-display text-4xl font-light leading-[1.1] text-text-primary sm:text-5xl md:text-7xl">
+            <h2 className="mx-auto mt-10 max-w-3xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-7xl">
               L'adhésion au Cercle
               <br />
               se mérite. Elle se <span className="text-accent">demande.</span>

@@ -188,7 +188,7 @@ export default function Offres() {
         <div className="absolute inset-0 bg-bg-primary/40" />
         <div className="relative z-10 mx-auto flex h-full max-w-container items-center px-6 md:px-12">
           <Reveal>
-            <p className="max-w-2xl font-display text-3xl font-light leading-snug text-text-primary md:text-5xl">
+            <p className="max-w-2xl font-display text-3xl font-normal leading-snug text-text-primary md:text-5xl">
               « Investir dans son corps n'est jamais une dépense. C'est la
               plus sûre des fondations. »
             </p>
@@ -202,7 +202,7 @@ export default function Offres() {
           <div className="lg:col-span-4">
             <SectionLabel>Questions fréquentes</SectionLabel>
             <Reveal delay={0.1}>
-              <h2 className="mt-8 font-display text-4xl font-light leading-[1.1] text-text-primary md:text-5xl">
+              <h2 className="mt-8 font-display text-4xl font-normal leading-[1.1] text-text-primary md:text-5xl">
                 Tout ce qu'il faut savoir.
               </h2>
             </Reveal>
@@ -219,7 +219,7 @@ export default function Offres() {
               {FAQ.map((item, i) => (
                 <Reveal key={item.q} delay={i * 0.08}>
                   <div className="border-b border-border-gold py-8">
-                    <h3 className="flex items-start gap-5 font-display text-2xl font-light text-text-primary">
+                    <h3 className="flex items-start gap-5 font-display text-2xl font-normal text-text-primary">
                       <span className="text-label text-[0.6rem] text-accent">
                         0{i + 1}
                       </span>
@@ -245,7 +245,7 @@ export default function Offres() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-light leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
+            <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
               Prêt à franchir la porte ?
             </h2>
           </Reveal>

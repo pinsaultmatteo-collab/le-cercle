@@ -4,12 +4,18 @@ import { InstagramIcon, CircleMark } from './Icons'
 
 const INSTAGRAM_URL = 'https://www.instagram.com/lecercle_clubdesport/'
 
-const LINKS = [
+const NAV_LINKS = [
   { label: 'Concept', to: '/concept' },
   { label: 'Services', to: '/services' },
   { label: 'Nos Offres', to: '/offres' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
+]
+
+const LEGAL_LINKS = [
+  { label: 'Mentions légales', to: '/mentions-legales' },
+  { label: 'Politique de confidentialité', to: '/confidentialite' },
+  { label: 'CGU', to: '/cgu' },
 ]
 
 export default function Footer() {
@@ -47,9 +53,9 @@ export default function Footer() {
 
         <div className="rule-gold my-12" />
 
-        {/* links */}
+        {/* nav links */}
         <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-start">
-          {LINKS.map((link) => (
+          {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
               to={link.to}
@@ -60,13 +66,26 @@ export default function Footer() {
           ))}
         </nav>
 
+        {/* legal links */}
+        <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:justify-start">
+          {LEGAL_LINKS.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="text-[0.68rem] font-light text-text-secondary/80 transition-colors duration-300 hover:text-accent-light"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
         {/* bottom */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 md:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border-gold pt-8 md:flex-row">
           <p className="text-[0.7rem] font-light tracking-wide text-text-secondary">
-            © 2025 Le Cercle — Club de Sport Privé · Toulouse
+            © {new Date().getFullYear()} Le Cercle CSP — Club de Sport Privé · Toulouse
           </p>
           <p className="text-[0.7rem] font-light tracking-wide text-text-secondary">
-            Coaching sportif d'exception
+            SIREN 101 917 219
           </p>
         </div>
       </div>

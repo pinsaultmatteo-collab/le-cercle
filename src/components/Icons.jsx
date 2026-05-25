@@ -41,6 +41,26 @@ export function ArrowRight({ size = 16, className = '' }) {
   )
 }
 
+export function ArrowLeft({ size = 16, className = '' }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <line x1="21" y1="12" x2="3" y2="12" />
+      <polyline points="10 5 3 12 10 19" />
+    </svg>
+  )
+}
+
 export function ArrowDown({ size = 16, className = '' }) {
   return (
     <svg

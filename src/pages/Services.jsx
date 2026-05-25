@@ -91,7 +91,7 @@ function ServiceCard({ service, index }) {
           <span className="text-label text-[0.6rem] text-accent">
             {service.tagline}
           </span>
-          <h3 className="mt-5 font-display text-3xl font-light text-text-primary md:text-4xl">
+          <h3 className="mt-5 font-display text-3xl font-normal text-text-primary md:text-4xl">
             {service.title}
           </h3>
           <p className="mt-5 text-sm font-light leading-relaxed text-text-secondary md:text-base">
@@ -165,7 +165,7 @@ export default function Services() {
           <div className="lg:col-span-7">
             <SectionLabel>Une offre complète</SectionLabel>
             <Reveal delay={0.1}>
-              <p className="mt-9 font-display text-3xl font-light leading-[1.22] text-text-primary sm:text-4xl">
+              <p className="mt-9 font-display text-3xl font-normal leading-[1.22] text-text-primary sm:text-4xl">
                 Quel que soit votre point de départ, Le Cercle a une réponse{' '}
                 <span className="text-accent">taillée pour vous.</span>
               </p>
@@ -224,7 +224,7 @@ export default function Services() {
                   <span className="font-display text-5xl font-light text-accent">
                     {s.n}
                   </span>
-                  <h3 className="mt-5 font-display text-2xl font-light text-text-primary">
+                  <h3 className="mt-5 font-display text-2xl font-normal text-text-primary">
                     {s.t}
                   </h3>
                   <p className="mt-3 text-sm font-light leading-relaxed text-text-secondary">
@@ -254,7 +254,7 @@ export default function Services() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-light leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
+            <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
               Une question sur le service idéal ?
             </h2>
           </Reveal>

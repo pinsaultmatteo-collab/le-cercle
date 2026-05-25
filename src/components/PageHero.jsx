@@ -40,7 +40,7 @@ export default function PageHero({ label, title, intro, image, align = 'left' })
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-7 max-w-4xl font-display text-5xl font-light leading-[1.02] tracking-tight text-text-primary sm:text-6xl md:text-8xl"
+          className="mt-7 max-w-4xl font-display text-[2.6rem] font-normal leading-[1.06] tracking-[-0.01em] text-text-primary sm:text-5xl md:text-7xl"
         >
           {title}
         </motion.h1>
