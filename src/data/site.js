@@ -25,7 +25,5 @@ export const ADDRESS = {
   full: '4 rue Joutx-Aigues · Carmes · Toulouse',
   lat: 43.6,
   lng: 1.4446,
-  mapEmbed:
-    'https://www.openstreetmap.org/export/embed.html?bbox=1.4416%2C43.5985%2C1.4476%2C43.6015&layer=mapnik',
   mapLink: 'https://www.openstreetmap.org/?mlat=43.6000&mlon=1.4446#map=17/43.6000/1.4446',
 }

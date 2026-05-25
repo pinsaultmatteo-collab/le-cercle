@@ -125,3 +125,79 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ============ Leaflet map theming ============ */
+.map-grayscale {
+  background: #080808;
+}
+/* Only the map tiles are desaturated/inverted — the marker stays red. */
+.map-grayscale .leaflet-tile-pane {
+  filter: grayscale(100%) invert(92%) contrast(0.9);
+}
+
+/* Zoom controls in dark style */
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background: rgba(17, 17, 17, 0.92);
+  color: var(--text-primary);
+  border-color: rgba(200, 169, 110, 0.25);
+  backdrop-filter: blur(6px);
+}
+.leaflet-bar a:hover {
+  background: rgba(22, 22, 22, 0.95);
+  color: var(--accent);
+}
+
+/* Hide the OSM attribution background — keep text discreet */
+.leaflet-control-attribution {
+  background: rgba(8, 8, 8, 0.65) !important;
+  color: rgba(138, 134, 128, 0.85) !important;
+  font-size: 9px !important;
+  padding: 2px 6px !important;
+}
+.leaflet-control-attribution a {
+  color: rgba(200, 169, 110, 0.85) !important;
+}
+
+/* Red pin marker */
+.lc-pin-icon { background: transparent; border: 0; }
+.lc-pin-wrap {
+  position: relative;
+  width: 36px;
+  height: 48px;
+}
+.lc-pin-svg {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.55));
+}
+.lc-pin-pulse {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(230, 57, 70, 0.45);
+  transform: translateX(-50%);
+  animation: lcPinPulse 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+@keyframes lcPinPulse {
+  0%   { transform: translateX(-50%) scale(0.4); opacity: 0.7; }
+  80%  { transform: translateX(-50%) scale(2.2); opacity: 0; }
+  100% { transform: translateX(-50%) scale(2.2); opacity: 0; }
+}
+
+/* Tooltip styling */
+.leaflet-tooltip {
+  background: rgba(8, 8, 8, 0.92) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(200, 169, 110, 0.3) !important;
+  border-radius: 2px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+}
+.leaflet-tooltip-top:before { border-top-color: rgba(200, 169, 110, 0.3) !important; }

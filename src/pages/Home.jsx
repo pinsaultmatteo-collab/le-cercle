@@ -10,7 +10,7 @@ import StatCounter from '../components/StatCounter'
 import { SectionHeading, SectionLabel } from '../components/Section'
 import { ArrowDown, ArrowRight, CircleMark, PlusIcon, MapPin } from '../components/Icons'
 import { ParallaxImage, ParallaxGlow, ParallaxText } from '../components/Parallax'
-import LocationPin from '../components/LocationPin'
+import MapEmbed from '../components/MapEmbed'
 import { useModal } from '../context/ModalContext'
 import { IMG, ADDRESS } from '../data/site'
 
@@ -770,19 +770,8 @@ export default function Home() {
         <div className="mx-auto mt-14 max-w-container px-6 pb-24 md:px-12 md:pb-32">
           <Reveal>
             <div className="relative h-[44svh] min-h-[340px] overflow-hidden border border-border-gold">
-              <iframe
-                title="Le Cercle — 4 rue Joutx-Aigues, Toulouse"
-                src={ADDRESS.mapEmbed}
-                className="absolute inset-0 h-full w-full"
-                style={{
-                  border: 0,
-                  filter: 'grayscale(100%) invert(92%) contrast(0.9)',
-                }}
-                loading="lazy"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-bg-primary/10" />
-              <LocationPin size={38} />
-              <div className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-3 border border-border-gold bg-bg-primary/90 px-6 py-4 backdrop-blur-sm">
+              <MapEmbed className="absolute inset-0 h-full w-full" zoom={17} />
+              <div className="pointer-events-none absolute bottom-6 left-6 z-[400] flex items-center gap-3 border border-border-gold bg-bg-primary/90 px-6 py-4 backdrop-blur-sm">
                 <CircleMark size={18} className="text-accent" />
                 <span className="text-label text-[0.56rem] text-text-primary">
                   {ADDRESS.full}

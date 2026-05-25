@@ -80,13 +80,28 @@ export default function Footer() {
         </nav>
 
         {/* bottom */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border-gold pt-8 md:flex-row">
-          <p className="text-[0.7rem] font-light tracking-wide text-text-secondary">
-            © {new Date().getFullYear()} Le Cercle CSP — Club de Sport Privé · Toulouse
+        <div className="mt-14 flex flex-col items-center justify-between gap-6 border-t border-border-gold pt-8 md:flex-row">
+          <p className="text-center text-[0.7rem] font-light tracking-wide text-text-secondary md:text-left">
+            © {new Date().getFullYear()} Le Cercle CSP — Club de Sport Privé · Toulouse · SIREN 101 917 219
           </p>
-          <p className="text-[0.7rem] font-light tracking-wide text-text-secondary">
-            SIREN 101 917 219
-          </p>
+
+          <a
+            href="https://www.agence-pmc-marketing.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3 text-text-secondary transition-colors hover:text-text-primary"
+            aria-label="Site créé par PMC Marketing"
+          >
+            <span className="text-label text-[0.55rem] tracking-widest">
+              Conçu par
+            </span>
+            <img
+              src="/pmc-marketing-logo.png"
+              alt="PMC Marketing"
+              className="h-7 w-auto opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+              draggable="false"
+            />
+          </a>
         </div>
       </div>
     </footer>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
-import LocationPin from '../components/LocationPin'
+import MapEmbed from '../components/MapEmbed'
 import { SectionLabel } from '../components/Section'
 import {
   MapPin,
@@ -327,19 +327,8 @@ export default function Contact() {
       {/* MAP STRIP */}
       <section className="border-t border-border-gold">
         <div className="relative h-[42svh] min-h-[320px] overflow-hidden bg-bg-secondary">
-          <iframe
-            title="Le Cercle — 4 rue Joutx-Aigues, Toulouse"
-            src={ADDRESS.mapEmbed}
-            className="absolute inset-0 h-full w-full"
-            style={{
-              border: 0,
-              filter: 'grayscale(100%) invert(92%) contrast(0.9)',
-            }}
-            loading="lazy"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-bg-primary/10" />
-          <LocationPin size={38} />
-          <div className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-3 border border-border-gold bg-bg-primary/90 px-6 py-4 backdrop-blur-sm md:left-12">
+          <MapEmbed className="absolute inset-0 h-full w-full" zoom={17} />
+          <div className="pointer-events-none absolute bottom-6 left-6 z-[400] flex items-center gap-3 border border-border-gold bg-bg-primary/90 px-6 py-4 backdrop-blur-sm md:left-12">
             <MapPin size={16} className="text-accent" />
             <span className="text-label text-[0.58rem] text-text-primary">
               {ADDRESS.full}
