@@ -25,7 +25,7 @@ export default function Footer() {
         {/* top row */}
         <div className="flex flex-col items-center gap-10 text-center md:flex-row md:justify-between md:text-left">
           <div className="flex flex-col items-center gap-5 md:items-start">
-            <Logo height={52} />
+            <Logo height={68} />
             <p className="text-label text-[0.62rem] text-text-secondary">
               4 rue Joutx-Aigues · Carmes · Toulouse
             </p>

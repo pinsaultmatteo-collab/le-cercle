@@ -57,7 +57,7 @@ export default function Navbar() {
         >
           <nav className="mx-auto flex max-w-container items-center justify-between px-6 py-5 md:px-12">
             {/* Logo */}
-            <Logo height={44} className="relative z-[110]" />
+            <Logo height={54} className="relative z-[110]" />
 
             {/* Desktop links */}
             <div className="hidden items-center gap-10 lg:flex">

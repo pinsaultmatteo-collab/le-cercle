@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom'
 
 /**
  * Logo — the Le Cercle brand mark.
- * The source is a JPEG on a pure-black background; `mix-blend-mode: screen`
- * makes the black drop out so only the white circle + wordmark show against
- * the dark UI — no visible square edge.
+ * Real transparent PNG, so no blend-mode trickery needed.
  */
-export default function Logo({ height = 48, className = '', onClick }) {
+export default function Logo({ height = 56, className = '', onClick }) {
   return (
     <Link
       to="/"
@@ -15,13 +13,9 @@ export default function Logo({ height = 48, className = '', onClick }) {
       className={`inline-flex items-center ${className}`}
     >
       <img
-        src="/logo.jpg"
+        src="/logo.png"
         alt="Le Cercle"
-        style={{
-          height,
-          width: 'auto',
-          mixBlendMode: 'screen',
-        }}
+        style={{ height, width: 'auto' }}
         draggable="false"
       />
     </Link>

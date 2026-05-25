@@ -200,17 +200,32 @@ export default function Home() {
           style={{ y: heroTextY }}
           className="relative z-30 mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center md:px-12"
         >
-          {/* giant faint outlined circle echoing the logo, behind the title */}
-          <motion.div
+          {/* animated circle that draws itself around the content block */}
+          <motion.svg
             aria-hidden="true"
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[34rem] w-[34rem] max-w-[92vw] -translate-x-1/2 -translate-y-1/2 sm:h-[40rem] sm:w-[40rem]"
+            viewBox="0 0 100 100"
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[88vw] w-[88vw] max-h-[44rem] max-w-[44rem] -translate-x-1/2 -translate-y-1/2 -rotate-90"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="absolute inset-0 rounded-full border border-accent/15" />
-            <div className="absolute inset-6 rounded-full border border-accent/8" />
-          </motion.div>
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="49.2"
+              fill="none"
+              stroke="rgba(200, 169, 110, 0.55)"
+              strokeWidth="0.18"
+              strokeLinecap="round"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{
+                duration: 2.6,
+                delay: 0.5,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            />
+          </motion.svg>
 
           {/* metadata trio */}
           <motion.div
