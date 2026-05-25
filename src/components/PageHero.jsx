@@ -40,7 +40,9 @@ export default function PageHero({ label, title, intro, image, align = 'center' 
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-7 max-w-4xl font-display text-[2.6rem] font-normal leading-[1.06] tracking-[-0.01em] text-text-primary sm:text-5xl md:text-7xl"
+          className={`mt-7 max-w-4xl font-display text-[2.6rem] font-normal leading-[1.06] tracking-[-0.01em] text-text-primary sm:text-5xl md:text-7xl ${
+            align === 'center' ? 'mx-auto' : ''
+          }`}
         >
           {title}
         </motion.h1>
