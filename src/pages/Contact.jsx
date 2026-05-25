@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import PageWrapper from '../components/PageWrapper'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
+import LocationPin from '../components/LocationPin'
 import { SectionLabel } from '../components/Section'
 import {
   MapPin,
@@ -328,7 +329,7 @@ export default function Contact() {
         <div className="relative h-[42svh] min-h-[320px] overflow-hidden bg-bg-secondary">
           <iframe
             title="Le Cercle — 4 rue Joutx-Aigues, Toulouse"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=1.4416%2C43.5985%2C1.4476%2C43.6015&layer=mapnik&marker=43.6000%2C1.4446"
+            src={ADDRESS.mapEmbed}
             className="absolute inset-0 h-full w-full"
             style={{
               border: 0,
@@ -337,6 +338,7 @@ export default function Contact() {
             loading="lazy"
           />
           <div className="pointer-events-none absolute inset-0 bg-bg-primary/10" />
+          <LocationPin size={38} />
           <div className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-3 border border-border-gold bg-bg-primary/90 px-6 py-4 backdrop-blur-sm md:left-12">
             <MapPin size={16} className="text-accent" />
             <span className="text-label text-[0.58rem] text-text-primary">

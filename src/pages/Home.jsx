@@ -10,6 +10,7 @@ import StatCounter from '../components/StatCounter'
 import { SectionHeading, SectionLabel } from '../components/Section'
 import { ArrowDown, ArrowRight, CircleMark, PlusIcon, MapPin } from '../components/Icons'
 import { ParallaxImage, ParallaxGlow, ParallaxText } from '../components/Parallax'
+import LocationPin from '../components/LocationPin'
 import { useModal } from '../context/ModalContext'
 import { IMG, ADDRESS } from '../data/site'
 
@@ -227,18 +228,16 @@ export default function Home() {
             />
           </motion.svg>
 
-          {/* metadata trio */}
+          {/* metadata */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-label text-[0.55rem] text-text-secondary"
           >
-            <span className="text-accent">Est · MMXXVI</span>
-            <span className="h-px w-6 bg-border-gold" />
-            <span>Carmes · Toulouse</span>
-            <span className="h-px w-6 bg-border-gold" />
-            <span>43.60°N · 01.44°E</span>
+            <span className="h-px w-8 bg-border-gold" />
+            <span className="text-accent">Carmes · Toulouse</span>
+            <span className="h-px w-8 bg-border-gold" />
           </motion.div>
 
           {/* headline */}
@@ -249,7 +248,6 @@ export default function Home() {
             className="mt-10 font-display text-[3.4rem] font-light leading-[0.95] tracking-[-0.015em] text-text-primary sm:text-7xl md:text-[6.4rem]"
           >
             L'exigence
-            <span className="mx-2 inline-block text-accent">—</span>
             <br />
             a son <span className="text-accent">cercle.</span>
           </motion.h1>
@@ -783,6 +781,7 @@ export default function Home() {
                 loading="lazy"
               />
               <div className="pointer-events-none absolute inset-0 bg-bg-primary/10" />
+              <LocationPin size={38} />
               <div className="pointer-events-none absolute bottom-6 left-6 flex items-center gap-3 border border-border-gold bg-bg-primary/90 px-6 py-4 backdrop-blur-sm">
                 <CircleMark size={18} className="text-accent" />
                 <span className="text-label text-[0.56rem] text-text-primary">
