@@ -92,13 +92,13 @@ export default function Footer() {
             className="group flex items-center gap-3 text-text-secondary transition-colors hover:text-text-primary"
             aria-label="Site créé par PMC Marketing"
           >
-            <span className="text-label text-[0.55rem] tracking-widest">
+            <span className="text-label text-[0.62rem] tracking-widest">
               Conçu par
             </span>
             <img
               src="/pmc-marketing-logo.png"
               alt="PMC Marketing"
-              className="h-7 w-auto opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+              className="h-9 w-auto opacity-80 transition-opacity duration-300 group-hover:opacity-100"
               draggable="false"
             />
           </a>
