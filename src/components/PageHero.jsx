@@ -4,7 +4,7 @@ import { SectionLabel } from './Section'
 /**
  * PageHero — full-bleed hero banner used at the top of interior pages.
  */
-export default function PageHero({ label, title, intro, image, align = 'left' }) {
+export default function PageHero({ label, title, intro, image, align = 'center' }) {
   return (
     <section className="relative flex h-[68svh] min-h-[460px] items-end overflow-hidden">
       <motion.img

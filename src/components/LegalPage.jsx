@@ -15,13 +15,13 @@ export default function LegalPage({ label, title, intro, sections, updated }) {
   return (
     <PageWrapper>
       <section className="border-b border-border-gold pt-36 md:pt-44">
-        <div className="mx-auto max-w-3xl px-6 pb-14 md:px-12 md:pb-20">
+        <div className="mx-auto flex max-w-3xl flex-col items-center px-6 pb-14 text-center md:px-12 md:pb-20">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           >
-            <SectionLabel>{label}</SectionLabel>
+            <SectionLabel className="justify-center">{label}</SectionLabel>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

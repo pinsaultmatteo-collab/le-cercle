@@ -100,7 +100,7 @@ export default function BlogPost() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 flex flex-wrap items-center gap-4 text-label text-[0.58rem] text-text-secondary"
+            className="mt-8 flex flex-wrap items-center justify-center gap-4 text-label text-[0.58rem] text-text-secondary"
           >
             <span className="text-accent">{post.category}</span>
             <span className="h-px w-4 bg-border-gold" />
@@ -113,7 +113,7 @@ export default function BlogPost() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 max-w-4xl font-display text-[2.2rem] font-normal leading-[1.12] tracking-[-0.005em] text-text-primary sm:text-4xl md:text-5xl lg:text-6xl"
+            className="mx-auto mt-6 max-w-4xl text-center font-display text-[2.2rem] font-normal leading-[1.12] tracking-[-0.005em] text-text-primary sm:text-4xl md:text-5xl lg:text-6xl"
           >
             {post.title}
           </motion.h1>
