@@ -11,6 +11,7 @@ import { SectionHeading, SectionLabel } from '../components/Section'
 import { ArrowDown, ArrowRight, CircleMark, PlusIcon, MapPin } from '../components/Icons'
 import { ParallaxImage, ParallaxGlow, ParallaxText } from '../components/Parallax'
 import MapEmbed from '../components/MapEmbed'
+import HeroSparkCircle from '../components/HeroSparkCircle'
 import { useModal } from '../context/ModalContext'
 import { IMG, ADDRESS } from '../data/site'
 
@@ -201,32 +202,9 @@ export default function Home() {
           style={{ y: heroTextY }}
           className="relative z-30 mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center md:px-12"
         >
-          {/* animated circle that draws itself around the content block */}
-          <motion.svg
-            aria-hidden="true"
-            viewBox="0 0 100 100"
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[88vw] w-[88vw] max-h-[44rem] max-w-[44rem] -translate-x-1/2 -translate-y-1/2 -rotate-90"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="49.2"
-              fill="none"
-              stroke="rgba(200, 169, 110, 0.55)"
-              strokeWidth="0.18"
-              strokeLinecap="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{
-                duration: 2.6,
-                delay: 0.5,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            />
-          </motion.svg>
+          {/* animated circle that draws itself around the content block,
+              with a sparkling fireworks-fuse effect */}
+          <HeroSparkCircle className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[88vw] w-[88vw] max-h-[44rem] max-w-[44rem] -translate-x-1/2 -translate-y-1/2 overflow-visible" />
 
           {/* metadata */}
           <motion.div
