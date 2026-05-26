@@ -77,7 +77,7 @@ function Ember({ spec, progress }) {
 
 export default function HeroSparkCircle({
   className = '',
-  duration = 3,
+  duration = 4.8,
   delay = 0.5,
 }) {
   const progress = useMotionValue(0)
@@ -105,6 +105,9 @@ export default function HeroSparkCircle({
   // fade in fast, fade out as the spark reaches the start again
   const headOpacity = useTransform(progress, [0, 0.03, 0.94, 1], [0, 1, 1, 0])
   const trailOpacity = useTransform(progress, [0.92, 1], [1, 0.55])
+  // kill any embers still alive once the animation completes — prevents
+  // leftover dots near the spawn-point at the top of the circle
+  const embersGroupOpacity = useTransform(progress, [0.94, 1], [1, 0])
 
   return (
     <motion.svg
@@ -151,10 +154,14 @@ export default function HeroSparkCircle({
         style={{ strokeDashoffset: dashOffset, opacity: trailOpacity }}
       />
 
-      {/* Drifting embers along the trail */}
-      {embers.map((spec, i) => (
-        <Ember key={i} spec={spec} progress={progress} />
-      ))}
+      {/* Drifting embers along the trail — wrapped in a group that fades
+          out at the very end so no stray particles linger after the
+          animation completes */}
+      <motion.g style={{ opacity: embersGroupOpacity }}>
+        {embers.map((spec, i) => (
+          <Ember key={i} spec={spec} progress={progress} />
+        ))}
+      </motion.g>
 
       {/* Outer halo around the head */}
       <motion.circle

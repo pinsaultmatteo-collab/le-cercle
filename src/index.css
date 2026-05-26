@@ -65,6 +65,33 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* ============ Shimmer gold ============
+   Warm orange-gold that echoes the firework circle's hue, with a soft
+   highlight band that sweeps across the word every few seconds. */
+.shimmer-gold {
+  background: linear-gradient(
+    100deg,
+    #E0A24B 0%,
+    #E0A24B 28%,
+    #F4C673 44%,
+    #FFEEC7 50%,
+    #F4C673 56%,
+    #E0A24B 72%,
+    #E0A24B 100%
+  );
+  background-size: 260% 100%;
+  background-position: 200% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmerSweep 4.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes shimmerSweep {
+  0%   { background-position: 200% 50%; }
+  100% { background-position: -100% 50%; }
+}
+
 /* Thin gold rule */
 .rule-gold {
   height: 1px;

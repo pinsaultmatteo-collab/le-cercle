@@ -227,7 +227,7 @@ export default function Home() {
           >
             L'exigence
             <br />
-            a son <span className="text-accent">cercle.</span>
+            a son <span className="shimmer-gold">cercle.</span>
           </motion.h1>
 
           {/* gold rule + circle mark divider */}
