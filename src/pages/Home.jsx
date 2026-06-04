@@ -302,10 +302,10 @@ export default function Home() {
       <section className="border-y border-border-gold bg-bg-secondary py-8">
         <Marquee
           items={[
-            'Performance',
-            'Discipline',
+            'Expertise',
+            'Motivation',
             'Sur-mesure',
-            'Confidentiel',
+            'Accompagnement',
             'Excellence',
           ]}
           duration={32}

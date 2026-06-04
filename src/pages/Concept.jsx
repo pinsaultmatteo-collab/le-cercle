@@ -18,8 +18,8 @@ const PILLARS = [
   },
   {
     n: '02',
-    title: 'Balance impédancemètre',
-    text: 'Suivez votre progression avec précision grâce à notre balance à impédancemètre professionnelle. Analyse de la composition corporelle, évolution mesurable, données concrètes : un suivi clair pour piloter vos résultats avec exigence.',
+    title: 'Suivi de progression',
+    text: 'Votre évolution est mesurée et documentée à chaque étape. Des bilans réguliers permettent d\'ajuster votre programme et de rester aligné avec vos objectifs, semaine après semaine.',
   },
   {
     n: '03',
@@ -207,7 +207,7 @@ export default function Concept() {
       {/* MARQUEE */}
       <section className="border-y border-border-gold bg-bg-secondary py-8">
         <Marquee
-          items={['Performance', 'Discipline', 'Sur-mesure', 'Confidentiel', 'Excellence']}
+          items={['Expertise', 'Motivation', 'Sur-mesure', 'Accompagnement', 'Excellence']}
           reverse
           duration={34}
         />
