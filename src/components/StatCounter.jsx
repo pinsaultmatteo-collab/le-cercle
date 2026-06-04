@@ -11,8 +11,14 @@ export default function StatCounter({
   label,
   decimals = 0,
   align = 'left',
+  size = 'lg',
 }) {
   const [ref, display] = useCountUp(value, { decimals, duration: 2200 })
+
+  const sizeClass =
+    size === 'sm'
+      ? 'font-display text-4xl font-light leading-none text-text-primary md:text-5xl'
+      : 'font-display text-6xl font-light leading-none text-text-primary md:text-7xl'
 
   return (
     <div
@@ -25,7 +31,7 @@ export default function StatCounter({
             : 'text-left'
       }
     >
-      <div className="font-display text-6xl font-light leading-none text-text-primary md:text-7xl">
+      <div className={sizeClass}>
         <span className="text-accent">{prefix}</span>
         {display}
         <span className="text-accent">{suffix}</span>

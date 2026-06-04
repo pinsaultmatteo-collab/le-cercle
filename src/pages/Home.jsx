@@ -367,19 +367,19 @@ export default function Home() {
           to={{ x: -160, y: 30 }}
           opacity={0.6}
         />
-        <div className="relative z-10 mx-auto max-w-container px-6 py-20 md:px-12 md:py-24">
-          <Stagger className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-8">
+        <div className="relative z-10 mx-auto max-w-container px-6 py-16 md:px-12 md:py-20">
+          <Stagger className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-6">
             <StaggerItem>
-              <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" />
+              <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" size="sm" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" />
+              <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" size="sm" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={55} prefix="Dès " suffix=" €" label="Coaching individuel / séance" />
+              <StatCounter value={55} prefix="Dès " suffix=" €" label="Coaching individuel / séance" size="sm" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={60} prefix="Dès " suffix=" €" label="Coaching binôme / séance" />
+              <StatCounter value={60} prefix="Dès " suffix=" €" label="Coaching binôme / séance" size="sm" />
             </StaggerItem>
           </Stagger>
         </div>
