@@ -18,21 +18,21 @@ import { IMG, ADDRESS } from '../data/site'
 const SERVICES_PREVIEW = [
   {
     n: '01',
-    title: 'Cours collectifs',
-    text: 'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX. Cours quotidien de 8 à 10 personnes (45 minutes). Réservez vos cours via l\'application.',
-    img: IMG.gymInterior,
-  },
-  {
-    n: '02',
     title: 'Coaching individuel',
     text: 'Entraînement sur mesure pensé pour vous. Séance d\'une heure avec coach dédié. Planification de vos séances hebdomadaires selon vos disponibilités.',
     img: IMG.coachAthlete,
   },
   {
-    n: '03',
+    n: '02',
     title: 'Coaching en binôme',
     text: 'Premier échange approfondi pour analyser votre situation et fixer vos objectifs. Séance d\'une heure en binôme avec coach dédié.',
     img: IMG.trackNight,
+  },
+  {
+    n: '03',
+    title: 'Cours collectifs',
+    text: 'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX. Cours quotidien de 8 à 10 personnes (45 minutes). Réservez vos cours via l\'application.',
+    img: IMG.gymInterior,
   },
 ]
 
@@ -358,7 +358,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ STATS ============ */}
+      {/* ============ STATS COURS COLLECTIFS ============ */}
       <section className="relative overflow-hidden border-y border-border-gold bg-bg-secondary">
         <ParallaxGlow
           className="z-0"
@@ -367,13 +367,32 @@ export default function Home() {
           to={{ x: -160, y: 30 }}
           opacity={0.6}
         />
-        <div className="relative z-10 mx-auto max-w-container px-6 py-16 md:px-12 md:py-20">
-          <Stagger className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-6">
+        <div className="relative z-10 mx-auto max-w-container px-6 py-14 md:px-12 md:py-16">
+          <p className="mb-8 text-label text-[0.58rem] text-text-secondary">Cours collectifs</p>
+          <Stagger className="grid grid-cols-3 gap-10 md:gap-6">
             <StaggerItem>
-              <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" size="sm" />
+              <StatCounter value={8} suffix=" / cours" label="Personnes maximum" size="sm" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" size="sm" />
+              <StatCounter value={45} suffix=" min" label="Durée du cours" size="sm" />
+            </StaggerItem>
+            <StaggerItem>
+              <StatCounter value={7.5} prefix="Dès " suffix=" €" label="Le cours" decimals={1} size="sm" />
+            </StaggerItem>
+          </Stagger>
+        </div>
+      </section>
+
+      {/* ============ STATS COACHING ============ */}
+      <section className="relative overflow-hidden border-b border-border-gold bg-bg-secondary">
+        <div className="relative z-10 mx-auto max-w-container px-6 py-14 md:px-12 md:py-16">
+          <p className="mb-8 text-label text-[0.58rem] text-text-secondary">Coaching</p>
+          <Stagger className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-6">
+            <StaggerItem>
+              <StatCounter value={1} suffix=" coach" label="Dédié à votre suivi" size="sm" />
+            </StaggerItem>
+            <StaggerItem>
+              <StatCounter value={1} suffix="h" label="Durée de la séance" size="sm" />
             </StaggerItem>
             <StaggerItem>
               <StatCounter value={55} prefix="Dès " suffix=" €" label="Coaching individuel / séance" size="sm" />
