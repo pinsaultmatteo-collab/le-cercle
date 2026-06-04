@@ -112,10 +112,10 @@ export default function Concept() {
           className="absolute inset-0 h-full w-full object-cover"
           style={{ filter: 'brightness(0.55) grayscale(25%)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/70 to-transparent" />
-        <div className="relative z-10 mx-auto flex h-full max-w-container items-center px-6 md:px-12">
+        <div className="absolute inset-0 bg-bg-primary/55" />
+        <div className="relative z-10 mx-auto flex h-full max-w-container items-center justify-center px-6 text-center md:px-12">
           <Reveal>
-            <p className="max-w-lg font-display text-3xl font-normal leading-snug text-text-primary md:text-4xl">
+            <p className="max-w-2xl font-display text-3xl font-normal leading-snug text-text-primary md:text-4xl">
               « Notre mission : offrir un coaching premium, alliant expertise
               et personnalisation, dans un cadre motivant et chaleureux. »
             </p>
