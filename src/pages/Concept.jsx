@@ -41,13 +41,13 @@ const APPROACH = [
   },
   {
     step: 'II',
-    title: 'Coaching 360°',
+    title: 'Séance bilan',
     text: 'Un diagnostic complet de 1h30 : immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour concevoir votre programme sur mesure.',
   },
   {
     step: 'III',
     title: 'Le coaching',
-    text: 'Sur une durée d\'une heure, votre coach vous offre une expérience sportive de qualité, personnalisée et adaptée à vos besoins spécifiques, en cohérence avec les données du Coaching 360°.',
+    text: 'Sur une durée d\'une heure, votre coach vous offre une expérience sportive de qualité, personnalisée et adaptée à vos besoins spécifiques, en cohérence avec les données de votre séance bilan.',
   },
   {
     step: 'IV',
@@ -197,8 +197,8 @@ export default function Concept() {
       {/* STATS */}
       <section className="mx-auto max-w-container px-6 py-16 md:px-12 md:py-20">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-6">
-          <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" size="sm" />
-          <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" size="sm" />
+          <StatCounter value={1} prefix="" suffix=" coach" label="Dédié à votre entraînement &amp; suivi" size="sm" />
+          <StatCounter value={1} prefix="" suffix="h" label="Durée de la séance" size="sm" />
           <StatCounter value={55} prefix="Dès " suffix=" €" label="Coaching individuel / séance" size="sm" />
           <StatCounter value={60} prefix="Dès " suffix=" €" label="Coaching binôme / séance" size="sm" />
         </div>
