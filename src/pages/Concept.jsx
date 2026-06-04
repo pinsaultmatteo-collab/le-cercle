@@ -195,12 +195,12 @@ export default function Concept() {
       </section>
 
       {/* STATS */}
-      <section className="mx-auto max-w-container px-6 py-24 md:px-12 md:py-32">
-        <div className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-8">
-          <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" />
-          <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" />
-          <StatCounter value={55} prefix="À partir de " suffix=" €" label="Coaching individuel / séance" />
-          <StatCounter value={60} prefix="À partir de " suffix=" €" label="Coaching binôme / séance" />
+      <section className="mx-auto max-w-container px-6 py-16 md:px-12 md:py-20">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-6">
+          <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" size="sm" />
+          <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" size="sm" />
+          <StatCounter value={55} prefix="À partir de " suffix=" €" label="Coaching individuel / séance" size="sm" />
+          <StatCounter value={60} prefix="À partir de " suffix=" €" label="Coaching binôme / séance" size="sm" />
         </div>
       </section>
 
