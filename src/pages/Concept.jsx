@@ -199,8 +199,8 @@ export default function Concept() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-6">
           <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" size="sm" />
           <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" size="sm" />
-          <StatCounter value={55} prefix="À partir de " suffix=" €" label="Coaching individuel / séance" size="sm" />
-          <StatCounter value={60} prefix="À partir de " suffix=" €" label="Coaching binôme / séance" size="sm" />
+          <StatCounter value={55} prefix="Dès " suffix=" €" label="Coaching individuel / séance" size="sm" />
+          <StatCounter value={60} prefix="Dès " suffix=" €" label="Coaching binôme / séance" size="sm" />
         </div>
       </section>
 
