@@ -115,9 +115,8 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                     Rejoindre Le Cercle
                   </h3>
                   <p className="mt-4 text-sm font-light leading-relaxed text-text-secondary">
-                    L'adhésion se fait sur entretien. Laissez-nous vos
-                    coordonnées — nous vous recontactons sous 48 heures pour
-                    convenir d'une première rencontre.
+                    Laissez-nous vos coordonnées — nous vous recontactons
+                    rapidement pour convenir d'une première rencontre.
                   </p>
 
                   <form onSubmit={handleSubmit} className="mt-9 space-y-7">
@@ -182,7 +181,7 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                         htmlFor="m-formule"
                         className="text-label text-[0.58rem] text-text-secondary"
                       >
-                        Formule souhaitée
+                        Service souhaité
                       </label>
                       <select
                         id="m-formule"
@@ -192,19 +191,22 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                         className={`${field} appearance-none`}
                       >
                         <option value="" className="bg-bg-card">
-                          Sélectionnez une formule
+                          Sélectionnez un service
                         </option>
-                        <option value="Essentiel" className="bg-bg-card">
-                          Essentiel
+                        <option value="Cours collectifs" className="bg-bg-card">
+                          Cours collectifs
                         </option>
-                        <option value="Signature" className="bg-bg-card">
-                          Signature
+                        <option value="Coaching individuel" className="bg-bg-card">
+                          Coaching individuel
                         </option>
-                        <option value="Privé" className="bg-bg-card">
-                          Privé
+                        <option value="Coaching en binôme" className="bg-bg-card">
+                          Coaching en binôme
                         </option>
-                        <option value="Indécis" className="bg-bg-card">
-                          Je souhaite être conseillé
+                        <option value="Cours collectifs small group" className="bg-bg-card">
+                          Cours collectifs en small group
+                        </option>
+                        <option value="Je ne sais pas" className="bg-bg-card">
+                          Je ne sais pas encore
                         </option>
                       </select>
                     </div>
