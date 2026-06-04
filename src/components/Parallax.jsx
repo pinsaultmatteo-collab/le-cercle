@@ -72,7 +72,7 @@ export function ParallaxGlow({
           height: size,
           opacity,
           background:
-            'radial-gradient(circle, rgba(200,169,110,0.22) 0%, rgba(200,169,110,0.07) 38%, transparent 70%)',
+            'radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 38%, transparent 70%)',
         }}
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
       />

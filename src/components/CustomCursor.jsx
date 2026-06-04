@@ -55,10 +55,10 @@ export default function CustomCursor() {
         const scale = hovering.current ? 2.4 : 1
         ringRef.current.style.transform = `translate(${ring.current.x}px, ${ring.current.y}px) scale(${scale})`
         ringRef.current.style.borderColor = hovering.current
-          ? 'rgba(232, 201, 142, 0.9)'
-          : 'rgba(200, 169, 110, 0.6)'
+          ? 'rgba(255, 255, 255, 0.9)'
+          : 'rgba(255, 255, 255, 0.5)'
         ringRef.current.style.backgroundColor = hovering.current
-          ? 'rgba(200, 169, 110, 0.08)'
+          ? 'rgba(255, 255, 255, 0.06)'
           : 'transparent'
       }
       raf = requestAnimationFrame(render)
@@ -114,7 +114,7 @@ export default function CustomCursor() {
           marginLeft: -15,
           marginTop: -15,
           borderRadius: '50%',
-          border: '1px solid rgba(200, 169, 110, 0.6)',
+          border: '1px solid rgba(255, 255, 255, 0.4)',
           pointerEvents: 'none',
           zIndex: 9999,
           opacity: 0,

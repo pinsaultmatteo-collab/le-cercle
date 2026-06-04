@@ -6,11 +6,11 @@
   --bg-primary: #080808;
   --bg-secondary: #111111;
   --bg-card: #161616;
-  --accent: #c8a96e;
-  --accent-light: #e8c98e;
-  --text-primary: #f5f0e8;
+  --accent: #ffffff;
+  --accent-light: #cccccc;
+  --text-primary: #ffffff;
   --text-secondary: #8a8680;
-  --border: rgba(200, 169, 110, 0.2);
+  --border: rgba(255, 255, 255, 0.15);
 }
 
 * {
@@ -47,10 +47,10 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 169, 110, 0.25);
+  background: rgba(255, 255, 255, 0.15);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 169, 110, 0.45);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Typographic helpers */
@@ -65,19 +65,17 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* ============ Shimmer gold ============
-   Warm orange-gold that echoes the firework circle's hue, with a soft
-   highlight band that sweeps across the word every few seconds. */
+/* ============ Shimmer white ============ */
 .shimmer-gold {
   background: linear-gradient(
     100deg,
-    #E0A24B 0%,
-    #E0A24B 28%,
-    #F4C673 44%,
-    #FFEEC7 50%,
-    #F4C673 56%,
-    #E0A24B 72%,
-    #E0A24B 100%
+    #cccccc 0%,
+    #cccccc 28%,
+    #ffffff 44%,
+    #ffffff 50%,
+    #ffffff 56%,
+    #cccccc 72%,
+    #cccccc 100%
   );
   background-size: 260% 100%;
   background-position: 200% 50%;
@@ -92,14 +90,14 @@ body {
   100% { background-position: -100% 50%; }
 }
 
-/* Thin gold rule */
+/* Thin white rule */
 .rule-gold {
   height: 1px;
   width: 100%;
   background: linear-gradient(
     to right,
     transparent,
-    rgba(200, 169, 110, 0.4),
+    rgba(255, 255, 255, 0.2),
     transparent
   );
 }
@@ -117,7 +115,7 @@ body {
   background: linear-gradient(
     120deg,
     transparent 0%,
-    rgba(232, 201, 142, 0.45) 50%,
+    rgba(255, 255, 255, 0.15) 50%,
     transparent 100%
   );
   transform: translateX(-120%);
@@ -157,7 +155,6 @@ body {
 .map-grayscale {
   background: #080808;
 }
-/* Only the map tiles are desaturated/inverted — the marker stays red. */
 .map-grayscale .leaflet-tile-pane {
   filter: grayscale(100%) invert(92%) contrast(0.9);
 }
@@ -167,7 +164,7 @@ body {
 .leaflet-bar a:hover {
   background: rgba(17, 17, 17, 0.92);
   color: var(--text-primary);
-  border-color: rgba(200, 169, 110, 0.25);
+  border-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
 }
 .leaflet-bar a:hover {
@@ -175,7 +172,7 @@ body {
   color: var(--accent);
 }
 
-/* Hide the OSM attribution background — keep text discreet */
+/* Hide the OSM attribution background */
 .leaflet-control-attribution {
   background: rgba(8, 8, 8, 0.65) !important;
   color: rgba(138, 134, 128, 0.85) !important;
@@ -183,7 +180,7 @@ body {
   padding: 2px 6px !important;
 }
 .leaflet-control-attribution a {
-  color: rgba(200, 169, 110, 0.85) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 /* Red pin marker */
@@ -217,7 +214,7 @@ body {
 .leaflet-tooltip {
   background: rgba(8, 8, 8, 0.92) !important;
   color: var(--text-primary) !important;
-  border: 1px solid rgba(200, 169, 110, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 2px !important;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 10px !important;
@@ -227,4 +224,4 @@ body {
   padding: 6px 10px !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
 }
-.leaflet-tooltip-top:before { border-top-color: rgba(200, 169, 110, 0.3) !important; }
+.leaflet-tooltip-top:before { border-top-color: rgba(255, 255, 255, 0.2) !important; }

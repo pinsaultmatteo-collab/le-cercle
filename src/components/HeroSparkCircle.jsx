@@ -12,19 +12,14 @@ const TWO_PI = Math.PI * 2
 const CIRCUMFERENCE = TWO_PI * RADIUS
 
 const EMBER_COLORS = [
-  '#FFE9B8',
-  '#FFD27D',
-  '#FFB347',
-  '#FFC069',
-  '#FFF1C7',
-  '#FFAE5C',
+  '#ffffff',
+  '#e0e0e0',
+  '#cccccc',
+  '#f0f0f0',
+  '#ffffff',
+  '#d8d8d8',
 ]
 
-/**
- * Build a deterministic-ish set of embers distributed along the circle.
- * Each ember knows when it spawns (matched to head position) and where it
- * flies — outward, with a random spread.
- */
 function buildEmbers({ bursts = 22, perBurst = 3 } = {}) {
   const out = []
   for (let i = 0; i < bursts; i++) {
@@ -41,10 +36,8 @@ function buildEmbers({ bursts = 22, perBurst = 3 } = {}) {
         cx,
         cy,
         vx: Math.cos(driftAngle) * speed,
-        // gravity-ish drift downward in screen space (y+) → after the SVG -rotate-90 wrapper this becomes a sideways drift, which still reads like sparkles
         vy: Math.sin(driftAngle) * speed + Math.random() * 0.8,
         r: 0.22 + Math.random() * 0.45,
-        // each ember lives a fraction of total progress
         lifespan: 0.08 + Math.random() * 0.08,
         color: EMBER_COLORS[Math.floor(Math.random() * EMBER_COLORS.length)],
       })
@@ -92,21 +85,16 @@ export default function HeroSparkCircle({
     return () => controls.stop()
   }, [progress, duration, delay])
 
-  // dash offset reveals the burnt trail behind the spark head
   const dashOffset = useTransform(progress, [0, 1], [CIRCUMFERENCE, 0])
 
-  // bright head position — tip of the moving spark
   const headX = useTransform(progress, (p) =>
     CENTER + RADIUS * Math.cos(TWO_PI * p)
   )
   const headY = useTransform(progress, (p) =>
     CENTER + RADIUS * Math.sin(TWO_PI * p)
   )
-  // fade in fast, fade out as the spark reaches the start again
   const headOpacity = useTransform(progress, [0, 0.03, 0.94, 1], [0, 1, 1, 0])
   const trailOpacity = useTransform(progress, [0.92, 1], [1, 0.55])
-  // kill any embers still alive once the animation completes — prevents
-  // leftover dots near the spawn-point at the top of the circle
   const embersGroupOpacity = useTransform(progress, [0.94, 1], [1, 0])
 
   return (
@@ -127,26 +115,26 @@ export default function HeroSparkCircle({
         </filter>
       </defs>
 
-      {/* Burnt trail — what the spark leaves behind */}
+      {/* Burnt trail */}
       <motion.circle
         cx={CENTER}
         cy={CENTER}
         r={RADIUS}
         fill="none"
-        stroke="rgba(255, 178, 80, 0.62)"
+        stroke="rgba(255, 255, 255, 0.5)"
         strokeWidth="0.22"
         strokeLinecap="round"
         strokeDasharray={CIRCUMFERENCE}
         style={{ strokeDashoffset: dashOffset, opacity: trailOpacity }}
       />
 
-      {/* Soft warm glow following the trail (gives it a "still hot" look) */}
+      {/* Soft glow following the trail */}
       <motion.circle
         cx={CENTER}
         cy={CENTER}
         r={RADIUS}
         fill="none"
-        stroke="rgba(255, 150, 60, 0.25)"
+        stroke="rgba(255, 255, 255, 0.15)"
         strokeWidth="0.9"
         strokeLinecap="round"
         strokeDasharray={CIRCUMFERENCE}
@@ -154,21 +142,19 @@ export default function HeroSparkCircle({
         style={{ strokeDashoffset: dashOffset, opacity: trailOpacity }}
       />
 
-      {/* Drifting embers along the trail — wrapped in a group that fades
-          out at the very end so no stray particles linger after the
-          animation completes */}
+      {/* Drifting embers */}
       <motion.g style={{ opacity: embersGroupOpacity }}>
         {embers.map((spec, i) => (
           <Ember key={i} spec={spec} progress={progress} />
         ))}
       </motion.g>
 
-      {/* Outer halo around the head */}
+      {/* Outer halo */}
       <motion.circle
         cx={headX}
         cy={headY}
         r="2.8"
-        fill="rgba(255, 200, 100, 0.55)"
+        fill="rgba(255, 255, 255, 0.3)"
         filter="url(#sparkWideGlow)"
         style={{ opacity: headOpacity }}
       />
@@ -177,16 +163,16 @@ export default function HeroSparkCircle({
         cx={headX}
         cy={headY}
         r="1.3"
-        fill="rgba(255, 220, 140, 0.9)"
+        fill="rgba(255, 255, 255, 0.7)"
         filter="url(#sparkSoftGlow)"
         style={{ opacity: headOpacity }}
       />
-      {/* Bright core — the burning fuse tip */}
+      {/* Bright core */}
       <motion.circle
         cx={headX}
         cy={headY}
         r="0.55"
-        fill="#FFF8E0"
+        fill="#ffffff"
         style={{ opacity: headOpacity }}
       />
     </motion.svg>
