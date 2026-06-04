@@ -18,77 +18,77 @@ import { IMG, ADDRESS } from '../data/site'
 const SERVICES_PREVIEW = [
   {
     n: '01',
-    title: 'Coaching individuel',
-    text: 'Un accompagnement entièrement sur-mesure, pensé autour de votre physiologie et de vos ambitions.',
-    img: IMG.coachAthlete,
+    title: 'Cours collectifs',
+    text: 'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX. Cours quotidien de 8 à 10 personnes (45 minutes). Réservez vos cours via l\'application.',
+    img: IMG.gymInterior,
   },
   {
     n: '02',
-    title: 'Préparation physique',
-    text: 'La performance comme discipline. Force, endurance, mobilité — orchestrées avec précision.',
-    img: IMG.trackNight,
+    title: 'Coaching individuel',
+    text: 'Entraînement sur mesure pensé pour vous. Séance d\'une heure avec coach dédié. Planification de vos séances hebdomadaires selon vos disponibilités.',
+    img: IMG.coachAthlete,
   },
   {
     n: '03',
-    title: 'Small group',
-    text: "L'émulation d'un collectif restreint, l'exigence d'un suivi personnalisé. Six athlètes, jamais plus.",
-    img: IMG.gymInterior,
+    title: 'Coaching en binôme',
+    text: 'Premier échange approfondi pour analyser votre situation et fixer vos objectifs. Séance d\'une heure en binôme avec coach dédié.',
+    img: IMG.trackNight,
   },
 ]
 
 const COACHES = [
   {
-    initial: 'T',
-    name: 'Tom',
-    role: 'Coach · Cofondateur',
-    text: "Préparateur physique de formation, Tom a fondé Le Cercle autour d'une conviction : la performance se construit dans la durée, jamais dans la précipitation.",
-  },
-  {
     initial: 'D',
     name: 'Dylan',
-    role: 'Coach · Cofondateur',
-    text: "Spécialiste du mouvement et de la force, Dylan veille à ce que chaque séance serve une trajectoire — celle de l'athlète qu'il accompagne, pas une autre.",
+    role: 'Fondateur / Coach',
+    text: 'Cofondateur du Cercle, Dylan met son expertise au service de chaque membre. Passionné et certifié, il vous accompagne avec des programmes adaptés à vos objectifs.',
+  },
+  {
+    initial: 'T',
+    name: 'Tom',
+    role: 'Fondateur / Coach',
+    text: 'Cofondateur du Cercle, Tom a bâti le club autour d\'une conviction : un accompagnement global qui va au-delà des entraînements, pour vous guider dans l\'adoption d\'un mode de vie sain et équilibré.',
   },
 ]
 
 const AVIS = [
   {
-    name: 'Camille R.',
-    role: 'Membre depuis 2 ans',
-    text: "Je n'avais jamais été suivie avec une telle rigueur. Chaque séance a un sens, chaque détail est pensé. Le Cercle a changé mon rapport à l'effort.",
+    name: 'Marie A.',
+    role: 'Cliente',
+    text: "Je recommande Tom les yeux fermés pour son professionnalisme et la personnalisation des séances de sport au fil des semaines. J'ai commencé le coaching sportif à domicile avec Tom depuis 2 mois et j'ai déjà des résultats visibles. Encore merci Tom !!",
   },
   {
     name: 'Julien M.',
-    role: 'Membre Signature',
+    role: 'Membre',
     text: "Un cadre confidentiel, des coachs qui ne lâchent rien et une exigence constante. On ne vient pas ici par hasard — et ça se ressent.",
   },
   {
     name: 'Sarah L.',
-    role: 'Membre depuis 1 an',
-    text: "Le small group est une vraie révélation : l'émulation d'un collectif sans jamais perdre le sur-mesure. Je progresse plus vite que jamais.",
+    role: 'Membre',
+    text: "Le coaching collectif est une vraie révélation : l'émulation d'un groupe avec le suivi personnalisé. Je progresse plus vite que jamais.",
   },
 ]
 
 const FAQ = [
   {
-    q: 'Comment rejoindre Le Cercle ?',
-    a: "L'adhésion se fait sur entretien. Vous nous adressez une demande, nous échangeons sur vos objectifs, puis nous définissons ensemble la formule la plus adaptée. Les places sont volontairement limitées.",
+    q: 'Comment réserver mes cours ?',
+    a: 'Vous réservez vos cours collectifs directement via notre application. Simple et rapide, vous visualisez le planning en temps réel et réservez votre place en quelques clics.',
   },
   {
-    q: 'Faut-il un niveau sportif particulier ?',
-    a: "Non. Le Cercle accompagne aussi bien des débutants exigeants que des athlètes confirmés. Ce qui compte, c'est l'engagement — le programme, lui, est entièrement individualisé.",
+    q: 'Quels types de cours proposez-vous ?',
+    a: 'Nous proposons des cours collectifs en quatre intensités : SOFT pour un retour en douceur, MODÉRÉ pour entretenir la forme, HARD pour dépasser vos limites, et des cours SPÉCIAUX innovants. Nous proposons également du coaching individuel et en binôme.',
   },
   {
-    q: 'Où se situe le club ?',
-    a: "Au 4 rue Joutx-Aigues, en plein cœur du quartier des Carmes à Toulouse. Un espace privatif, pensé comme un écrin.",
+    q: 'Où se situe Le Cercle ?',
+    a: 'Le Cercle est situé au 4 rue Joutx Aigues, dans le quartier des Carmes à Toulouse. Accessible en bus (lignes L4 et 44, arrêt Carmes), en métro (Ligne B arrêt Carmes, Ligne A arrêt Esquirol).',
   },
   {
-    q: 'Les séances sont-elles individuelles ou en groupe ?',
-    a: "Les deux. Vous pouvez opter pour un coaching strictement individuel ou pour le small group, limité à six athlètes afin de préserver la qualité du suivi.",
+    q: 'Comment fonctionne la séance d\'essai offerte ?',
+    a: 'Nous offrons une séance d\'essai pour les cours collectifs. C\'est l\'occasion de découvrir notre espace, rencontrer nos coachs et vivre une première expérience Le Cercle sans engagement.',
   },
   {
-    q: 'Quelles formules proposez-vous ?',
-    a: "Trois formules : Essentiel, Signature et Privé. Chacune se décline selon votre rythme et vos ambitions. Le détail est disponible sur la page Nos Offres.",
+    q: 'Quel est le tarif du coaching individuel ?',
+    a: 'Le coaching individuel est à partir de 55 € / séance. Le coaching en binôme est à partir de 60 € / binôme / séance. Contactez-nous pour connaître nos formules et tarifs complets.',
   },
 ]
 
@@ -225,9 +225,7 @@ export default function Home() {
             transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="mt-10 font-display text-[3.4rem] font-light leading-[0.95] tracking-[-0.015em] text-text-primary sm:text-7xl md:text-[6.4rem]"
           >
-            L'exigence
-            <br />
-            a son <span className="shimmer-gold">cercle.</span>
+            LE <span className="shimmer-gold">CERCLE</span>
           </motion.h1>
 
           {/* gold rule + circle mark divider */}
@@ -249,9 +247,11 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="mx-auto mt-10 max-w-md text-[0.98rem] font-light leading-relaxed text-text-secondary md:text-lg"
           >
-            Un club de coaching sportif confidentiel au cœur des Carmes.
-            L'accompagnement d'exception — réservé à celles et ceux qui ne
-            transigent pas.
+            Bienvenue dans LE CERCLE, un espace dédié à votre bien-être et à vos
+            objectifs sportifs, où chaque entraînement est conçu sur-mesure pour
+            répondre à vos besoins. Notre mission : offrir un coaching premium,
+            alliant expertise et personnalisation, dans un cadre motivant et
+            chaleureux.
           </motion.p>
 
           {/* CTAs */}
@@ -262,7 +262,7 @@ export default function Home() {
             className="mt-12 flex flex-col items-center gap-5 sm:flex-row sm:justify-center"
           >
             <Button variant="solid" onClick={() => openModal()}>
-              Demander une adhésion
+              Passez à l'action !
             </Button>
             <Button variant="ghost" to="/concept">
               Découvrir le concept
@@ -276,7 +276,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 1.2 }}
             className="mt-10 text-label text-[0.52rem] text-text-secondary/70"
           >
-            Places limitées · Entrée sur entretien
+            Club de sport privé · Carmes · Toulouse
           </motion.p>
         </motion.div>
 
@@ -326,10 +326,10 @@ export default function Home() {
               <SectionLabel>Le manifeste</SectionLabel>
               <Reveal delay={0.1}>
                 <p className="mt-9 font-display text-3xl font-normal leading-[1.25] text-text-primary sm:text-4xl md:text-[2.9rem]">
-                  Le Cercle n'est pas une salle de sport. C'est un{' '}
-                  <span className="text-accent">cercle restreint</span> où
-                  chaque membre est accompagné comme un athlète — avec rigueur,
-                  attention et une obsession partagée du détail.
+                  Parce qu'un cercle est un espace clos et ouvert à la fois. Il
+                  protège, il rassemble, il unit. C'est une forme pleine,
+                  équilibrée, continue, comme le parcours de transformation
+                  qu'on propose à chacun ici.
                 </p>
               </Reveal>
             </div>
@@ -338,9 +338,9 @@ export default function Home() {
               <Reveal delay={0.2}>
                 <div className="rule-gold mb-8" />
                 <p className="text-base font-light leading-relaxed text-text-secondary">
-                  Fondé à Toulouse, Le Cercle réunit des coachs d'élite et une
-                  approche profondément individualisée. Ici, on ne compte pas
-                  les répétitions — on construit une trajectoire.
+                  Le Cercle, où l'on vient travailler sur soi, mais jamais
+                  seul. C'est un espace où l'on s'entraîne, où l'on partage,
+                  où l'on se recentre.
                 </p>
                 <Link
                   to="/concept"
@@ -370,16 +370,16 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-container px-6 py-20 md:px-12 md:py-24">
           <Stagger className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-8">
             <StaggerItem>
-              <StatCounter value={6} label="Membres par groupe" />
+              <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={12} suffix="+" label="Coachs certifiés" />
+              <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={2400} label="Séances par an" />
+              <StatCounter value={55} prefix="Dès " suffix=" €" label="Coaching individuel / séance" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={98} suffix="%" label="Membres fidèles" />
+              <StatCounter value={60} prefix="Dès " suffix=" €" label="Coaching binôme / séance" />
             </StaggerItem>
           </Stagger>
         </div>
@@ -389,12 +389,12 @@ export default function Home() {
       <section className="mx-auto max-w-container px-6 py-28 md:px-12 md:py-40">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
-            label="Nos disciplines"
+            label="Nos services"
             title={
               <>
-                Un savoir-faire,
+                Cours collectifs,
                 <br />
-                plusieurs visages.
+                coaching individuel &amp; binôme.
               </>
             }
           />
@@ -467,16 +467,16 @@ export default function Home() {
             <SectionLabel>Le concept</SectionLabel>
             <Reveal delay={0.1}>
               <h2 className="mt-8 font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
-                Un environnement
+                Un cadre
                 <br />
-                pensé pour la <span className="text-accent">progression.</span>
+                exclusif &amp; <span className="text-accent">motivant.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-8 max-w-md text-base font-light leading-relaxed text-text-secondary">
-                Espace privatif, matériel d'exception, coachs triés sur le
-                volet. Le Cercle a été conçu comme un écrin — un lieu où la
-                seule variable est votre engagement.
+                Profitez d'un environnement premium pensé pour votre confort et
+                votre motivation. Espace privatif, matériel de qualité, coachs
+                passionnés et certifiés — tout est pensé pour votre réussite.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -504,12 +504,10 @@ export default function Home() {
               align="center"
               title={
                 <>
-                  Deux coachs,
-                  <br />
-                  une même exigence.
+                  Dylan &amp; Tom
                 </>
               }
-              intro="Le Cercle, c'est d'abord un binôme. Tom et Dylan ont bâti le club autour d'une conviction commune : on ne suit pas un membre, on s'engage à ses côtés."
+              intro="Passionnés et certifiés, Dylan et Tom sont prêts à vous accompagner avec des programmes adaptés. Au-delà des entraînements, ils vous guident dans l'adoption d'un mode de vie sain et équilibré."
               className="mx-auto"
             />
           </div>
@@ -550,11 +548,11 @@ export default function Home() {
           <Reveal delay={0.2}>
             <blockquote className="mx-auto mt-16 max-w-2xl border-l border-accent pl-8 md:pl-10">
               <p className="font-display text-2xl font-normal leading-snug text-text-primary md:text-3xl">
-                « On ne vend pas des séances. On construit des athlètes, une
-                décision à la fois. »
+                « Ensemble, nous vous aidons à atteindre vos objectifs les plus
+                élevés. »
               </p>
               <footer className="mt-5 text-label text-[0.6rem] text-text-secondary">
-                Tom &amp; Dylan — Cofondateurs du Cercle
+                Dylan &amp; Tom — Fondateurs du Cercle
               </footer>
             </blockquote>
           </Reveal>
@@ -571,9 +569,7 @@ export default function Home() {
               align="center"
               title={
                 <>
-                  La parole
-                  <br />
-                  à nos membres.
+                  Avis clients
                 </>
               }
               className="mx-auto"
@@ -624,9 +620,9 @@ export default function Home() {
                 label="Questions fréquentes"
                 title={
                   <>
-                    Tout savoir
+                    Des questions
                     <br />
-                    avant d'entrer.
+                    sur nos services ?
                   </>
                 }
               />
@@ -709,9 +705,9 @@ export default function Home() {
               label="Nous trouver"
               title={
                 <>
-                  Au cœur
+                  4 rue Joutx Aigues,
                   <br />
-                  des Carmes.
+                  <span className="text-accent">Carmes, Toulouse.</span>
                 </>
               }
             />
@@ -777,21 +773,21 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mx-auto mt-10 max-w-3xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-7xl">
-              L'adhésion au Cercle
+              Prêt à atteindre
               <br />
-              se mérite. Elle se <span className="text-accent">demande.</span>
+              vos <span className="text-accent">objectifs ?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-8 max-w-lg text-base font-light leading-relaxed text-text-secondary">
-              Les places sont limitées et l'entrée se fait sur entretien.
-              Prenez le premier rendez-vous qui pourrait tout changer.
+              Ensemble, nous vous aidons à atteindre vos objectifs les plus
+              élevés.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
             <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
               <Button variant="solid" onClick={() => openModal()}>
-                Demander une adhésion
+                Nous contacter
               </Button>
               <Button variant="ghost" to="/offres">
                 Voir nos offres

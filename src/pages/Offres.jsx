@@ -6,88 +6,83 @@ import Reveal, { Stagger, StaggerItem } from '../components/Reveal'
 import Button from '../components/Button'
 import { SectionHeading, SectionLabel } from '../components/Section'
 import { CircleMark, ArrowRight } from '../components/Icons'
-import { useModal } from '../context/ModalContext'
 import { IMG } from '../data/site'
 
 const OFFERS = [
   {
-    name: 'Essentiel',
-    price: '180',
-    cadence: '/ mois',
-    summary: 'Pour débuter l\'aventure avec un cadre solide.',
+    name: 'Cours collectifs',
+    price: 'Séance d\'essai offerte',
+    cadence: '',
+    summary: 'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX. Cours quotidien de 8 à 10 personnes (45 minutes).',
     features: [
-      '4 séances small group / mois',
-      'Bilan physiologique initial',
-      'Accès à l\'espace privatif',
-      'Suivi digital de progression',
+      'Séance d\'essai offerte',
+      'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX',
+      'Réservez vos cours via l\'application',
+      'Cours quotidien de 8 à 10 personnes (45 minutes)',
     ],
     featured: false,
+    cta: 'Détails',
   },
   {
-    name: 'Signature',
-    price: '340',
-    cadence: '/ mois',
-    summary: 'Notre formule la plus choisie. L\'équilibre parfait.',
+    name: 'Coaching individuel',
+    price: 'À partir de 55 €',
+    cadence: '/ séance',
+    summary: 'Un focus total sur vos objectifs pour une transformation garantie. Séance d\'une heure avec coach dédié.',
     features: [
-      '8 séances / mois (mix individuel & groupe)',
-      'Coach attitré',
-      'Programmation 100 % sur-mesure',
-      'Suivi nutritionnel intégré',
-      'Accès illimité à l\'espace privatif',
+      'Prise de contact, bilan personnalisé et définition des objectifs',
+      'Entraînement sur mesure pensé pour vous',
+      'Planification de vos séances hebdomadaires selon vos disponibilités',
+      'Séance d\'une heure avec coach dédié',
     ],
     featured: true,
+    cta: 'Détails',
   },
   {
-    name: 'Privé',
-    price: 'Sur devis',
-    cadence: '',
-    summary: 'L\'accompagnement sans limite, pour les plus exigeants.',
+    name: 'Coaching en binôme',
+    price: 'À partir de 60 €',
+    cadence: '/ binôme / séance',
+    summary: 'Deux fois plus de motivation, deux fois plus de résultats. Séance d\'une heure en binôme avec coach dédié.',
     features: [
-      'Séances individuelles illimitées',
-      'Coach dédié & préparateur physique',
-      'Bilan complet trimestriel',
-      'Nutrition & récupération sur-mesure',
-      'Disponibilités prioritaires',
-      'Accompagnement compétition',
+      'Premier échange approfondi pour analyser votre situation et fixer vos objectifs',
+      'Mise à jour du programme toutes les 2 semaines',
+      'Planification de vos séances hebdomadaires selon vos disponibilités',
+      'Séance d\'une heure en binôme avec coach dédié',
     ],
     featured: false,
+    cta: 'Détails',
   },
 ]
 
 const FAQ = [
   {
-    q: 'Comment rejoindre Le Cercle ?',
-    a: 'L\'adhésion se fait sur entretien. Vous remplissez une demande, nous vous recontactons sous 48 heures pour convenir d\'une première rencontre sans engagement.',
+    q: 'Comment s\'inscrire aux cours collectifs ?',
+    a: 'Réservez vos cours directement via notre application. Vous visualisez le planning en temps réel et choisissez votre séance parmi les formats SOFT, MODÉRÉ, HARD ou SPÉCIAUX.',
   },
   {
-    q: 'Y a-t-il un engagement de durée ?',
-    a: 'Nos formules mensuelles sont sans engagement long. Nous croyons que la fidélité se gagne séance après séance, pas par contrat.',
+    q: 'Comment fonctionne le coaching individuel ?',
+    a: 'Tout commence par une prise de contact et un bilan personnalisé pour définir vos objectifs. Votre coach crée un entraînement sur mesure et planifie vos séances hebdomadaires selon vos disponibilités.',
   },
   {
-    q: 'Puis-je changer de formule ?',
-    a: 'Absolument. Votre accompagnement évolue avec vous : il est possible de monter ou d\'ajuster votre formule à tout moment, en accord avec votre coach.',
+    q: 'Qu\'est-ce que le Coaching 360° ?',
+    a: 'Le Coaching 360° est un diagnostic complet d\'1h30 : immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio). Ces données permettent de concevoir votre programme sur mesure et de vous orienter vers le service le plus adapté.',
   },
   {
     q: 'Les séances sont-elles personnalisées ?',
-    a: 'Toujours. Même en small group, chaque membre suit une intention propre. Le sur-mesure est le socle non négociable du Cercle.',
+    a: 'Toujours. Que ce soit en coaching individuel, en binôme ou même en cours collectif, votre coach adapte le programme à votre niveau et vos objectifs. Le sur-mesure est au cœur de notre approche.',
   },
 ]
 
 export default function Offres() {
-  const { openModal } = useModal()
-
   return (
     <PageWrapper>
       <PageHero
         label="Nos offres"
         title={
           <>
-            L'excellence,
-            <br />
-            <span className="text-accent">à votre mesure.</span>
+            NOS OFFRES
           </>
         }
-        intro="Trois formules pensées comme des paliers d'engagement. Toutes partagent la même exigence — seule l'intensité de l'accompagnement varie."
+        intro="Chez LE CERCLE, nous croyons que chaque individu mérite un accompagnement unique. C'est pourquoi nous proposons une expertise professionnelle, un cadre exclusif et un accompagnement global."
         image={IMG.athleteGrayscale}
       />
 
@@ -95,7 +90,7 @@ export default function Offres() {
       <section className="mx-auto max-w-container px-6 py-28 md:px-12 md:py-36">
         <SectionHeading
           label="Les formules"
-          title="Choisissez votre niveau d'accompagnement"
+          title="Cours collectifs &amp; Coaching"
           align="center"
           className="mx-auto"
         />
@@ -123,8 +118,7 @@ export default function Offres() {
                 </span>
 
                 <div className="mt-7 flex items-baseline gap-2">
-                  <span className="font-display text-6xl font-light text-text-primary">
-                    {offer.price === 'Sur devis' ? '' : '€'}
+                  <span className="font-display text-3xl font-light text-text-primary">
                     {offer.price}
                   </span>
                   <span className="text-sm font-light text-text-secondary">
@@ -153,10 +147,10 @@ export default function Offres() {
                 <div className="mt-10">
                   <Button
                     variant={offer.featured ? 'solid' : 'outline'}
-                    onClick={() => openModal(offer.name)}
+                    to="/contact"
                     className="w-full"
                   >
-                    Choisir {offer.name}
+                    Nous contacter
                   </Button>
                 </div>
               </motion.div>
@@ -166,9 +160,9 @@ export default function Offres() {
 
         <Reveal delay={0.2}>
           <p className="mx-auto mt-12 max-w-xl text-center text-sm font-light leading-relaxed text-text-secondary">
-            Toutes les formules incluent l'accès à l'espace privatif des
-            Carmes et un bilan de progression régulier. Tarifs entreprises et
-            duo sur demande.
+            Une séance d'essai offerte pour les cours collectifs. Contactez-nous
+            pour connaître nos tarifs détaillés et trouver la formule adaptée à
+            vos objectifs.
           </p>
         </Reveal>
       </section>
@@ -246,22 +240,22 @@ export default function Offres() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
-              Prêt à franchir la porte ?
+              Prêt à atteindre vos objectifs ?
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-7 max-w-lg text-base font-light leading-relaxed text-text-secondary">
-              Demandez votre entretien d'adhésion. Nous étudions chaque
-              candidature avec la même attention.
+              Ensemble, nous vous aidons à atteindre vos objectifs les plus
+              élevés. Contactez-nous pour votre première séance.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
             <div className="mt-11 flex flex-col items-center justify-center gap-5 sm:flex-row">
-              <Button variant="solid" onClick={() => openModal()}>
-                Demander une adhésion
-              </Button>
-              <Button variant="ghost" to="/contact">
+              <Button variant="solid" to="/contact">
                 Nous contacter
+              </Button>
+              <Button variant="ghost" to="/services">
+                Nos services
                 <ArrowRight size={15} />
               </Button>
             </div>

@@ -7,57 +7,60 @@ import Reveal, { Stagger, StaggerItem } from '../components/Reveal'
 import Button from '../components/Button'
 import { SectionHeading, SectionLabel } from '../components/Section'
 import { PlusIcon, ArrowRight, CircleMark } from '../components/Icons'
-import { useModal } from '../context/ModalContext'
 import { IMG } from '../data/site'
 
 const SERVICES = [
   {
     n: '01',
-    title: 'Coaching individuel',
-    tagline: 'L\'accompagnement absolu',
-    text: 'Un coach dédié, un protocole unique. Chaque séance est pensée pour vous : posture, charge, récupération, nutrition. Le sur-mesure poussé à son extrême.',
-    img: IMG.coachAthlete,
-    points: ['Bilan physiologique complet', 'Programmation individualisée', 'Suivi nutritionnel'],
+    title: 'Cours collectifs',
+    tagline: 'Une offre en quatre intensités',
+    text: 'Une offre structurée en quatre intensités pour répondre avec précision à chaque niveau et objectif de performance. Cours quotidien de 8 à 10 personnes (45 minutes). Réservez vos cours via l\'application.',
+    img: IMG.gymInterior,
+    points: [
+      'SOFT : séances douces pour se détendre, améliorer la souplesse et retrouver l\'équilibre',
+      'MODÉRÉ : entraînements dynamiques pour renforcer le corps et maintenir la forme',
+      'HARD : sessions intensives pour dépasser vos limites et atteindre des performances optimales',
+      'SPÉCIAL : cours uniques et innovants, alliant techniques modernes et plaisir',
+    ],
   },
   {
     n: '02',
-    title: 'Préparation physique',
-    tagline: 'La performance comme discipline',
-    text: 'Pour l\'athlète, le compétiteur ou l\'ambitieux. Force, puissance, endurance et mobilité orchestrées avec une précision chirurgicale.',
-    img: IMG.trackNight,
-    points: ['Tests de performance', 'Périodisation avancée', 'Prévention des blessures'],
+    title: 'Coaching individuel',
+    tagline: 'À partir de 55 € / séance',
+    text: 'Une approche sur-mesure, centrée sur vos objectifs spécifiques, que ce soit pour améliorer vos performances, retrouver la forme, ou simplement vous sentir bien dans votre corps. Un focus total sur vos objectifs pour une transformation garantie.',
+    img: IMG.coachAthlete,
+    points: [
+      'Prise de contact, bilan personnalisé et définition des objectifs',
+      'Entraînement sur mesure pensé pour vous',
+      'Planification de vos séances hebdomadaires selon vos disponibilités',
+      'Séance d\'une heure avec coach dédié',
+    ],
   },
   {
     n: '03',
-    title: 'Small group training',
-    tagline: 'L\'émulation du collectif',
-    text: 'Six membres maximum. L\'énergie d\'un groupe, l\'exigence d\'un suivi rapproché. On progresse ensemble, sans jamais se perdre dans la masse.',
-    img: IMG.gymInterior,
-    points: ['Groupes de 6 maximum', 'Sessions thématiques', 'Coach attitré'],
+    title: 'Coaching en binôme',
+    tagline: 'À partir de 60 € / binôme / séance',
+    text: 'Deux fois plus de motivation, deux fois plus de résultats. Partagez votre accompagnement avec un partenaire pour des séances dynamiques et stimulantes.',
+    img: IMG.trackNight,
+    points: [
+      'Premier échange approfondi pour analyser votre situation et fixer vos objectifs',
+      'Mise à jour du programme d\'entraînement toutes les 2 semaines',
+      'Planification de vos séances hebdomadaires selon vos disponibilités',
+      'Séance d\'une heure en binôme avec coach dédié',
+    ],
   },
   {
     n: '04',
-    title: 'Coaching cycliste',
-    tagline: 'La route, maîtrisée',
-    text: 'Préparation spécifique pour cyclistes et triathlètes. Puissance au seuil, gestion de l\'effort, planification de saison — du loisir éclairé à la compétition.',
+    title: 'Coaching 360°',
+    tagline: 'Le premier contact',
+    text: 'Le Coaching 360° est un diagnostic complet de 1h30 qui combine immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour quantifier précisément vos capacités initiales.',
     img: IMG.cyclist,
-    points: ['Analyse de puissance', 'Plan de saison', 'Sorties encadrées'],
-  },
-  {
-    n: '05',
-    title: 'Remise en forme',
-    tagline: 'Le retour au mouvement',
-    text: 'Reprendre, se reconstruire, retrouver le plaisir du corps en action. Un accompagnement progressif et bienveillant, sans jugement, sans précipitation.',
-    img: IMG.athleteGrayscale,
-    points: ['Reprise progressive', 'Mobilité & posture', 'Objectifs réalistes'],
-  },
-  {
-    n: '06',
-    title: 'Coaching nutrition',
-    tagline: 'L\'assiette au service du geste',
-    text: 'La performance se construit aussi à table. Un accompagnement nutritionnel intégré, concret et durable — pensé pour votre quotidien, pas contre lui.',
-    img: IMG.coachPortrait,
-    points: ['Bilan alimentaire', 'Stratégie personnalisée', 'Suivi mensuel'],
+    points: [
+      'Immersion au studio Le Cercle',
+      'Bilan de santé complet',
+      'Tests physiques techniques : mobilité, force, cardio',
+      'Conception d\'un programme sur mesure et suivi de progression précis',
+    ],
   },
 ]
 
@@ -142,20 +145,16 @@ function ServiceCard({ service, index }) {
 }
 
 export default function Services() {
-  const { openModal } = useModal()
-
   return (
     <PageWrapper>
       <PageHero
         label="Nos services"
         title={
           <>
-            Le coaching,
-            <br />
-            <span className="text-accent">décliné.</span>
+            NOS OFFRES
           </>
         }
-        intro="Six disciplines, une même obsession : vous amener exactement là où vous voulez aller. Choisissez votre voie."
+        intro="Chez LE CERCLE, nous croyons que chaque individu mérite un accompagnement unique. Nos coachs sont passionnés et certifiés, prêts à vous accompagner avec des programmes adaptés."
         image={IMG.trackNight}
       />
 
@@ -166,17 +165,18 @@ export default function Services() {
             <SectionLabel>Une offre complète</SectionLabel>
             <Reveal delay={0.1}>
               <p className="mt-9 font-display text-3xl font-normal leading-[1.22] text-text-primary sm:text-4xl">
-                Quel que soit votre point de départ, Le Cercle a une réponse{' '}
-                <span className="text-accent">taillée pour vous.</span>
+                Une expertise professionnelle au service{' '}
+                <span className="text-accent">de votre corps.</span>
               </p>
             </Reveal>
           </div>
           <div className="flex items-end lg:col-span-5">
             <Reveal delay={0.2}>
               <p className="text-base font-light leading-relaxed text-text-secondary">
-                Tous nos services partagent le même socle : un coach expert,
-                un protocole sur-mesure et un suivi sans concession. Le reste
-                n'est qu'une question d'objectif.
+                Un cadre exclusif : profitez d'un environnement premium pensé
+                pour votre confort et votre motivation. Un accompagnement
+                global : au-delà des entraînements, nous vous guidons dans
+                l'adoption d'un mode de vie sain et équilibré.
               </p>
             </Reveal>
           </div>
@@ -205,18 +205,18 @@ export default function Services() {
             {[
               {
                 n: '01',
-                t: 'Demandez un entretien',
+                t: 'Contactez-nous',
                 d: 'Un échange pour cerner vos objectifs et vous orienter vers le bon service.',
               },
               {
                 n: '02',
                 t: 'Rencontrez votre coach',
-                d: 'Bilan initial, tests, et construction de votre protocole personnalisé.',
+                d: 'Coaching 360° : bilan de santé, tests physiques et construction de votre programme personnalisé.',
               },
               {
                 n: '03',
-                t: 'Entrez dans Le Cercle',
-                d: 'Votre accompagnement commence. Et il ne ressemblera à aucun autre.',
+                t: 'Passez à l\'action !',
+                d: 'Votre accompagnement commence. Séances collectives, individuelles ou en binôme — selon votre formule.',
               },
             ].map((s) => (
               <StaggerItem key={s.n}>
@@ -255,19 +255,20 @@ export default function Services() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
-              Une question sur le service idéal ?
+              Prêt à atteindre vos objectifs ?
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mx-auto mt-7 max-w-lg text-base font-light leading-relaxed text-text-secondary">
-              Nos coachs vous orientent avec plaisir. Le premier échange ne
-              vous engage à rien — si ce n'est à viser juste.
+              Ensemble, nous vous aidons à atteindre vos objectifs les plus
+              élevés. Commencez par une séance d'essai offerte pour les cours
+              collectifs.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
             <div className="mt-11 flex flex-col items-center justify-center gap-5 sm:flex-row">
-              <Button variant="solid" onClick={() => openModal()}>
-                Demander une adhésion
+              <Button variant="solid" to="/contact">
+                Nous contacter
               </Button>
               <Button variant="ghost" to="/offres">
                 Voir les offres

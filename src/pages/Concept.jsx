@@ -8,70 +8,67 @@ import StatCounter from '../components/StatCounter'
 import Marquee from '../components/Marquee'
 import { SectionHeading, SectionLabel } from '../components/Section'
 import { CircleMark } from '../components/Icons'
-import { useModal } from '../context/ModalContext'
 import { IMG } from '../data/site'
 
 const PILLARS = [
   {
     n: '01',
-    title: 'Confidentialité',
-    text: 'Un espace privatif, à l\'abri des regards. Le Cercle se vit en petit comité — jamais en foule.',
+    title: 'Zone de coworking',
+    text: 'Profitez d\'un espace calme et confortable pour travailler, passer un appel, répondre à vos mails ou simplement prendre un moment pour vous avant ou après votre séance. Café, pause, concentration ou récupération : ici, tout est pensé pour que vous vous sentiez attendu, installé, privilégié.',
   },
   {
     n: '02',
-    title: 'Sur-mesure absolu',
-    text: 'Aucun programme générique. Chaque protocole est dessiné autour de votre corps, votre histoire, vos objectifs.',
+    title: 'Balance impédancemètre',
+    text: 'Suivez votre progression avec précision grâce à notre balance à impédancemètre professionnelle. Analyse de la composition corporelle, évolution mesurable, données concrètes : un suivi clair pour piloter vos résultats avec exigence.',
   },
   {
     n: '03',
-    title: 'Exigence partagée',
-    text: 'Coachs et membres avancent ensemble, animés par la même intransigeance sur la qualité du geste.',
+    title: 'Expertise certifiée',
+    text: 'Nos coachs sont passionnés et certifiés, prêts à vous accompagner avec des programmes adaptés à votre situation. Une expertise professionnelle au service de votre corps.',
   },
   {
     n: '04',
-    title: 'Constance',
-    text: 'La performance n\'est pas un sprint. Le Cercle bâtit des trajectoires sur la durée, sans raccourci.',
+    title: 'Accompagnement global',
+    text: 'Au-delà des entraînements, nous vous guidons dans l\'adoption d\'un mode de vie sain et équilibré. Le Cercle, où l\'on vient travailler sur soi, mais jamais seul.',
   },
 ]
 
 const APPROACH = [
   {
     step: 'I',
-    title: 'L\'entretien',
-    text: 'Tout commence par une rencontre. On écoute, on évalue, on comprend votre point de départ et votre destination.',
+    title: 'Prise de contact',
+    text: 'Contactez-nous pour un premier échange. Nous écoutons vos objectifs et vous orientons vers le service le plus adapté à votre situation.',
   },
   {
     step: 'II',
-    title: 'Le protocole',
-    text: 'Vos coachs construisent un plan d\'entraînement individualisé — précis, évolutif, mesurable.',
+    title: 'Coaching 360°',
+    text: 'Un diagnostic complet de 1h30 : immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour concevoir votre programme sur mesure.',
   },
   {
     step: 'III',
-    title: 'L\'accompagnement',
-    text: 'Séance après séance, votre coach ajuste, corrige et vous pousse vers le geste juste.',
+    title: 'Le coaching',
+    text: 'Sur une durée d\'une heure, votre coach vous offre une expérience sportive de qualité, personnalisée et adaptée à vos besoins spécifiques, en cohérence avec les données du Coaching 360°.',
   },
   {
     step: 'IV',
     title: 'La progression',
-    text: 'Les résultats se mesurent, se célèbrent, et nourrissent le prochain palier. Le Cercle ne s\'arrête jamais.',
+    text: 'Votre programme évolue avec vous. Résultats mesurables, ajustements réguliers — Le Cercle vous accompagne vers vos objectifs les plus élevés.',
   },
 ]
 
 export default function Concept() {
-  const { openModal } = useModal()
-
   return (
     <PageWrapper>
       <PageHero
         label="Le concept"
         title={
           <>
-            Plus qu'un club.
+            Le Cercle,
             <br />
-            <span className="text-accent">Un cercle.</span>
+            <span className="text-accent">c'est quoi ?</span>
           </>
         }
-        intro="Le Cercle réinvente le coaching sportif à Toulouse : confidentiel, exigeant, profondément humain. Voici ce qui nous distingue."
+        intro="Bienvenue dans LE CERCLE, un espace dédié à votre bien-être et à vos objectifs sportifs, où chaque entraînement est conçu sur-mesure pour répondre à vos besoins."
         image={IMG.gymInterior}
       />
 
@@ -82,10 +79,11 @@ export default function Concept() {
             <SectionLabel>Notre raison d'être</SectionLabel>
             <Reveal delay={0.1}>
               <p className="mt-9 font-display text-3xl font-normal leading-[1.22] text-text-primary sm:text-4xl md:text-[2.9rem]">
-                Nous avons créé Le Cercle parce que la performance mérite{' '}
-                <span className="text-accent">mieux</span> que des
-                salles bondées et des programmes interchangeables. Ici, chaque
-                membre est un projet à part entière.
+                Parce qu'un cercle est un espace clos et ouvert à la fois. Il
+                protège, il{' '}
+                <span className="text-accent">rassemble</span>, il unit.
+                C'est une forme pleine, équilibrée, continue, comme le parcours
+                de transformation qu'on propose à chacun ici.
               </p>
             </Reveal>
           </div>
@@ -93,9 +91,9 @@ export default function Concept() {
             <Reveal delay={0.2}>
               <div className="rule-gold mb-8" />
               <p className="text-base font-light leading-relaxed text-text-secondary">
-                Au cœur des Carmes, dans un espace pensé comme un atelier
-                d'orfèvre, Le Cercle accueille un nombre volontairement
-                restreint de membres. C'est le prix de l'attention réelle.
+                Le Cercle, où l'on vient travailler sur soi, mais jamais seul.
+                C'est un espace où l'on s'entraîne, où l'on partage, où l'on
+                se recentre.
               </p>
             </Reveal>
           </div>
@@ -118,7 +116,8 @@ export default function Concept() {
         <div className="relative z-10 mx-auto flex h-full max-w-container items-center px-6 md:px-12">
           <Reveal>
             <p className="max-w-lg font-display text-3xl font-normal leading-snug text-text-primary md:text-4xl">
-              « Le luxe, ce n'est pas l'abondance. C'est la justesse. »
+              « Notre mission : offrir un coaching premium, alliant expertise
+              et personnalisation, dans un cadre motivant et chaleureux. »
             </p>
           </Reveal>
         </div>
@@ -127,12 +126,12 @@ export default function Concept() {
       {/* PILLARS */}
       <section className="mx-auto max-w-container px-6 py-28 md:px-12 md:py-40">
         <SectionHeading
-          label="Nos piliers"
+          label="Le club"
           title={
             <>
-              Quatre principes,
+              Un cadre pensé
               <br />
-              une seule direction.
+              pour votre réussite.
             </>
           }
         />
@@ -172,7 +171,7 @@ export default function Concept() {
           <SectionHeading
             label="La méthode"
             title="Comment Le Cercle vous accompagne"
-            intro="Un parcours en quatre temps, rigoureux et entièrement personnalisé — de la première rencontre au dépassement."
+            intro="Un parcours en quatre temps, rigoureux et entièrement personnalisé — de la première prise de contact à l'atteinte de vos objectifs."
           />
 
           <div className="mt-20 grid gap-px border border-border-gold bg-border-gold md:grid-cols-2 lg:grid-cols-4">
@@ -198,17 +197,17 @@ export default function Concept() {
       {/* STATS */}
       <section className="mx-auto max-w-container px-6 py-24 md:px-12 md:py-32">
         <div className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-8">
-          <StatCounter value={2018} label="Année de fondation" />
-          <StatCounter value={40} suffix="+" label="Membres actifs" />
-          <StatCounter value={6} label="Athlètes par groupe" />
-          <StatCounter value={1} prefix="N°" label="Adresse aux Carmes" />
+          <StatCounter value={8} suffix=" à 10" label="Personnes par cours collectif" />
+          <StatCounter value={45} suffix=" min" label="Durée des cours collectifs" />
+          <StatCounter value={55} prefix="À partir de " suffix=" €" label="Coaching individuel / séance" />
+          <StatCounter value={60} prefix="À partir de " suffix=" €" label="Coaching binôme / séance" />
         </div>
       </section>
 
       {/* MARQUEE */}
       <section className="border-y border-border-gold bg-bg-secondary py-8">
         <Marquee
-          items={['Rigueur', 'Écoute', 'Précision', 'Engagement', 'Justesse']}
+          items={['Performance', 'Discipline', 'Sur-mesure', 'Confidentiel', 'Excellence']}
           reverse
           duration={34}
         />
@@ -223,22 +222,22 @@ export default function Concept() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="mx-auto mt-10 max-w-2xl font-display text-4xl font-normal leading-[1.1] text-text-primary sm:text-5xl md:text-6xl">
-            Le Cercle vous ressemble ?
+            Prêt à atteindre vos objectifs ?
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mx-auto mt-7 max-w-lg text-base font-light leading-relaxed text-text-secondary">
-            Découvrez nos services et nos formules, ou demandez directement
-            un entretien d'adhésion.
+            Ensemble, nous vous aidons à atteindre vos objectifs les plus
+            élevés. Découvrez nos services ou contactez-nous directement.
           </p>
         </Reveal>
         <Reveal delay={0.3}>
           <div className="mt-11 flex flex-col items-center justify-center gap-5 sm:flex-row">
-            <Button variant="solid" onClick={() => openModal()}>
-              Demander une adhésion
+            <Button variant="solid" to="/contact">
+              Nous contacter
             </Button>
             <Button variant="outline" to="/services">
-              Découvrir les services
+              Nos services
             </Button>
           </div>
         </Reveal>
