@@ -9,9 +9,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Le Cercle — Club de sport privé à Toulouse. Coaching sportif d'exception, accompagnement sur-mesure dans un cadre confidentiel au cœur des Carmes."
+      content="Le Cercle — Club de coaching sportif privé à Toulouse. Cours collectifs, coaching individuel et en binôme. Coachs certifiés, accompagnement sur-mesure au cœur des Carmes."
     />
     <meta name="theme-color" content="#080808" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.lecercle-sports.fr/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Le Cercle" />
+    <meta property="og:title" content="Le Cercle — Club de Sport Privé · Toulouse" />
+    <meta property="og:description" content="Club de coaching sportif privé au cœur des Carmes, Toulouse. Cours collectifs, coaching individuel et en binôme. Coachs certifiés, accompagnement sur-mesure." />
+    <meta property="og:url" content="https://www.lecercle-sports.fr/" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Le Cercle — Club de Sport Privé · Toulouse" />
+    <meta name="twitter:description" content="Club de coaching sportif privé au cœur des Carmes, Toulouse. Cours collectifs, coaching individuel et en binôme." />
+
+    <!-- Geo -->
+    <meta name="geo.region" content="FR-31" />
+    <meta name="geo.placename" content="Toulouse" />
+    <meta name="geo.position" content="43.6;1.4446" />
+    <meta name="ICBM" content="43.6, 1.4446" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,6 +45,108 @@
     />
 
     <title>Le Cercle — Club de Sport Privé · Toulouse</title>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SportsActivityLocation",
+          "@id": "https://www.lecercle-sports.fr/#organization",
+          "name": "Le Cercle",
+          "description": "Club de coaching sportif privé au cœur des Carmes, Toulouse. Cours collectifs, coaching individuel et en binôme. Coachs certifiés, accompagnement sur-mesure.",
+          "url": "https://www.lecercle-sports.fr",
+          "logo": "https://www.lecercle-sports.fr/logo.png",
+          "image": "https://www.lecercle-sports.fr/logo.png",
+          "telephone": "",
+          "email": "",
+          "sameAs": [
+            "https://www.instagram.com/lecercle_sports"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4 rue Joutx Aigues",
+            "addressLocality": "Toulouse",
+            "addressRegion": "Haute-Garonne",
+            "postalCode": "31000",
+            "addressCountry": "FR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 43.6,
+            "longitude": 1.4446
+          },
+          "openingHoursSpecification": [],
+          "priceRange": "€€",
+          "currenciesAccepted": "EUR",
+          "paymentAccepted": "Cash, Credit Card",
+          "founder": [
+            {
+              "@type": "Person",
+              "name": "Tom Gioanni",
+              "jobTitle": "Président & Coach"
+            },
+            {
+              "@type": "Person",
+              "name": "Dylan Carvalho",
+              "jobTitle": "Directeur Général & Coach"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.lecercle-sports.fr/#website",
+          "url": "https://www.lecercle-sports.fr",
+          "name": "Le Cercle",
+          "description": "Club de coaching sportif privé à Toulouse",
+          "inLanguage": "fr-FR",
+          "publisher": {
+            "@id": "https://www.lecercle-sports.fr/#organization"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Cours collectifs",
+          "description": "Cours collectifs quotidiens en 4 intensités (SOFT, MODÉRÉ, HARD, SPÉCIAUX). 8 à 10 personnes, 45 minutes. Séance d'essai offerte.",
+          "provider": { "@id": "https://www.lecercle-sports.fr/#organization" },
+          "areaServed": "Toulouse",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "7.50",
+            "description": "Dès 7,5 € le cours"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Coaching individuel",
+          "description": "Coaching sportif individuel sur mesure avec coach dédié. Séance d'1 heure, programme personnalisé.",
+          "provider": { "@id": "https://www.lecercle-sports.fr/#organization" },
+          "areaServed": "Toulouse",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "55.00",
+            "description": "À partir de 55 € / séance"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Coaching en binôme",
+          "description": "Coaching sportif en binôme avec coach dédié. Séance d'1 heure, programme partagé et personnalisé.",
+          "provider": { "@id": "https://www.lecercle-sports.fr/#organization" },
+          "areaServed": "Toulouse",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "60.00",
+            "description": "À partir de 60 € / binôme / séance"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

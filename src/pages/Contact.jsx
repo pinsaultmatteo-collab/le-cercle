@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 import PageWrapper from '../components/PageWrapper'
+import Seo from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import MapEmbed from '../components/MapEmbed'
@@ -49,6 +50,11 @@ export default function Contact() {
 
   return (
     <PageWrapper>
+      <Seo
+        title="Contact"
+        description="Contactez Le Cercle, club de sport privé à Toulouse - Carmes. Réservez votre séance d'essai, posez vos questions ou venez nous rendre visite au 4 rue Joutx Aigues, Toulouse."
+        canonical="/contact"
+      />
       <PageHero
         label="Contact"
         title={

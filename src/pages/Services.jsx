@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 import PageWrapper from '../components/PageWrapper'
+import Seo from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal'
 import Button from '../components/Button'
@@ -147,6 +148,11 @@ function ServiceCard({ service, index }) {
 export default function Services() {
   return (
     <PageWrapper>
+      <Seo
+        title="Nos Services — Cours collectifs, Coaching individuel & Binôme"
+        description="Cours collectifs SOFT, MODÉRÉ, HARD, SPÉCIAUX · Coaching individuel dès 55 € · Coaching en binôme dès 60 € · Séance bilan 360°. Coachs certifiés à Toulouse - Carmes."
+        canonical="/services"
+      />
       <PageHero
         label="Nos services"
         title={

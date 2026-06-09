@@ -1,0 +1,16 @@
+# Le Cercle — Club de Sport Privé · Toulouse
+
+> Le Cercle est un club de coaching sportif privé situé au cœur du quartier des Carmes à Toulouse. Fondé par Dylan Carvalho et Tom Gioanni, le club propose des cours collectifs, du coaching individuel et en binôme dans un cadre exclusif et motivant.
+
+## Pages principales
+
+- [Accueil](https://www.lecercle-sports.fr/): Présentation du club, services, coachs et informations de contact
+- [Le Concept](https://www.lecercle-sports.fr/concept): La philosophie du Cercle, la méthode d'accompagnement et les valeurs du club
+- [Nos Services](https://www.lecercle-sports.fr/services): Cours collectifs (SOFT, MODÉRÉ, HARD, SPÉCIAUX), coaching individuel, coaching en binôme, séance bilan
+- [Nos Offres & Tarifs](https://www.lecercle-sports.fr/offres): Tarifs détaillés — séance d'essai offerte pour les cours collectifs, coaching individuel dès 55 €, coaching binôme dès 60 €
+- [Contact](https://www.lecercle-sports.fr/contact): 4 rue Joutx Aigues, Carmes, Toulouse · Formulaire de contact
+- [Blog](https://www.lecercle-sports.fr/blog): Conseils sport, nutrition et bien-être par les coachs du Cercle
+
+## Documentation optionnelle
+
+- [Contenu complet du site](https://www.lecercle-sports.fr/llms-full.txt)

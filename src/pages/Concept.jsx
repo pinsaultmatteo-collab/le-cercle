@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 
 import PageWrapper from '../components/PageWrapper'
+import Seo from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal'
 import Button from '../components/Button'
@@ -59,6 +60,11 @@ const APPROACH = [
 export default function Concept() {
   return (
     <PageWrapper>
+      <Seo
+        title="Le Concept"
+        description="Découvrez Le Cercle : un espace dédié à votre bien-être sportif à Toulouse. Zone de coworking, coachs certifiés, accompagnement global — un cadre exclusif et motivant au cœur des Carmes."
+        canonical="/concept"
+      />
       <PageHero
         label="Le concept"
         title={

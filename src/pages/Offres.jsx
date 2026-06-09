@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 
 import PageWrapper from '../components/PageWrapper'
+import Seo from '../components/Seo'
 import PageHero from '../components/PageHero'
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal'
 import Button from '../components/Button'
@@ -75,6 +76,11 @@ const FAQ = [
 export default function Offres() {
   return (
     <PageWrapper>
+      <Seo
+        title="Nos Offres & Tarifs"
+        description="Cours collectifs avec séance d'essai offerte · Coaching individuel à partir de 55 €/séance · Coaching en binôme à partir de 60 €. Découvrez toutes nos formules au Cercle, Toulouse."
+        canonical="/offres"
+      />
       <PageHero
         label="Nos offres"
         title={

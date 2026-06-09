@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 import PageWrapper from '../components/PageWrapper'
+import Seo from '../components/Seo'
 import Reveal, { Stagger, StaggerItem } from '../components/Reveal'
 import Button from '../components/Button'
 import Marquee from '../components/Marquee'
@@ -127,6 +128,11 @@ export default function Home() {
 
   return (
     <PageWrapper>
+      <Seo
+        title="Club de Sport Privé à Toulouse"
+        description="Le Cercle — Club de coaching sportif privé au cœur des Carmes, Toulouse. Cours collectifs, coaching individuel et en binôme. Coachs certifiés, accompagnement sur-mesure."
+        canonical="/"
+      />
       {/* ============ HERO ============ */}
       <section
         ref={heroRef}

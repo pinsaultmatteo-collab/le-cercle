@@ -1,0 +1,150 @@
+# Le Cercle — Club de Sport Privé · Toulouse
+# llms-full.txt — Contenu complet du site
+
+URL: https://www.lecercle-sports.fr
+Dernière mise à jour: 2026-06-04
+
+---
+
+## Page d'accueil
+
+**Titre:** Le Cercle — Club de Sport Privé à Toulouse
+
+**Accroche:** Bienvenue dans LE CERCLE, un espace dédié à votre bien-être et à vos objectifs sportifs, où chaque entraînement est conçu sur-mesure pour répondre à vos besoins. Notre mission : offrir un coaching premium, alliant expertise et personnalisation, dans un cadre motivant et chaleureux.
+
+**Manifeste:** Parce qu'un cercle est un espace clos et ouvert à la fois. Il protège, il rassemble, il unit. C'est une forme pleine, équilibrée, continue, comme le parcours de transformation qu'on propose à chacun ici. Le Cercle, où l'on vient travailler sur soi, mais jamais seul. C'est un espace où l'on s'entraîne, où l'on partage, où l'on se recentre.
+
+**Chiffres clés:**
+- Cours collectifs : 8 personnes max / cours · 45 min · Dès 7,5 €
+- Coaching : 1 coach dédié · 1h de séance · Dès 55 € (individuel) · Dès 60 € (binôme)
+
+**Services proposés:**
+1. Coaching individuel — Entraînement sur mesure, séance d'1h, coach dédié
+2. Coaching en binôme — Séance d'1h en duo, coach dédié, programme partagé
+3. Cours collectifs — SOFT, MODÉRÉ, HARD, SPÉCIAUX — 8 à 10 personnes — 45 min
+
+**Les cofondateurs:**
+- Dylan Carvalho — Fondateur / Coach. Cofondateur du Cercle, Dylan met son expertise au service de chaque membre. Passionné et certifié, il vous accompagne avec des programmes adaptés à vos objectifs.
+- Tom Gioanni — Fondateur / Coach. Cofondateur du Cercle, Tom a bâti le club autour d'une conviction : un accompagnement global qui va au-delà des entraînements, pour vous guider dans l'adoption d'un mode de vie sain et équilibré.
+
+**Citation fondateurs:** « Ensemble, nous vous aidons à atteindre vos objectifs les plus élevés. »
+
+**Avis client:** Marie A. — « Je recommande Tom les yeux fermés pour son professionnalisme et la personnalisation des séances de sport au fil des semaines. J'ai commencé le coaching sportif à domicile avec Tom depuis 2 mois et j'ai déjà des résultats visibles. »
+
+**Adresse:** 4 rue Joutx Aigues, Carmes, Toulouse
+**Accès:** Bus L4 et 44 arrêt Carmes · Métro Ligne B arrêt Carmes · Ligne A arrêt Esquirol
+
+---
+
+## Page Concept
+
+URL: https://www.lecercle-sports.fr/concept
+
+**Présentation:** Bienvenue dans LE CERCLE, un espace dédié à votre bien-être et à vos objectifs sportifs, où chaque entraînement est conçu sur-mesure pour répondre à vos besoins.
+
+**Mission:** « Notre mission : offrir un coaching premium, alliant expertise et personnalisation, dans un cadre motivant et chaleureux. »
+
+**Le club — Ce que propose Le Cercle:**
+- Zone de coworking — Espace calme pour travailler, prendre un café ou récupérer avant/après séance
+- Suivi de progression — Bilans réguliers et ajustements du programme semaine après semaine
+- Expertise certifiée — Coachs passionnés et certifiés, programmes adaptés
+- Accompagnement global — Guidance vers un mode de vie sain et équilibré
+
+**La méthode en 4 étapes:**
+1. Prise de contact — Premier échange pour cerner vos objectifs
+2. Séance bilan — Diagnostic complet 1h30 : bilan de santé, tests physiques (mobilité, force, cardio), conception du programme
+3. Le coaching — Séance d'1h, personnalisée, en cohérence avec la séance bilan
+4. La progression — Programme évolutif, résultats mesurables, ajustements réguliers
+
+**Chiffres:** 1 coach dédié · 1h de séance · Dès 55 € (individuel) · Dès 60 € (binôme)
+
+**Valeurs:** Expertise · Motivation · Sur-mesure · Accompagnement · Excellence
+
+---
+
+## Page Services
+
+URL: https://www.lecercle-sports.fr/services
+
+**Introduction:** Chez LE CERCLE, nous croyons que chaque individu mérite un accompagnement unique. Nos coachs sont passionnés et certifiés, prêts à vous accompagner avec des programmes adaptés.
+
+**Service 01 — Cours collectifs**
+Une offre en quatre intensités. Cours quotidien de 8 à 10 personnes (45 minutes). Réservez via l'application.
+- SOFT : séances douces pour se détendre, améliorer la souplesse et retrouver l'équilibre
+- MODÉRÉ : entraînements dynamiques pour renforcer le corps et maintenir la forme
+- HARD : sessions intensives pour dépasser ses limites et atteindre des performances optimales
+- SPÉCIAL : cours uniques et innovants, alliant techniques modernes et plaisir
+
+**Service 02 — Coaching individuel** — À partir de 55 € / séance
+Un focus total sur vos objectifs pour une transformation garantie.
+- Prise de contact, bilan personnalisé et définition des objectifs
+- Entraînement sur mesure pensé pour vous
+- Planification hebdomadaire selon vos disponibilités
+- Séance d'une heure avec coach dédié
+
+**Service 03 — Coaching en binôme** — À partir de 60 € / binôme / séance
+Deux fois plus de motivation, deux fois plus de résultats.
+- Premier échange approfondi pour analyser votre situation
+- Mise à jour du programme toutes les 2 semaines
+- Planification hebdomadaire selon vos disponibilités
+- Séance d'une heure en binôme avec coach dédié
+
+**Service 04 — Séance bilan**
+Diagnostic complet de 1h30 : immersion au studio, bilan de santé, tests physiques (mobilité, force, cardio). Conception d'un programme sur mesure et suivi de progression précis.
+
+**Processus d'entrée:**
+1. Contactez-nous — échange pour cerner vos objectifs
+2. Rencontrez votre coach — séance bilan, bilan de santé, tests physiques, programme personnalisé
+3. Passez à l'action — séances collectives, individuelles ou en binôme
+
+---
+
+## Page Offres & Tarifs
+
+URL: https://www.lecercle-sports.fr/offres
+
+**Cours collectifs**
+- Séance d'essai offerte
+- Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX
+- Réservation via l'application
+- 8 à 10 personnes · 45 minutes
+
+**Coaching individuel** — À partir de 55 € / séance
+- Bilan personnalisé et définition des objectifs
+- Entraînement sur mesure
+- Planification hebdomadaire
+- 1h avec coach dédié
+
+**Coaching en binôme** — À partir de 60 € / binôme / séance
+- Bilan approfondi et définition des objectifs
+- Programme mis à jour toutes les 2 semaines
+- Planification hebdomadaire
+- 1h en binôme avec coach dédié
+
+---
+
+## Page Contact
+
+URL: https://www.lecercle-sports.fr/contact
+
+**Adresse:** 4 rue Joutx Aigues, 31000 Toulouse (Quartier des Carmes)
+**Coordonnées GPS:** 43.6, 1.4446
+
+**Accès transports:**
+- Bus : Lignes L4 et 44, arrêt Carmes
+- Métro : Ligne B arrêt Carmes / Ligne A arrêt Esquirol
+
+**Entité légale:** SAS Le Cercle · SIREN 101 917 219
+
+---
+
+## Informations générales
+
+**Nom:** Le Cercle — Club de Sport Privé
+**Domaine:** lecercle-sports.fr
+**Adresse:** 4 rue Joutx Aigues, Carmes, Toulouse (31000)
+**Type d'établissement:** Club de sport privé, coaching sportif
+**Fondateurs:** Dylan Carvalho (Directeur Général) et Tom Gioanni (Président)
+**Spécialités:** Coaching sportif, cours collectifs, coaching individuel, coaching en binôme, préparation physique, bien-être
+**Zone géographique:** Toulouse, Haute-Garonne, Occitanie, France
+**Réseaux sociaux:** Instagram (@lecercle_sports)
