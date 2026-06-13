@@ -31,8 +31,8 @@ const SERVICES_PREVIEW = [
   },
   {
     n: '03',
-    title: 'Cours collectifs',
-    text: 'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX. Cours quotidien de 8 à 10 personnes (45 minutes). Réservez vos cours via l\'application.',
+    title: 'Cours collectifs en small group',
+    text: 'Au choix : SOFT, MODÉRÉ, HARD. Cours quotidien de 8 personnes maximum (45 minutes). Réservez vos cours via l\'application.',
     img: IMG.gymInterior,
   },
 ]
@@ -55,17 +55,17 @@ const COACHES = [
 const AVIS = [
   {
     name: 'Marie A.',
-    role: 'Cliente',
+    role: 'Avis Google',
     text: "Je recommande Tom les yeux fermés pour son professionnalisme et la personnalisation des séances de sport au fil des semaines. J'ai commencé le coaching sportif à domicile avec Tom depuis 2 mois et j'ai déjà des résultats visibles. Encore merci Tom !!",
   },
   {
     name: 'Julien M.',
-    role: 'Membre',
+    role: 'Avis Google',
     text: "Un cadre confidentiel, des coachs qui ne lâchent rien et une exigence constante. On ne vient pas ici par hasard — et ça se ressent.",
   },
   {
     name: 'Sarah L.',
-    role: 'Membre',
+    role: 'Avis Google',
     text: "Le coaching collectif est une vraie révélation : l'émulation d'un groupe avec le suivi personnalisé. Je progresse plus vite que jamais.",
   },
 ]
@@ -77,7 +77,7 @@ const FAQ = [
   },
   {
     q: 'Quels types de cours proposez-vous ?',
-    a: 'Nous proposons des cours collectifs en quatre intensités : SOFT pour un retour en douceur, MODÉRÉ pour entretenir la forme, HARD pour dépasser vos limites, et des cours SPÉCIAUX innovants. Nous proposons également du coaching individuel et en binôme.',
+    a: 'Nous proposons des cours collectifs en trois intensités : SOFT pour un retour en douceur, MODÉRÉ pour entretenir la forme, HARD pour dépasser vos limites. Groupes de 8 personnes maximum. Nous proposons également du coaching individuel et en binôme.',
   },
   {
     q: 'Où se situe Le Cercle ?',
@@ -332,10 +332,11 @@ export default function Home() {
               <SectionLabel>Le manifeste</SectionLabel>
               <Reveal delay={0.1}>
                 <p className="mt-9 font-display text-3xl font-normal leading-[1.25] text-text-primary sm:text-4xl md:text-[2.9rem]">
-                  Parce qu'un cercle est un espace clos et ouvert à la fois. Il
-                  protège, il rassemble, il unit. C'est une forme pleine,
-                  équilibrée, continue, comme le parcours de transformation
-                  qu'on propose à chacun ici.
+                  LE CERCLE est un studio de coaching sportif premium proposant
+                  un accompagnement sur mesure à travers du coaching individuel,
+                  du coaching en binôme et des cours collectifs en petits groupes
+                  de 8 personnes maximum. Notre approche allie expertise,
+                  personnalisation et suivi de qualité.
                 </p>
               </Reveal>
             </div>
@@ -343,11 +344,6 @@ export default function Home() {
             <div className="flex flex-col justify-end lg:col-span-5">
               <Reveal delay={0.2}>
                 <div className="rule-gold mb-8" />
-                <p className="text-base font-light leading-relaxed text-text-secondary">
-                  Le Cercle, où l'on vient travailler sur soi, mais jamais
-                  seul. C'est un espace où l'on s'entraîne, où l'on partage,
-                  où l'on se recentre.
-                </p>
                 <Link
                   to="/concept"
                   className="group mt-8 inline-flex items-center gap-3 text-label text-[0.65rem] text-accent transition-colors hover:text-accent-light"
@@ -374,16 +370,16 @@ export default function Home() {
           opacity={0.6}
         />
         <div className="relative z-10 mx-auto max-w-container px-6 py-14 md:px-12 md:py-16">
-          <p className="mb-8 text-label text-[0.58rem] text-text-secondary">Cours collectifs</p>
+          <p className="mb-8 text-label text-[0.58rem] text-text-secondary">Cours collectifs en small group</p>
           <Stagger className="grid grid-cols-3 gap-10 md:gap-6">
             <StaggerItem>
-              <StatCounter value={8} suffix=" / cours" label="Personnes maximum" size="sm" />
+              <StatCounter value={8} suffix="" label="Personnes maximum" size="sm" />
             </StaggerItem>
             <StaggerItem>
               <StatCounter value={45} suffix=" min" label="Durée du cours" size="sm" />
             </StaggerItem>
             <StaggerItem>
-              <StatCounter value={7.5} prefix="Dès " suffix=" €" label="Le cours" decimals={1} size="sm" />
+              <StatCounter value={65} prefix="À partir de " suffix=" €" label="Par mois" size="sm" />
             </StaggerItem>
           </Stagger>
         </div>
@@ -570,17 +566,6 @@ export default function Home() {
             ))}
           </Stagger>
 
-          <Reveal delay={0.2}>
-            <blockquote className="mx-auto mt-16 max-w-2xl border-l border-accent pl-8 md:pl-10">
-              <p className="font-display text-2xl font-normal leading-snug text-text-primary md:text-3xl">
-                « Ensemble, nous vous aidons à atteindre vos objectifs les plus
-                élevés. »
-              </p>
-              <footer className="mt-5 text-label text-[0.6rem] text-text-secondary">
-                Dylan &amp; Tom — Fondateurs du Cercle
-              </footer>
-            </blockquote>
-          </Reveal>
         </div>
       </section>
 

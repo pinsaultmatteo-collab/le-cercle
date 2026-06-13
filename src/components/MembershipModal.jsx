@@ -193,17 +193,17 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                         <option value="" className="bg-bg-card">
                           Sélectionnez un service
                         </option>
-                        <option value="Cours collectifs" className="bg-bg-card">
-                          Cours collectifs
-                        </option>
                         <option value="Coaching individuel" className="bg-bg-card">
                           Coaching individuel
                         </option>
                         <option value="Coaching en binôme" className="bg-bg-card">
                           Coaching en binôme
                         </option>
-                        <option value="Cours collectifs small group" className="bg-bg-card">
+                        <option value="Cours collectifs en small group" className="bg-bg-card">
                           Cours collectifs en small group
+                        </option>
+                        <option value="Pass 2 séances / semaine" className="bg-bg-card">
+                          Pass 2 séances / semaine — 105 € / mois
                         </option>
                         <option value="Je ne sais pas" className="bg-bg-card">
                           Je ne sais pas encore

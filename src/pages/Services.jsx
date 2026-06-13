@@ -13,15 +13,14 @@ import { IMG } from '../data/site'
 const SERVICES = [
   {
     n: '01',
-    title: 'Cours collectifs',
-    tagline: 'Une offre en quatre intensités',
-    text: 'Une offre structurée en quatre intensités pour répondre avec précision à chaque niveau et objectif de performance. Cours quotidien de 8 à 10 personnes (45 minutes). Réservez vos cours via l\'application.',
+    title: 'Cours collectifs en small group',
+    tagline: 'À partir de 65 € / mois',
+    text: 'Une offre structurée en trois intensités pour répondre avec précision à chaque niveau et objectif de performance. Cours quotidien de 8 personnes maximum (45 minutes). Réservez vos cours via l\'application.',
     img: IMG.gymInterior,
     points: [
       'SOFT : séances douces pour se détendre, améliorer la souplesse et retrouver l\'équilibre',
       'MODÉRÉ : entraînements dynamiques pour renforcer le corps et maintenir la forme',
       'HARD : sessions intensives pour dépasser vos limites et atteindre des performances optimales',
-      'SPÉCIAL : cours uniques et innovants, alliant techniques modernes et plaisir',
     ],
   },
   {
@@ -45,22 +44,34 @@ const SERVICES = [
     img: IMG.trackNight,
     points: [
       'Premier échange approfondi pour analyser votre situation et fixer vos objectifs',
-      'Mise à jour du programme d\'entraînement toutes les 2 semaines',
       'Planification de vos séances hebdomadaires selon vos disponibilités',
       'Séance d\'une heure en binôme avec coach dédié',
     ],
   },
   {
     n: '04',
-    title: 'Coaching 360°',
+    title: 'Séance bilan',
     tagline: 'Le premier contact',
-    text: 'Le Coaching 360° est un diagnostic complet de 1h30 qui combine immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour quantifier précisément vos capacités initiales.',
+    text: 'La séance bilan est un diagnostic complet de 1h30 qui combine immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour quantifier précisément vos capacités initiales.',
     img: IMG.cyclist,
     points: [
       'Immersion au studio Le Cercle',
       'Bilan de santé complet',
       'Tests physiques techniques : mobilité, force, cardio',
       'Conception d\'un programme sur mesure et suivi de progression précis',
+    ],
+  },
+  {
+    n: '05',
+    title: 'Pass 2 séances / semaine',
+    tagline: '105 € / mois',
+    text: 'Notre abonnement pour les plus assidus. Deux séances par semaine pour progresser régulièrement et ancrer de bonnes habitudes sportives dans votre quotidien.',
+    img: IMG.coachPortrait,
+    points: [
+      'Accès illimité aux cours collectifs en small group',
+      '2 séances par semaine incluses',
+      'Réservation via l\'application',
+      'Idéal pour une progression régulière et durable',
     ],
   },
 ]
@@ -160,7 +171,7 @@ export default function Services() {
             NOS OFFRES
           </>
         }
-        intro="Chez LE CERCLE, nous croyons que chaque individu mérite un accompagnement unique. Nos coachs sont passionnés et certifiés, prêts à vous accompagner avec des programmes adaptés."
+        intro="Chez LE CERCLE, nous croyons que chaque personne mérite notre offre d'accompagnement unique. Nos coachs sont passionnés et certifiés, prêts à vous accompagner avec des programmes adaptés."
         image={IMG.trackNight}
       />
 

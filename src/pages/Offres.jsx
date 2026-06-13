@@ -11,17 +11,31 @@ import { IMG } from '../data/site'
 
 const OFFERS = [
   {
-    name: 'Cours collectifs',
-    price: 'Séance d\'essai offerte',
-    cadence: '',
-    summary: 'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX. Cours quotidien de 8 à 10 personnes (45 minutes).',
+    name: 'Cours collectifs en small group',
+    price: 'À partir de 65 €',
+    cadence: '/ mois',
+    summary: 'Au choix : SOFT, MODÉRÉ, HARD. Cours quotidien de 8 personnes maximum (45 minutes).',
     features: [
       'Séance d\'essai offerte',
-      'Au choix : SOFT, MODÉRÉ, HARD, SPÉCIAUX',
+      'Au choix : SOFT, MODÉRÉ, HARD',
       'Réservez vos cours via l\'application',
-      'Cours quotidien de 8 à 10 personnes (45 minutes)',
+      '8 personnes maximum · 45 minutes',
     ],
     featured: false,
+    cta: 'Détails',
+  },
+  {
+    name: 'Pass 2 séances / semaine',
+    price: '105 €',
+    cadence: '/ mois',
+    summary: 'Deux séances par semaine pour progresser régulièrement et ancrer de bonnes habitudes sportives.',
+    features: [
+      'Accès aux cours collectifs en small group',
+      '2 séances par semaine incluses',
+      'Réservation via l\'application',
+      'SOFT, MODÉRÉ ou HARD selon vos envies',
+    ],
+    featured: true,
     cta: 'Détails',
   },
   {
@@ -35,7 +49,7 @@ const OFFERS = [
       'Planification de vos séances hebdomadaires selon vos disponibilités',
       'Séance d\'une heure avec coach dédié',
     ],
-    featured: true,
+    featured: false,
     cta: 'Détails',
   },
   {
@@ -45,7 +59,6 @@ const OFFERS = [
     summary: 'Deux fois plus de motivation, deux fois plus de résultats. Séance d\'une heure en binôme avec coach dédié.',
     features: [
       'Premier échange approfondi pour analyser votre situation et fixer vos objectifs',
-      'Mise à jour du programme toutes les 2 semaines',
       'Planification de vos séances hebdomadaires selon vos disponibilités',
       'Séance d\'une heure en binôme avec coach dédié',
     ],
@@ -57,19 +70,19 @@ const OFFERS = [
 const FAQ = [
   {
     q: 'Comment s\'inscrire aux cours collectifs ?',
-    a: 'Réservez vos cours directement via notre application. Vous visualisez le planning en temps réel et choisissez votre séance parmi les formats SOFT, MODÉRÉ, HARD ou SPÉCIAUX.',
+    a: 'Réservez vos cours directement via notre application. Vous visualisez le planning en temps réel et choisissez votre séance parmi les formats SOFT, MODÉRÉ ou HARD.',
   },
   {
     q: 'Comment fonctionne le coaching individuel ?',
     a: 'Tout commence par une prise de contact et un bilan personnalisé pour définir vos objectifs. Votre coach crée un entraînement sur mesure et planifie vos séances hebdomadaires selon vos disponibilités.',
   },
   {
-    q: 'Qu\'est-ce que le Coaching 360° ?',
-    a: 'Le Coaching 360° est un diagnostic complet d\'1h30 : immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio). Ces données permettent de concevoir votre programme sur mesure et de vous orienter vers le service le plus adapté.',
+    q: 'Qu\'est-ce que la séance bilan ?',
+    a: 'La séance bilan est un diagnostic complet d\'1h30 : immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio). Ces données permettent de concevoir votre programme sur mesure.',
   },
   {
     q: 'Les séances sont-elles personnalisées ?',
-    a: 'Toujours. Que ce soit en coaching individuel, en binôme ou même en cours collectif, votre coach adapte le programme à votre niveau et vos objectifs. Le sur-mesure est au cœur de notre approche.',
+    a: 'Toujours. Que ce soit en coaching individuel, en binôme ou en cours collectif, votre coach adapte le programme à votre niveau et vos objectifs. Le sur-mesure est au cœur de notre approche.',
   },
 ]
 
@@ -88,7 +101,7 @@ export default function Offres() {
             NOS OFFRES
           </>
         }
-        intro="Chez LE CERCLE, nous croyons que chaque individu mérite un accompagnement unique. C'est pourquoi nous proposons une expertise professionnelle, un cadre exclusif et un accompagnement global."
+        intro="Chez LE CERCLE, nous croyons que chaque personne mérite notre offre d'accompagnement unique. Une expertise professionnelle, un cadre exclusif et un suivi de qualité."
         image={IMG.athleteGrayscale}
       />
 
@@ -171,29 +184,6 @@ export default function Offres() {
             vos objectifs.
           </p>
         </Reveal>
-      </section>
-
-      {/* IMAGE BREAK */}
-      <section className="relative h-[46svh] min-h-[340px] overflow-hidden border-y border-border-gold">
-        <motion.img
-          src={IMG.coachAthlete}
-          alt="Séance de coaching au Cercle"
-          initial={{ scale: 1.1 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ filter: 'brightness(0.5)' }}
-        />
-        <div className="absolute inset-0 bg-bg-primary/40" />
-        <div className="relative z-10 mx-auto flex h-full max-w-container items-center px-6 md:px-12">
-          <Reveal>
-            <p className="max-w-2xl font-display text-3xl font-normal leading-snug text-text-primary md:text-5xl">
-              « Investir dans son corps n'est jamais une dépense. C'est la
-              plus sûre des fondations. »
-            </p>
-          </Reveal>
-        </div>
       </section>
 
       {/* FAQ */}

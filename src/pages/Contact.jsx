@@ -84,7 +84,7 @@ export default function Contact() {
             <Reveal delay={0.2}>
               <p className="mt-6 max-w-md text-sm font-light leading-relaxed text-text-secondary">
                 Notre espace privatif se niche dans l'un des quartiers les
-                plus raffinés de Toulouse. Les visites se font uniquement sur
+                plus raffinés de Toulouse. Les visites se font sur
                 rendez-vous.
               </p>
             </Reveal>
@@ -130,7 +130,7 @@ export default function Contact() {
                     Téléphone
                   </p>
                   <p className="mt-2 font-light text-text-primary transition-colors group-hover:text-accent-light">
-                    05 00 00 00 00
+                    06 61 07 33 87
                   </p>
                 </div>
               </a>
