@@ -1,18 +1,20 @@
-/* Centralised image URLs (Framer CDN) + shared site data. */
+/* Centralised image paths (local, optimised) + shared site data. */
 
 export const IMG = {
-  hero: 'https://framerusercontent.com/images/QZMFovraHICoqijOtJwYtaNkY.jpg',
-  coachPortrait:
-    'https://framerusercontent.com/images/wYDmbhCtP2WawcJKkEqpxTG4FFo.png',
-  athleteGrayscale:
-    'https://framerusercontent.com/images/BXWFFqcz6AW615Pi9Gvyn3F56qk.jpeg',
-  coachAthlete:
-    'https://framerusercontent.com/images/Ns7cNWO7lLv4LeBuIMMv96tFaE0.jpeg',
-  trackNight:
-    'https://framerusercontent.com/images/XhuLFOeHWkSJUExj4pgS4CkLg3o.jpg',
-  cyclist: 'https://framerusercontent.com/images/ZHjJwDm6egdrb5sZEVY7bBAYimw.jpg',
-  gymInterior:
-    'https://framerusercontent.com/images/mMTV9HDKl0KrOsg7IE8lBfC09g.jpg',
+  hero: '/images/salle-track.jpg',
+  salleTrack: '/images/salle-track.jpg',
+  salleLarge: '/images/salle-large.jpg',
+  vestiaires: '/images/vestiaires.jpg',
+  coachTom: '/images/coach-tom.jpg',
+  coachDylan: '/images/coach-dylan.jpg',
+  // service photos
+  coachAthlete: '/images/coaching-individuel.jpg',
+  trackNight: '/images/coaching-binome.jpg',
+  gymInterior: '/images/cours-collectifs.jpg',
+  // legacy keys kept for any remaining references
+  coachPortrait: '/images/coach-tom.jpg',
+  athleteGrayscale: '/images/salle-large.jpg',
+  cyclist: '/images/vestiaires.jpg',
 }
 
 export const INSTAGRAM_URL =

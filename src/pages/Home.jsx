@@ -42,12 +42,14 @@ const COACHES = [
     initial: 'D',
     name: 'Dylan',
     role: 'Fondateur / Coach',
+    img: IMG.coachDylan,
     text: 'Cofondateur du Cercle, Dylan met son expertise au service de chaque membre. Passionné et certifié, il vous accompagne avec des programmes adaptés à vos objectifs.',
   },
   {
     initial: 'T',
     name: 'Tom',
     role: 'Fondateur / Coach',
+    img: IMG.coachTom,
     text: 'Cofondateur du Cercle, Tom a bâti le club autour d\'une conviction : un accompagnement global qui va au-delà des entraînements, pour vous guider dans l\'adoption d\'un mode de vie sain et équilibré.',
   },
 ]
@@ -327,11 +329,11 @@ export default function Home() {
           to={{ x: 120, y: 80 }}
         />
         <div className="relative z-10 mx-auto max-w-container px-6 py-28 md:px-12 md:py-40">
-          <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
-            <div className="lg:col-span-7">
+          <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-20">
+            <div className="lg:col-span-6">
               <SectionLabel>Le manifeste</SectionLabel>
               <Reveal delay={0.1}>
-                <p className="mt-9 font-display text-3xl font-normal leading-[1.25] text-text-primary sm:text-4xl md:text-[2.9rem]">
+                <p className="mt-9 font-display text-3xl font-normal leading-[1.25] text-text-primary sm:text-4xl md:text-[2.6rem]">
                   LE CERCLE est un studio de coaching sportif premium proposant
                   un accompagnement sur mesure à travers du coaching individuel,
                   du coaching en binôme et des cours collectifs en petits groupes
@@ -339,14 +341,11 @@ export default function Home() {
                   personnalisation et suivi de qualité.
                 </p>
               </Reveal>
-            </div>
-
-            <div className="flex flex-col justify-end lg:col-span-5">
               <Reveal delay={0.2}>
-                <div className="rule-gold mb-8" />
+                <div className="rule-gold my-8 max-w-[160px]" />
                 <Link
                   to="/concept"
-                  className="group mt-8 inline-flex items-center gap-3 text-label text-[0.65rem] text-accent transition-colors hover:text-accent-light"
+                  className="group inline-flex items-center gap-3 text-label text-[0.65rem] text-accent transition-colors hover:text-accent-light"
                 >
                   Notre philosophie
                   <ArrowRight
@@ -354,6 +353,19 @@ export default function Home() {
                     className="transition-transform duration-500 ease-luxe group-hover:translate-x-1"
                   />
                 </Link>
+              </Reveal>
+            </div>
+
+            <div className="lg:col-span-6">
+              <Reveal delay={0.25}>
+                <div className="relative aspect-[4/3] overflow-hidden border border-border-gold">
+                  <ParallaxImage
+                    src={IMG.salleTrack}
+                    alt="La salle du Cercle à Toulouse"
+                    className="h-full w-full"
+                    filter="brightness(0.92)"
+                  />
+                </div>
               </Reveal>
             </div>
           </div>
@@ -476,10 +488,10 @@ export default function Home() {
         <div className="grid lg:grid-cols-2">
           <div className="relative min-h-[420px] overflow-hidden lg:min-h-[640px]">
             <ParallaxImage
-              src={IMG.athleteGrayscale}
-              alt="Athlète en mouvement"
+              src={IMG.vestiaires}
+              alt="Les vestiaires du Cercle"
               speed={0.2}
-              filter="brightness(0.8) grayscale(30%)"
+              filter="brightness(0.85)"
             />
             <div className="absolute inset-0 bg-bg-primary/20" />
           </div>
@@ -537,16 +549,19 @@ export default function Home() {
             {COACHES.map((coach) => (
               <StaggerItem key={coach.initial}>
                 <article className="group flex h-full flex-col items-center border border-border-gold bg-bg-card px-8 py-14 text-center transition-colors duration-500 hover:border-accent md:px-12">
-                  {/* Monogram portrait */}
+                  {/* Photo portrait */}
                   <div className="relative">
                     <motion.div
                       whileHover={{ scale: 1.04 }}
                       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                      className="flex h-32 w-32 items-center justify-center rounded-full border border-accent/40 bg-bg-primary md:h-36 md:w-36"
+                      className="h-36 w-36 overflow-hidden rounded-full border border-accent/40 bg-bg-primary md:h-40 md:w-40"
                     >
-                      <span className="font-display text-5xl font-light tracking-tight text-accent md:text-6xl">
-                        {coach.initial}
-                      </span>
+                      <img
+                        src={coach.img}
+                        alt={`${coach.name} — coach au Cercle`}
+                        className="h-full w-full object-cover object-top"
+                        style={{ filter: 'grayscale(15%)' }}
+                      />
                     </motion.div>
                     <span className="absolute -inset-2 -z-10 rounded-full border border-border-gold" />
                   </div>
@@ -782,8 +797,8 @@ export default function Home() {
       {/* ============ CTA ============ */}
       <section className="relative overflow-hidden">
         <ParallaxImage
-          src={IMG.cyclist}
-          alt="Cycliste à l'effort"
+          src={IMG.salleLarge}
+          alt="La salle du Cercle"
           speed={0.22}
           filter="brightness(0.35)"
         />
