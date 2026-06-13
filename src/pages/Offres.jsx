@@ -102,7 +102,7 @@ export default function Offres() {
           </>
         }
         intro="Chez LE CERCLE, nous croyons que chaque personne mérite notre offre d'accompagnement unique. Une expertise professionnelle, un cadre exclusif et un suivi de qualité."
-        image={IMG.athleteGrayscale}
+        image={IMG.poids}
       />
 
       {/* PRICING */}

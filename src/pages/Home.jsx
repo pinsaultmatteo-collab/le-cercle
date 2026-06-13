@@ -559,7 +559,7 @@ export default function Home() {
                       <img
                         src={coach.img}
                         alt={`${coach.name} — coach au Cercle`}
-                        className="h-full w-full object-cover object-top"
+                        className="h-full w-full object-cover object-[center_22%]"
                         style={{ filter: 'grayscale(15%)' }}
                       />
                     </motion.div>

@@ -65,7 +65,7 @@ export default function Contact() {
           </>
         }
         intro="Une question, une demande d'adhésion, une envie d'en savoir plus ? Écrivez-nous — nous répondons à chaque message avec attention."
-        image={IMG.coachPortrait}
+        image={IMG.salleRack}
       />
 
       {/* CONTACT GRID */}

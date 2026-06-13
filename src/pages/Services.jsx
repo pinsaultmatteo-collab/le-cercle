@@ -16,7 +16,7 @@ const SERVICES = [
     title: 'Cours collectifs en small group',
     tagline: 'À partir de 65 € / mois',
     text: 'Une offre structurée en trois intensités pour répondre avec précision à chaque niveau et objectif de performance. Cours quotidien de 8 personnes maximum (45 minutes). Réservez vos cours via l\'application.',
-    img: IMG.gymInterior,
+    img: IMG.salleBoxing,
     points: [
       'SOFT : séances douces pour se détendre, améliorer la souplesse et retrouver l\'équilibre',
       'MODÉRÉ : entraînements dynamiques pour renforcer le corps et maintenir la forme',
@@ -28,7 +28,7 @@ const SERVICES = [
     title: 'Coaching individuel',
     tagline: 'À partir de 55 € / séance',
     text: 'Une approche sur-mesure, centrée sur vos objectifs spécifiques, que ce soit pour améliorer vos performances, retrouver la forme, ou simplement vous sentir bien dans votre corps. Un focus total sur vos objectifs pour une transformation garantie.',
-    img: IMG.coachAthlete,
+    img: IMG.salleRack,
     points: [
       'Prise de contact, bilan personnalisé et définition des objectifs',
       'Entraînement sur mesure pensé pour vous',
@@ -53,7 +53,7 @@ const SERVICES = [
     title: 'Séance bilan',
     tagline: 'Le premier contact',
     text: 'La séance bilan est un diagnostic complet de 1h30 qui combine immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour quantifier précisément vos capacités initiales.',
-    img: IMG.cyclist,
+    img: IMG.tapisCourse,
     points: [
       'Immersion au studio Le Cercle',
       'Bilan de santé complet',
@@ -66,7 +66,7 @@ const SERVICES = [
     title: 'Pass 2 séances / semaine',
     tagline: '105 € / mois',
     text: 'Notre abonnement pour les plus assidus. Deux séances par semaine pour progresser régulièrement et ancrer de bonnes habitudes sportives dans votre quotidien.',
-    img: IMG.coachPortrait,
+    img: IMG.poids,
     points: [
       'Accès illimité aux cours collectifs en small group',
       '2 séances par semaine incluses',
@@ -172,7 +172,7 @@ export default function Services() {
           </>
         }
         intro="Chez LE CERCLE, nous croyons que chaque personne mérite notre offre d'accompagnement unique. Nos coachs sont passionnés et certifiés, prêts à vous accompagner avec des programmes adaptés."
-        image={IMG.trackNight}
+        image={IMG.salleBoxing}
       />
 
       {/* INTRO */}
@@ -257,7 +257,7 @@ export default function Services() {
       {/* CTA */}
       <section className="relative overflow-hidden">
         <img
-          src={IMG.gymInterior}
+          src={IMG.salleLarge}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"

@@ -75,7 +75,7 @@ export default function Concept() {
           </>
         }
         intro="Bienvenue dans LE CERCLE, un espace dédié à votre bien-être et à vos objectifs sportifs, où chaque entraînement est conçu sur-mesure pour répondre à vos besoins."
-        image={IMG.gymInterior}
+        image={IMG.coworking}
       />
 
       {/* INTRO STATEMENT */}
@@ -109,14 +109,14 @@ export default function Concept() {
       {/* IMAGE BREAK */}
       <section className="relative h-[50svh] min-h-[380px] overflow-hidden border-y border-border-gold">
         <motion.img
-          src={IMG.coachPortrait}
-          alt="Coach du Cercle"
+          src={IMG.vestiaires}
+          alt="Les vestiaires du Cercle"
           initial={{ scale: 1.1 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ filter: 'brightness(0.55) grayscale(25%)' }}
+          style={{ filter: 'brightness(0.55)' }}
         />
         <div className="absolute inset-0 bg-bg-primary/55" />
         <div className="relative z-10 mx-auto flex h-full max-w-container items-center justify-center px-6 text-center md:px-12">
