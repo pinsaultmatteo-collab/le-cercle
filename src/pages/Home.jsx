@@ -54,19 +54,19 @@ const COACHES = [
 
 const AVIS = [
   {
-    name: 'Marie A.',
-    role: 'Avis Google',
-    text: "Je recommande Tom les yeux fermés pour son professionnalisme et la personnalisation des séances de sport au fil des semaines. J'ai commencé le coaching sportif à domicile avec Tom depuis 2 mois et j'ai déjà des résultats visibles. Encore merci Tom !!",
+    name: 'Deborah Acin Sanchez',
+    role: 'Local Guide · Avis Google',
+    text: "Faire du sport avec plaisir dans une ambiance cosy avec pleins des petits détails pour notre confort !!! Les coachs Tom et Dylan sont très pros et à l'écoute. Tout ça dans la bonne humeur et avec le sourire !!! La salle est super très bien équipée, on peut aussi prendre un petit café pour se détendre.",
   },
   {
-    name: 'Julien M.',
+    name: 'Stephane Adnet',
     role: 'Avis Google',
-    text: "Un cadre confidentiel, des coachs qui ne lâchent rien et une exigence constante. On ne vient pas ici par hasard — et ça se ressent.",
+    text: "Plus qu'une salle de sport, c'est un lieu privé qui rassemble tous les codes du haut de gamme, avec un sens aigu du service, un endroit où l'esthétique est soignée et où on se sent chez soi. L'alliance du premium et du professionnalisme. Un sans faute.",
   },
   {
-    name: 'Sarah L.',
+    name: 'Séville Guillot',
     role: 'Avis Google',
-    text: "Le coaching collectif est une vraie révélation : l'émulation d'un groupe avec le suivi personnalisé. Je progresse plus vite que jamais.",
+    text: "Une superbe salle, esthétiquement très belle et lumineuse! Il y a tout le matériel et les équipements nécessaires pour faire de supers séances. Les garçons sont géniaux, mettent directement à l'aise ! Je ne peux que conseiller 😁",
   },
 ]
 
@@ -612,6 +612,19 @@ export default function Home() {
               </StaggerItem>
             ))}
           </Stagger>
+
+          <Reveal delay={0.3}>
+            <div className="mt-12 flex justify-center">
+              <a
+                href="https://www.google.com/search?sca_esv=a61294bd7b2aaade&rlz=1C5AJCO_enFR1213FR1213&cs=1&sxsrf=ANbL-n6M0lwMy01etA5nIkAoNrLVJyomkw:1781361604233&q=Le+Cercle+-+Club+de+sport+priv%C3%A9+Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxtDAwMLYwNzAzMrawMDEzNDQ1MdjAyPiKUdUnVcE5tSg5J1VBV8E5pzRJISVVobggv6hEoaAos-zwSgXHssziRazEqQMAQnUS5msAAAA&rldimm=18003870623884611540&tbm=lcl&hl=fr-FR&sa=X&ved=2ahUKEwis8YqNuYSVAxXUSKQEHQPMEokQ9fQKegQIDxAG&biw=1710&bih=944&dpr=2#lkt=LocalPoiReviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 border border-border-gold bg-transparent px-8 py-4 text-label text-[0.65rem] text-accent transition-all duration-300 hover:border-accent hover:bg-bg-card"
+              >
+                ★ Laisser un avis Google
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
