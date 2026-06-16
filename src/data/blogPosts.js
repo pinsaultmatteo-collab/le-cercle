@@ -16,7 +16,7 @@ export const POSTS = [
     excerpt:
       'Pourquoi les plateaux font partie du chemin, et comment Le Cercle transforme la stagnation en tremplin.',
     category: 'Performance',
-    date: '14 Mai 2026',
+    date: '13 Juin 2026',
     read: '6 min',
     img: IMG.trackNight,
     featured: true,
@@ -70,7 +70,7 @@ export const POSTS = [
     excerpt:
       "L'assiette d'un athlète ne se prive pas, elle se construit. Les principes que nos coachs nutrition appliquent au quotidien.",
     category: 'Nutrition',
-    date: '22 Avril 2026',
+    date: '11 Juin 2026',
     read: '8 min',
     img: IMG.coachPortrait,
     featured: false,
@@ -128,7 +128,7 @@ export const POSTS = [
     excerpt:
       'Ce qui se joue la nuit détermine ce que vous réalisez le jour. Comprendre la récupération comme un levier de performance.',
     category: 'Récupération',
-    date: '10 Février 2026',
+    date: '09 Juin 2026',
     read: '5 min',
     img: IMG.gymInterior,
     featured: false,
@@ -178,7 +178,7 @@ export const POSTS = [
     excerpt:
       "Redéfinir la rigueur comme un acte de respect envers soi-même. Une réflexion sur l'état d'esprit des membres du Cercle.",
     category: "État d'esprit",
-    date: '08 Janvier 2026',
+    date: '06 Juin 2026',
     read: '7 min',
     img: IMG.athleteGrayscale,
     featured: false,
@@ -227,7 +227,7 @@ export const POSTS = [
     excerpt:
       'Pourquoi s\'entraîner à 8 maximum change tout. Ce que le format small group apporte que ni la salle bondée ni le solo ne peuvent offrir.',
     category: 'Performance',
-    date: '18 Mars 2026',
+    date: '04 Juin 2026',
     read: '6 min',
     img: IMG.salleBoxing,
     featured: false,
@@ -281,7 +281,7 @@ export const POSTS = [
     excerpt:
       "Avant la force, l'amplitude. Pourquoi nos protocoles commencent toujours par libérer le mouvement.",
     category: 'Récupération',
-    date: '20 Novembre 2025',
+    date: '02 Juin 2026',
     read: '6 min',
     img: IMG.coachAthlete,
     featured: false,
