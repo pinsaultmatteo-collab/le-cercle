@@ -10,6 +10,7 @@ export const IMG = {
   vestiaires: '/images/vestiaires.jpg',
   sanitaires: '/images/sanitaires.jpg',
   boxingSac: '/images/boxing-sac.jpg',
+  offresBoxing: '/images/offres-boxing.jpg',
   tapisCourse: '/images/tapis-course.jpg',
   poids: '/images/poids.jpg',
   coachTom: '/images/coach-tom.jpg',
