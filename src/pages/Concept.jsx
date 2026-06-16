@@ -43,7 +43,7 @@ const APPROACH = [
   {
     step: 'II',
     title: 'Séance bilan',
-    text: 'Un diagnostic complet de 1h30 : immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour concevoir votre programme sur mesure.',
+    text: 'Un diagnostic complet de 1h30 : immersion au club, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour concevoir votre programme sur mesure.',
   },
   {
     step: 'III',

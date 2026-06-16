@@ -16,7 +16,7 @@ export const POSTS = [
     excerpt:
       'Pourquoi les plateaux font partie du chemin, et comment Le Cercle transforme la stagnation en tremplin.',
     category: 'Performance',
-    date: '12 Mars 2025',
+    date: '14 Mai 2026',
     read: '6 min',
     img: IMG.trackNight,
     featured: true,
@@ -70,7 +70,7 @@ export const POSTS = [
     excerpt:
       "L'assiette d'un athlète ne se prive pas, elle se construit. Les principes que nos coachs nutrition appliquent au quotidien.",
     category: 'Nutrition',
-    date: '28 Février 2025',
+    date: '22 Avril 2026',
     read: '8 min',
     img: IMG.coachPortrait,
     featured: false,
@@ -128,7 +128,7 @@ export const POSTS = [
     excerpt:
       'Ce qui se joue la nuit détermine ce que vous réalisez le jour. Comprendre la récupération comme un levier de performance.',
     category: 'Récupération',
-    date: '15 Février 2025',
+    date: '10 Février 2026',
     read: '5 min',
     img: IMG.gymInterior,
     featured: false,
@@ -178,7 +178,7 @@ export const POSTS = [
     excerpt:
       "Redéfinir la rigueur comme un acte de respect envers soi-même. Une réflexion sur l'état d'esprit des membres du Cercle.",
     category: "État d'esprit",
-    date: '02 Février 2025',
+    date: '08 Janvier 2026',
     read: '7 min',
     img: IMG.athleteGrayscale,
     featured: false,
@@ -222,57 +222,56 @@ export const POSTS = [
     ],
   },
   {
-    slug: 'puissance-au-seuil-watts',
-    title: 'Puissance au seuil : décoder vos watts',
+    slug: 'small-group-energie-du-collectif',
+    title: "Small group : l'énergie du collectif, le suivi du sur-mesure",
     excerpt:
-      'Pour le cycliste, la donnée est une boussole. Comment lire et exploiter votre puissance pour progresser intelligemment.',
+      'Pourquoi s\'entraîner à 8 maximum change tout. Ce que le format small group apporte que ni la salle bondée ni le solo ne peuvent offrir.',
     category: 'Performance',
-    date: '20 Janvier 2025',
-    read: '9 min',
-    img: IMG.cyclist,
+    date: '18 Mars 2026',
+    read: '6 min',
+    img: IMG.salleBoxing,
     featured: false,
     body: [
       {
         type: 'p',
-        text: "Sur un vélo, la sensation ment. Le vent, le sommeil, le stress, la température — tous ces paramètres faussent la perception de l'effort. La puissance, elle, ne ment pas. C'est pour cela qu'elle est devenue, en deux décennies, l'instrument central de l'entraînement cycliste sérieux.",
+        text: "Il existe une zone idéale entre l'anonymat d'une grande salle et la solitude de l'entraînement individuel. Cette zone, c'est le small group : un collectif assez restreint pour que chacun soit vu, assez nombreux pour que l'énergie circule. Au Cercle, nous l'avons fixé à 8 personnes maximum. Ce n'est pas un hasard.",
       },
       {
         type: 'heading',
-        text: "Qu'est-ce que la FTP ?",
+        text: 'Pourquoi huit, et pas trente',
       },
       {
         type: 'p',
-        text: "La FTP (Functional Threshold Power) est la puissance moyenne que vous pouvez maintenir pendant une heure d'effort. C'est votre référence métabolique. À partir d'elle, on définit des zones d'entraînement précises, chacune sollicitant un système physiologique distinct.",
+        text: "Au-delà d'une certaine taille, un coach ne coache plus : il surveille. Il ne peut plus corriger une posture, ajuster une charge, encourager au bon moment. À huit, tout redevient possible. Chaque participant garde son intensité propre — SOFT, MODÉRÉ ou HARD — tout en profitant de la dynamique du groupe. Vous n'êtes jamais un numéro, jamais perdu dans la masse.",
+      },
+      {
+        type: 'heading',
+        text: "L'émulation, ce moteur sous-estimé",
+      },
+      {
+        type: 'p',
+        text: "S'entraîner seul demande une volonté de fer. S'entraîner à côté de personnes qui donnent tout, c'est laisser le collectif porter une partie de l'effort. On se dépasse sans s'en rendre compte, simplement parce que l'énergie de la séance nous tire vers le haut. C'est l'un des leviers les plus puissants — et les plus gratuits — de la progression.",
+      },
+      {
+        type: 'quote',
+        text: "Seul on va plus vite, à huit on va plus loin. Et surtout, on revient le lendemain.",
+        author: 'Dylan — Cofondateur',
+      },
+      {
+        type: 'heading',
+        text: 'Trois intensités, un même cadre',
       },
       {
         type: 'list',
         items: [
-          'Zone 1 (< 55 % FTP) — récupération active, drainage.',
-          'Zone 2 (55-75 %) — endurance fondamentale, base aérobie. La zone où passer le plus de temps.',
-          'Zone 3 (76-90 %) — tempo, seuil aérobie. À doser.',
-          'Zone 4 (91-105 %) — au seuil. La zone où la FTP se construit.',
-          'Zone 5 et au-delà — VO2max, anaérobie. Court, intense, sélectif.',
+          'SOFT — séances douces pour se détendre, améliorer la souplesse et retrouver l\'équilibre.',
+          'MODÉRÉ — entraînements dynamiques pour renforcer le corps et maintenir la forme.',
+          'HARD — sessions intensives pour dépasser ses limites et atteindre des performances optimales.',
         ],
       },
       {
-        type: 'heading',
-        text: "L'erreur classique",
-      },
-      {
         type: 'p',
-        text: "La plupart des cyclistes amateurs roulent en permanence dans une zone hybride : trop intense pour bénéficier des effets de la zone 2, pas assez pour travailler le seuil. Résultat : beaucoup de fatigue, peu de progression. La règle est simple : roulez facile quand c'est facile, fort quand c'est fort. Le milieu, on l'évite.",
-      },
-      {
-        type: 'quote',
-        text: "Mesurer, ce n'est pas tricher avec la sensation. C'est l'objectiver pour ne plus être l'otage des bonnes ou mauvaises journées.",
-      },
-      {
-        type: 'heading',
-        text: 'Au Cercle',
-      },
-      {
-        type: 'p',
-        text: "Nous équipons et accompagnons les cyclistes qui veulent passer de l'effort senti à l'effort piloté. Tests FTP réguliers, structuration des semaines, analyse des données post-séance — tout cela sert un objectif : faire en sorte que chaque heure passée en selle produise une progression mesurable.",
+        text: "Vous réservez votre cours via l'application, en fonction de votre forme du jour et de vos disponibilités. Une séance d'essai est offerte : le meilleur moyen de comprendre, en 45 minutes, pourquoi le format change tout.",
       },
     ],
   },
@@ -282,7 +281,7 @@ export const POSTS = [
     excerpt:
       "Avant la force, l'amplitude. Pourquoi nos protocoles commencent toujours par libérer le mouvement.",
     category: 'Récupération',
-    date: '08 Janvier 2025',
+    date: '20 Novembre 2025',
     read: '6 min',
     img: IMG.coachAthlete,
     featured: false,

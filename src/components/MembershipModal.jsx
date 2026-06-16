@@ -202,9 +202,6 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                         <option value="Cours collectifs en small group" className="bg-bg-card">
                           Cours collectifs en small group
                         </option>
-                        <option value="Pass 2 séances / semaine" className="bg-bg-card">
-                          Pass 2 séances / semaine — 105 € / mois
-                        </option>
                         <option value="Je ne sais pas" className="bg-bg-card">
                           Je ne sais pas encore
                         </option>

@@ -46,7 +46,7 @@ Deux fois plus de motivation, deux fois plus de résultats.
 
 Diagnostic complet de **1h30** pour démarrer sur des bases solides.
 
-- Immersion au studio Le Cercle
+- Immersion au club Le Cercle
 - Bilan de santé complet
 - Tests physiques : mobilité, force, cardio
 - Conception d'un programme sur mesure et suivi de progression précis

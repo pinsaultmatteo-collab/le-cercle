@@ -52,26 +52,13 @@ const SERVICES = [
     n: '04',
     title: 'Séance bilan',
     tagline: 'Le premier contact',
-    text: 'La séance bilan est un diagnostic complet de 1h30 qui combine immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour quantifier précisément vos capacités initiales.',
+    text: 'La séance bilan est un diagnostic complet de 1h30 qui combine immersion au club, bilan de santé et tests physiques techniques (mobilité, force, cardio) pour quantifier précisément vos capacités initiales.',
     img: IMG.tapisCourse,
     points: [
-      'Immersion au studio Le Cercle',
+      'Immersion au club Le Cercle',
       'Bilan de santé complet',
       'Tests physiques techniques : mobilité, force, cardio',
       'Conception d\'un programme sur mesure et suivi de progression précis',
-    ],
-  },
-  {
-    n: '05',
-    title: 'Pass 2 séances / semaine',
-    tagline: '105 € / mois',
-    text: 'Notre abonnement pour les plus assidus. Deux séances par semaine pour progresser régulièrement et ancrer de bonnes habitudes sportives dans votre quotidien.',
-    img: IMG.poids,
-    points: [
-      'Accès illimité aux cours collectifs en small group',
-      '2 séances par semaine incluses',
-      'Réservation via l\'application',
-      'Idéal pour une progression régulière et durable',
     ],
   },
 ]
@@ -172,7 +159,7 @@ export default function Services() {
           </>
         }
         intro="Chez LE CERCLE, nous croyons que chaque personne mérite notre offre d'accompagnement unique. Nos coachs sont passionnés et certifiés, prêts à vous accompagner avec des programmes adaptés."
-        image={IMG.salleBoxing}
+        image={IMG.boxingSac}
       />
 
       {/* INTRO */}

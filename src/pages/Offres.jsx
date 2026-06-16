@@ -1,70 +1,41 @@
-import { motion } from 'framer-motion'
-
 import PageWrapper from '../components/PageWrapper'
 import Seo from '../components/Seo'
 import PageHero from '../components/PageHero'
-import Reveal, { Stagger, StaggerItem } from '../components/Reveal'
+import Reveal from '../components/Reveal'
 import Button from '../components/Button'
 import { SectionHeading, SectionLabel } from '../components/Section'
 import { CircleMark, ArrowRight } from '../components/Icons'
 import { IMG } from '../data/site'
 
-const OFFERS = [
-  {
-    name: 'Cours collectifs en small group',
-    price: 'À partir de 65 €',
-    cadence: '/ mois',
-    summary: 'Au choix : SOFT, MODÉRÉ, HARD. Cours quotidien de 8 personnes maximum (45 minutes).',
-    features: [
-      'Séance d\'essai offerte',
-      'Au choix : SOFT, MODÉRÉ, HARD',
-      'Réservez vos cours via l\'application',
-      '8 personnes maximum · 45 minutes',
-    ],
-    featured: false,
-    cta: 'Détails',
-  },
-  {
-    name: 'Pass 2 séances / semaine',
-    price: '105 €',
-    cadence: '/ mois',
-    summary: 'Deux séances par semaine pour progresser régulièrement et ancrer de bonnes habitudes sportives.',
-    features: [
-      'Accès aux cours collectifs en small group',
-      '2 séances par semaine incluses',
-      'Réservation via l\'application',
-      'SOFT, MODÉRÉ ou HARD selon vos envies',
-    ],
-    featured: true,
-    cta: 'Détails',
-  },
-  {
-    name: 'Coaching individuel',
-    price: 'À partir de 55 €',
-    cadence: '/ séance',
-    summary: 'Un focus total sur vos objectifs pour une transformation garantie. Séance d\'une heure avec coach dédié.',
-    features: [
-      'Prise de contact, bilan personnalisé et définition des objectifs',
-      'Entraînement sur mesure pensé pour vous',
-      'Planification de vos séances hebdomadaires selon vos disponibilités',
-      'Séance d\'une heure avec coach dédié',
-    ],
-    featured: false,
-    cta: 'Détails',
-  },
-  {
-    name: 'Coaching en binôme',
-    price: 'À partir de 60 €',
-    cadence: '/ binôme / séance',
-    summary: 'Deux fois plus de motivation, deux fois plus de résultats. Séance d\'une heure en binôme avec coach dédié.',
-    features: [
-      'Premier échange approfondi pour analyser votre situation et fixer vos objectifs',
-      'Planification de vos séances hebdomadaires selon vos disponibilités',
-      'Séance d\'une heure en binôme avec coach dédié',
-    ],
-    featured: false,
-    cta: 'Détails',
-  },
+// ============ COURS COLLECTIFS — SMALL GROUP ============
+const SMALL_GROUP = {
+  intro:
+    'Cours quotidiens de 8 personnes maximum (45 minutes), au choix : SOFT, MODÉRÉ, HARD. Réservation via l\'application. Séance d\'essai offerte.',
+  rows: [
+    { label: 'Séance d\'essai', price: 'Offerte' },
+    { label: 'Pass 1 séance / semaine', price: '65 €', unit: '/ mois' },
+    { label: 'Pass 2 séances / semaine', price: '105 €', unit: '/ mois' },
+    { label: 'Pass 3 séances / semaine', price: '120 €', unit: '/ mois' },
+    { label: 'Pass illimité', price: '150 €', unit: '/ mois' },
+  ],
+}
+
+// ============ COACHING (SOLO & DUO) ============
+const COACHING_BILAN = [
+  { label: 'Séance bilan individuel', price: '70 €' },
+  { label: 'Séance bilan en binôme', price: '85 €' },
+]
+
+const COACHING_SOLO = [
+  { label: 'Pass 10 séances', price: '65 €', unit: '/ séance' },
+  { label: 'Pass 20 séances', price: '60 €', unit: '/ séance' },
+  { label: 'Pass 40 séances', price: '55 €', unit: '/ séance' },
+]
+
+const COACHING_DUO = [
+  { label: 'Pass 10 séances', price: '70 €', unit: '/ séance' },
+  { label: 'Pass 20 séances', price: '65 €', unit: '/ séance' },
+  { label: 'Pass 40 séances', price: '60 €', unit: '/ séance' },
 ]
 
 const FAQ = [
@@ -73,12 +44,12 @@ const FAQ = [
     a: 'Réservez vos cours directement via notre application. Vous visualisez le planning en temps réel et choisissez votre séance parmi les formats SOFT, MODÉRÉ ou HARD.',
   },
   {
-    q: 'Comment fonctionne le coaching individuel ?',
-    a: 'Tout commence par une prise de contact et un bilan personnalisé pour définir vos objectifs. Votre coach crée un entraînement sur mesure et planifie vos séances hebdomadaires selon vos disponibilités.',
+    q: 'Quelle est la différence entre cours collectifs et coaching ?',
+    a: 'Les cours collectifs en small group réunissent jusqu\'à 8 personnes autour d\'une séance commune (formules mensuelles). Le coaching, individuel ou en binôme, vous offre un accompagnement entièrement personnalisé avec un coach dédié (pass de séances).',
   },
   {
     q: 'Qu\'est-ce que la séance bilan ?',
-    a: 'La séance bilan est un diagnostic complet d\'1h30 : immersion au studio, bilan de santé et tests physiques techniques (mobilité, force, cardio). Ces données permettent de concevoir votre programme sur mesure.',
+    a: 'La séance bilan est un diagnostic complet d\'1h30 : immersion au club, bilan de santé et tests physiques techniques (mobilité, force, cardio). Ces données permettent de concevoir votre programme sur mesure.',
   },
   {
     q: 'Les séances sont-elles personnalisées ?',
@@ -105,85 +76,149 @@ export default function Offres() {
         image={IMG.poids}
       />
 
-      {/* PRICING */}
-      <section className="mx-auto max-w-container px-6 py-28 md:px-12 md:py-36">
+      {/* PRICING — COURS COLLECTIFS */}
+      <section className="mx-auto max-w-container px-6 py-24 md:px-12 md:py-32">
         <SectionHeading
-          label="Les formules"
-          title="Cours collectifs &amp; Coaching"
+          label="Cours collectifs"
+          title="Les tarifs Small Group"
           align="center"
           className="mx-auto"
         />
-
-        <Stagger className="mt-20 grid gap-6 lg:grid-cols-3">
-          {OFFERS.map((offer) => (
-            <StaggerItem key={offer.name}>
-              <motion.div
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className={`relative flex h-full flex-col border p-9 md:p-10 ${
-                  offer.featured
-                    ? 'border-accent bg-bg-card'
-                    : 'border-border-gold bg-bg-primary'
-                }`}
-              >
-                {offer.featured && (
-                  <span className="absolute -top-px right-8 -translate-y-1/2 bg-accent px-4 py-1 text-label text-[0.55rem] text-bg-primary">
-                    Le plus choisi
-                  </span>
-                )}
-
-                <span className="text-label text-[0.62rem] text-accent">
-                  {offer.name}
-                </span>
-
-                <div className="mt-7 flex items-baseline gap-2">
-                  <span className="font-display text-3xl font-light text-text-primary">
-                    {offer.price}
-                  </span>
-                  <span className="text-sm font-light text-text-secondary">
-                    {offer.cadence}
-                  </span>
-                </div>
-
-                <p className="mt-4 text-sm font-light leading-relaxed text-text-secondary">
-                  {offer.summary}
-                </p>
-
-                <div className="rule-gold my-8" />
-
-                <ul className="flex-1 space-y-4">
-                  {offer.features.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-start gap-3 text-sm font-light leading-snug text-text-primary"
-                    >
-                      <span className="mt-2 h-px w-4 shrink-0 bg-accent" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-10">
-                  <Button
-                    variant={offer.featured ? 'solid' : 'outline'}
-                    to="/contact"
-                    className="w-full"
-                  >
-                    Nous contacter
-                  </Button>
-                </div>
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-
-        <Reveal delay={0.2}>
-          <p className="mx-auto mt-12 max-w-xl text-center text-sm font-light leading-relaxed text-text-secondary">
-            Une séance d'essai offerte pour les cours collectifs. Contactez-nous
-            pour connaître nos tarifs détaillés et trouver la formule adaptée à
-            vos objectifs.
+        <Reveal delay={0.1}>
+          <p className="mx-auto mt-7 max-w-2xl text-center text-sm font-light leading-relaxed text-text-secondary">
+            {SMALL_GROUP.intro}
           </p>
         </Reveal>
+
+        <Reveal delay={0.15}>
+          <div className="mx-auto mt-14 max-w-2xl border border-border-gold bg-bg-card">
+            {SMALL_GROUP.rows.map((row, i) => (
+              <div
+                key={row.label}
+                className={`flex items-baseline justify-between gap-4 px-7 py-6 md:px-10 ${
+                  i !== SMALL_GROUP.rows.length - 1 ? 'border-b border-border-gold' : ''
+                }`}
+              >
+                <span className="text-sm font-light text-text-primary md:text-base">
+                  {row.label}
+                </span>
+                <span className="flex items-baseline gap-2 whitespace-nowrap">
+                  <span className="font-display text-xl font-light text-accent md:text-2xl">
+                    {row.price}
+                  </span>
+                  {row.unit && (
+                    <span className="text-xs font-light text-text-secondary">
+                      {row.unit}
+                    </span>
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* PRICING — COACHING */}
+      <section className="border-y border-border-gold bg-bg-secondary">
+        <div className="mx-auto max-w-container px-6 py-24 md:px-12 md:py-32">
+          <SectionHeading
+            label="Coaching"
+            title="Les tarifs de Coaching"
+            align="center"
+            className="mx-auto"
+          />
+          <Reveal delay={0.1}>
+            <p className="mx-auto mt-7 max-w-2xl text-center text-sm font-light leading-relaxed text-text-secondary">
+              Un accompagnement entièrement personnalisé avec un coach dédié,
+              en solo ou en binôme. Chaque parcours débute par une séance bilan.
+            </p>
+          </Reveal>
+
+          {/* Séances bilan */}
+          <Reveal delay={0.15}>
+            <div className="mx-auto mt-14 max-w-2xl border border-border-gold bg-bg-primary">
+              {COACHING_BILAN.map((row, i) => (
+                <div
+                  key={row.label}
+                  className={`flex items-baseline justify-between gap-4 px-7 py-6 md:px-10 ${
+                    i !== COACHING_BILAN.length - 1 ? 'border-b border-border-gold' : ''
+                  }`}
+                >
+                  <span className="text-sm font-light text-text-primary md:text-base">
+                    {row.label}
+                  </span>
+                  <span className="font-display text-xl font-light text-accent md:text-2xl">
+                    {row.price}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Solo & Duo */}
+          <div className="mx-auto mt-8 grid max-w-2xl gap-8 md:grid-cols-2">
+            <Reveal delay={0.2}>
+              <div className="h-full border border-border-gold bg-bg-primary">
+                <div className="border-b border-border-gold px-7 py-5 text-center">
+                  <h3 className="text-label text-[0.62rem] text-accent">
+                    Coaching solo
+                  </h3>
+                </div>
+                {COACHING_SOLO.map((row) => (
+                  <div key={row.label} className="px-7 py-5 text-center">
+                    <p className="text-sm font-light text-text-primary">
+                      {row.label}
+                    </p>
+                    <p className="mt-1">
+                      <span className="font-display text-xl font-light text-accent">
+                        {row.price}
+                      </span>{' '}
+                      <span className="text-xs font-light text-text-secondary">
+                        {row.unit}
+                      </span>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.25}>
+              <div className="h-full border border-border-gold bg-bg-primary">
+                <div className="border-b border-border-gold px-7 py-5 text-center">
+                  <h3 className="text-label text-[0.62rem] text-accent">
+                    Coaching duo
+                  </h3>
+                  <p className="mt-1 text-[0.7rem] font-light text-text-secondary">
+                    tarif à partager entre les 2 participants
+                  </p>
+                </div>
+                {COACHING_DUO.map((row) => (
+                  <div key={row.label} className="px-7 py-5 text-center">
+                    <p className="text-sm font-light text-text-primary">
+                      {row.label}
+                    </p>
+                    <p className="mt-1">
+                      <span className="font-display text-xl font-light text-accent">
+                        {row.price}
+                      </span>{' '}
+                      <span className="text-xs font-light text-text-secondary">
+                        {row.unit}
+                      </span>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.3}>
+            <div className="mt-14 flex justify-center">
+              <Button variant="solid" to="/contact">
+                Nous contacter
+              </Button>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* FAQ */}
