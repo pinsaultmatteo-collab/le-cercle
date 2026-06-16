@@ -333,7 +333,7 @@ export default function Home() {
             <div className="lg:col-span-6">
               <SectionLabel>Le manifeste</SectionLabel>
               <Reveal delay={0.1}>
-                <p className="mt-9 font-display text-3xl font-normal leading-[1.25] text-text-primary sm:text-4xl md:text-[2.6rem]">
+                <p className="mt-9 font-display text-2xl font-normal leading-[1.3] text-text-primary sm:text-[1.7rem] md:text-3xl">
                   LE CERCLE est un studio de coaching sportif premium proposant
                   un accompagnement sur mesure à travers du coaching individuel,
                   du coaching en binôme et des cours collectifs en petits groupes
