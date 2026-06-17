@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useState } from 'react'
 import MembershipModal from '../components/MembershipModal'
+import { trackPopupOpen } from '../lib/analytics'
 
 const ModalContext = createContext(null)
 
@@ -10,6 +11,7 @@ export function ModalProvider({ children }) {
   const openModal = useCallback((formule = '') => {
     setPreselect(formule)
     setOpen(true)
+    trackPopupOpen(formule)
   }, [])
 
   const closeModal = useCallback(() => setOpen(false), [])

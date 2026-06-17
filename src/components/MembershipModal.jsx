@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CloseIcon, CircleMark } from './Icons'
+import { trackPopupSubmit } from '../lib/analytics'
 
 /**
  * MembershipModal — a refined enquiry modal for joining Le Cercle.
@@ -57,6 +58,7 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    trackPopupSubmit(form.formule)
     setSubmitted(true)
   }
 

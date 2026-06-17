@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 import PageWrapper from '../components/PageWrapper'
@@ -15,6 +15,7 @@ import {
   CircleMark,
 } from '../components/Icons'
 import { ADDRESS, INSTAGRAM_URL, IMG } from '../data/site'
+import { trackContactView, trackContactSubmit } from '../lib/analytics'
 
 const SUBJECTS = [
   'Demande d\'adhésion',
@@ -39,8 +40,14 @@ export default function Contact() {
     setForm((f) => ({ ...f, [name]: value }))
   }
 
+  // Intention — vue de la page contact
+  useEffect(() => {
+    trackContactView()
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    trackContactSubmit(form.sujet)
     setSubmitted(true)
   }
 
