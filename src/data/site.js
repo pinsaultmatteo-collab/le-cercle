@@ -28,6 +28,9 @@ export const IMG = {
 export const INSTAGRAM_URL =
   'https://www.instagram.com/lecercle_clubdesport/'
 
+// Endpoint Formspree — reçoit les soumissions des formulaires (contact + adhésion)
+export const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xaqzzwdp'
+
 export const ADDRESS = {
   street: '4 rue Joutx-Aigues',
   district: 'Carmes',

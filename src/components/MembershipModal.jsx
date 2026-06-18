@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CloseIcon, CircleMark } from './Icons'
 import { trackPopupSubmit } from '../lib/analytics'
+import { FORMSPREE_ENDPOINT } from '../data/site'
 
 /**
  * MembershipModal — a refined enquiry modal for joining Le Cercle.
- * Controlled via `open` / `onClose`. No backend: shows a success state.
+ * Controlled via `open` / `onClose`. Soumissions envoyées via Formspree.
  */
 export default function MembershipModal({ open, onClose, preselect = '' }) {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     nom: '',
     email: '',
@@ -25,6 +28,7 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
   // lock scroll + escape to close
   useEffect(() => {
     if (!open) return
+    setError('')
     document.body.style.overflow = 'hidden'
     const onKey = (e) => e.key === 'Escape' && onClose()
     window.addEventListener('keydown', onKey)
@@ -56,10 +60,40 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
     setForm((f) => ({ ...f, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    trackPopupSubmit(form.formule)
-    setSubmitted(true)
+    if (sending) return
+    setSending(true)
+    setError('')
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          nom: form.nom,
+          email: form.email,
+          telephone: form.telephone,
+          formule: form.formule,
+          message: form.message,
+          _subject: `Adhésion Le Cercle — ${form.formule || 'Nouvelle demande'}`,
+        }),
+      })
+
+      if (!res.ok) throw new Error('Envoi impossible')
+
+      trackPopupSubmit(form.formule)
+      setSubmitted(true)
+    } catch {
+      setError(
+        "Une erreur est survenue lors de l'envoi. Merci de réessayer ou de nous écrire à contact@lecercle-sports.fr."
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   const field =
@@ -228,11 +262,18 @@ export default function MembershipModal({ open, onClose, preselect = '' }) {
                       />
                     </div>
 
+                    {error && (
+                      <p className="text-sm font-light leading-relaxed text-red-400">
+                        {error}
+                      </p>
+                    )}
+
                     <button
                       type="submit"
-                      className="btn-shimmer group relative w-full border border-accent bg-accent px-8 py-4 text-label text-[0.68rem] text-bg-primary transition-colors duration-500 hover:bg-accent-light"
+                      disabled={sending}
+                      className="btn-shimmer group relative w-full border border-accent bg-accent px-8 py-4 text-label text-[0.68rem] text-bg-primary transition-colors duration-500 hover:bg-accent-light disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      Envoyer ma demande
+                      {sending ? 'Envoi en cours…' : 'Envoyer ma demande'}
                     </button>
                   </form>
                 </>

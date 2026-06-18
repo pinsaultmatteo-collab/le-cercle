@@ -14,7 +14,7 @@ import {
   InstagramIcon,
   CircleMark,
 } from '../components/Icons'
-import { ADDRESS, INSTAGRAM_URL, IMG } from '../data/site'
+import { ADDRESS, INSTAGRAM_URL, IMG, FORMSPREE_ENDPOINT } from '../data/site'
 import { trackContactView, trackContactSubmit } from '../lib/analytics'
 
 const SUBJECTS = [
@@ -27,6 +27,8 @@ const SUBJECTS = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     nom: '',
     email: '',
@@ -45,10 +47,40 @@ export default function Contact() {
     trackContactView()
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    trackContactSubmit(form.sujet)
-    setSubmitted(true)
+    if (sending) return
+    setSending(true)
+    setError('')
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          nom: form.nom,
+          email: form.email,
+          telephone: form.telephone,
+          sujet: form.sujet,
+          message: form.message,
+          _subject: `Contact Le Cercle — ${form.sujet || 'Nouveau message'}`,
+        }),
+      })
+
+      if (!res.ok) throw new Error('Envoi impossible')
+
+      trackContactSubmit(form.sujet)
+      setSubmitted(true)
+    } catch {
+      setError(
+        "Une erreur est survenue lors de l'envoi. Merci de réessayer ou de nous écrire directement à contact@lecercle-sports.fr."
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   const field =
@@ -279,11 +311,18 @@ export default function Contact() {
                       />
                     </div>
 
+                    {error && (
+                      <p className="text-sm font-light leading-relaxed text-red-400">
+                        {error}
+                      </p>
+                    )}
+
                     <button
                       type="submit"
-                      className="btn-shimmer group relative w-full border border-accent bg-accent px-8 py-4 text-label text-[0.68rem] text-bg-primary transition-colors duration-500 hover:bg-accent-light sm:w-auto sm:px-12"
+                      disabled={sending}
+                      className="btn-shimmer group relative w-full border border-accent bg-accent px-8 py-4 text-label text-[0.68rem] text-bg-primary transition-colors duration-500 hover:bg-accent-light disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-12"
                     >
-                      Envoyer le message
+                      {sending ? 'Envoi en cours…' : 'Envoyer le message'}
                     </button>
                   </form>
                 </>
