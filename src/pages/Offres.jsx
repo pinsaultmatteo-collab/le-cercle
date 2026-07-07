@@ -17,8 +17,28 @@ const SMALL_GROUP = {
     { label: 'Pass 2 séances / semaine', price: '105 €', unit: '/ mois' },
     { label: 'Pass 3 séances / semaine', price: '120 €', unit: '/ mois' },
     { label: 'Pass illimité', price: '150 €', unit: '/ mois' },
+    { label: 'Pass 10 séances', price: '200 €', unit: '/ carnet' },
   ],
 }
+
+// ============ PLANNING — COURS COLLECTIFS ============
+const PLANNING_DAYS = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
+const PLANNING_SLOTS = [
+  { time: '8h15', cours: { Mardi: 'Pilates' } },
+  { time: '10h15', cours: { Samedi: 'CAF' } },
+  { time: '11h15', cours: { Samedi: 'Dead' } },
+  {
+    time: '12h15',
+    cours: { Lundi: 'Boxe', Mardi: 'CAF', Mercredi: 'Abdos', Jeudi: 'Renfo', Vendredi: 'TRX' },
+  },
+  { time: '13h15', cours: { Lundi: 'Pilates' } },
+  { time: '18h15', cours: { Vendredi: 'CAF' } },
+  {
+    time: '19h15',
+    cours: { Lundi: 'Dead', Mardi: 'TRX', Mercredi: 'Boxe', Jeudi: 'Dead', Vendredi: 'Souplesse' },
+  },
+  { time: '20h15', cours: { Mercredi: 'Renfo' } },
+]
 
 // ============ COACHING (SOLO & DUO) ============
 const COACHING_BILAN = [
@@ -116,6 +136,73 @@ export default function Offres() {
             ))}
           </div>
         </Reveal>
+      </section>
+
+      {/* PLANNING — COURS COLLECTIFS */}
+      <section className="border-t border-border-gold bg-bg-secondary">
+        <div className="mx-auto max-w-container px-6 py-24 md:px-12 md:py-32">
+          <SectionHeading
+            label="Cours collectifs"
+            title="Le planning de la semaine"
+            align="center"
+            className="mx-auto"
+          />
+          <Reveal delay={0.1}>
+            <p className="mx-auto mt-7 max-w-2xl text-center text-sm font-light leading-relaxed text-text-secondary">
+              Retrouvez chaque semaine nos cours collectifs en small group.
+              Réservation via l'application, dans la limite de 8 participants
+              par séance.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <div className="mt-14 overflow-x-auto">
+              <table className="w-full min-w-[720px] border-collapse border border-border-gold text-center">
+                <thead>
+                  <tr>
+                    <th className="border border-border-gold bg-bg-primary px-4 py-4 text-label text-[0.58rem] text-accent">
+                      Horaires
+                    </th>
+                    {PLANNING_DAYS.map((day) => (
+                      <th
+                        key={day}
+                        className="border border-border-gold bg-bg-primary px-4 py-4 text-label text-[0.58rem] text-text-primary"
+                      >
+                        {day}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {PLANNING_SLOTS.map((slot) => (
+                    <tr key={slot.time}>
+                      <th className="border border-border-gold bg-bg-primary px-4 py-5 font-display text-sm font-light text-text-primary">
+                        {slot.time}
+                      </th>
+                      {PLANNING_DAYS.map((day) => {
+                        const cours = slot.cours[day]
+                        return (
+                          <td
+                            key={day}
+                            className={`border border-border-gold px-4 py-5 ${
+                              cours ? 'bg-bg-card' : 'bg-transparent'
+                            }`}
+                          >
+                            {cours && (
+                              <span className="text-label text-[0.6rem] text-accent">
+                                {cours}
+                              </span>
+                            )}
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* PRICING — COACHING */}
