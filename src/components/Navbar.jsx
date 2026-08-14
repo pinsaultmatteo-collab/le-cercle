@@ -49,9 +49,9 @@ export default function Navbar() {
         className="fixed inset-x-0 top-0 z-[100]"
       >
         <div
-          className={`transition-all duration-500 ease-luxe ${
+          className={`pt-[env(safe-area-inset-top)] transition-all duration-500 ease-luxe ${
             scrolled || open
-              ? 'border-b border-border-gold bg-bg-primary/90 backdrop-blur-md'
+              ? 'border-b border-border-gold bg-bg-primary'
               : 'border-b border-transparent bg-transparent'
           }`}
         >
@@ -130,7 +130,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[90] flex flex-col bg-bg-primary lg:hidden"
+            className="fixed inset-0 z-[90] flex flex-col bg-bg-primary pb-[env(safe-area-inset-bottom)] pt-[env(safe-area-inset-top)] lg:hidden"
           >
             <div className="flex flex-1 flex-col justify-center px-8">
               {NAV_LINKS.map((link, i) => (

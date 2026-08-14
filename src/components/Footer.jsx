@@ -20,7 +20,7 @@ const LEGAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-border-gold bg-bg-secondary">
+    <footer className="relative border-t border-border-gold bg-bg-secondary pb-[env(safe-area-inset-bottom)]">
       <div className="mx-auto max-w-container px-6 py-20 md:px-12">
         {/* top row */}
         <div className="flex flex-col items-center gap-10 text-center md:flex-row md:justify-between md:text-left">
