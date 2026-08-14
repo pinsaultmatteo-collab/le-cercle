@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Diagnostic header — Le Cercle</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      /* Reproduit exactement la configuration du site */
+      body {
+        background-color: #080808;
+        color: #fff;
+        font-family: -apple-system, sans-serif;
+        overflow-x: hidden;
+      }
+      @supports (overflow: clip) {
+        body { overflow-x: clip; }
+      }
+
+      /* Contenu très voyant : toute bande visible au-dessus du header saute aux yeux */
+      .stripes {
+        background: repeating-linear-gradient(
+          45deg, #00e5ff 0 22px, #0088aa 22px 44px
+        );
+        height: 320vh;
+        padding-top: 300px;
+      }
+      .stripes p {
+        font-size: 30px;
+        font-weight: 800;
+        color: #000;
+        padding: 14px;
+        background: #fff;
+      }
+
+      /* Header fixe, magenta : impossible à confondre */
+      header {
+        position: fixed;
+        inset-inline: 0;
+        top: 0;
+        z-index: 100;
+      }
+      .bar {
+        position: relative;
+        padding-top: env(safe-area-inset-top);
+        background: #e4007c;
+      }
+      /* Prolongement opaque vers le haut (le "filet de sécurité" déjà en prod) */
+      .bar::before {
+        content: '';
+        position: absolute;
+        inset-inline: 0;
+        bottom: 100%;
+        height: 240px;
+        background: #7b0044;
+      }
+      .bar .inner {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+
+      /* Panneau de mesures */
+      #panel {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 200;
+        background: #000;
+        border-top: 3px solid #0f0;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        font-family: ui-monospace, Menlo, monospace;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #0f0;
+      }
+      #panel b { color: #fff; }
+      .bad { color: #ff4444 !important; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="bar"><div class="inner">HEADER</div></div>
+    </header>
+
+    <!-- sonde qui matérialise la valeur de env(safe-area-inset-top) -->
+    <div
+      id="probe"
+      style="position: fixed; top: 0; left: 0; width: 1px; height: env(safe-area-inset-top); pointer-events: none;"
+    ></div>
+
+    <div class="stripes">
+      <p>Fais défiler vers le bas, puis capture l'écran.</p>
+    </div>
+
+    <div id="panel">mesure…</div>
+
+    <script>
+      var panel = document.getElementById('panel');
+      var probe = document.getElementById('probe');
+      var bar = document.querySelector('.bar');
+
+      function n(v) { return Math.round(v * 10) / 10; }
+
+      function update() {
+        var r = bar.getBoundingClientRect();
+        var vv = window.visualViewport;
+        var cs = getComputedStyle(document.body);
+        var top = n(r.top);
+
+        var rows = [
+          ['header.top', top + (Math.abs(top) > 1 ? '  <-- DECALE' : '  (ok)'), Math.abs(top) > 1],
+          ['safe-area-top', n(probe.getBoundingClientRect().height), false],
+          ['scrollY', n(window.scrollY), false],
+          ['innerH', window.innerHeight, false],
+          ['visualVP.h', vv ? n(vv.height) : 'n/a', false],
+          ['visualVP.offTop', vv ? n(vv.offsetTop) : 'n/a', false],
+          ['visualVP.pageTop', vv ? n(vv.pageTop) : 'n/a', false],
+          ['scrollingEl', document.scrollingElement ? document.scrollingElement.tagName : '?', false],
+          ['body overflow', cs.overflow, false],
+          ['barHeight', n(r.height), false]
+        ];
+
+        panel.innerHTML = rows
+          .map(function (x) {
+            return '<b>' + x[0] + '</b>: <span' + (x[2] ? ' class="bad"' : '') + '>' + x[1] + '</span>';
+          })
+          .join('<br>');
+      }
+
+      update();
+      addEventListener('scroll', update, { passive: true });
+      addEventListener('resize', update);
+      if (window.visualViewport) {
+        visualViewport.addEventListener('scroll', update);
+        visualViewport.addEventListener('resize', update);
+      }
+      setInterval(update, 300);
+    </script>
+  </body>
+</html>
