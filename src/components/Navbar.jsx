@@ -49,9 +49,9 @@ export default function Navbar() {
         className="fixed inset-x-0 top-0 z-[100]"
       >
         <div
-          className={`pt-[env(safe-area-inset-top)] transition-all duration-500 ease-luxe ${
+          className={`relative pt-[env(safe-area-inset-top)] transition-all duration-500 ease-luxe ${
             scrolled || open
-              ? 'border-b border-border-gold bg-bg-primary'
+              ? "border-b border-border-gold bg-bg-primary before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-[240px] before:bg-bg-primary before:content-['']"
               : 'border-b border-transparent bg-transparent'
           }`}
         >
