@@ -30,7 +30,18 @@ body {
   color: var(--text-primary);
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
+  /* Fallback : `overflow-x: hidden` fait calculer `overflow-y` en `auto`,
+     ce qui transforme <body> en conteneur de défilement et désancre les
+     éléments `position: fixed` du viewport sur iOS Safari (header décalé). */
   overflow-x: hidden;
+}
+
+/* `clip` découpe sans créer de conteneur de défilement : le header fixe
+   reste ancré au viewport. Safari 16+, Chrome 90+. */
+@supports (overflow: clip) {
+  body {
+    overflow-x: clip;
+  }
 }
 
 /* Selection */
