@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
+import DebugPanel from './components/DebugPanel'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { ScrollToTop } from './components/PageWrapper'
@@ -26,6 +27,8 @@ export default function App() {
       <div className="grain relative min-h-screen bg-bg-primary">
         <ScrollToTop />
         <Navbar />
+        {typeof window !== 'undefined' &&
+          window.location.search.includes('debug') && <DebugPanel />}
 
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
