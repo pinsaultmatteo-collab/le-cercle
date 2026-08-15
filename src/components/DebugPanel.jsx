@@ -10,6 +10,17 @@ import { useEffect, useState } from 'react'
 export default function DebugPanel() {
   const [lines, setLines] = useState([])
 
+  // Colore le header en magenta : rend sa boîte réelle visible sur fond sombre
+  useEffect(() => {
+    const s = document.createElement('style')
+    s.textContent = `
+      header > div { background: #e4007c !important; }
+      header > div::before { background: #00ff88 !important; }
+    `
+    document.head.appendChild(s)
+    return () => s.remove()
+  }, [])
+
   useEffect(() => {
     const read = () => {
       const header = document.querySelector('header')
@@ -45,6 +56,11 @@ export default function DebugPanel() {
       }
       out.push(['scrollY', Math.round(window.scrollY), false])
       out.push(['innerH', window.innerHeight, false])
+      out.push(['screenH', window.screen ? window.screen.height : '?', false])
+      out.push(['docClientH', document.documentElement.clientHeight, false])
+      const vpMeta = document.querySelector('meta[name="viewport"]')
+      const vp = vpMeta ? vpMeta.getAttribute('content') : 'ABSENTE'
+      out.push(['vp.cover', vp.includes('viewport-fit=cover') ? 'oui' : 'NON', !vp.includes('cover')])
       out.push([
         'visualVP.offTop',
         window.visualViewport ? Math.round(window.visualViewport.offsetTop) : 'n/a',
