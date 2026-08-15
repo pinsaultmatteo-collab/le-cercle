@@ -16,6 +16,7 @@ export default function DebugPanel() {
     s.textContent = `
       header > div { background: #e4007c !important; }
       header > div::before { background: #00ff88 !important; }
+      [data-bleed-mask] { background: #ffee00 !important; }
     `
     document.head.appendChild(s)
     return () => s.remove()
