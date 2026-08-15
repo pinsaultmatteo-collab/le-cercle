@@ -21,7 +21,15 @@ export default function Navbar() {
 
   // background turns dark after a little scrolling
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => {
+      // selon le conteneur de défilement, iOS Safari n'alimente pas toujours window.scrollY
+      const y =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0
+      setScrolled(y > 40)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -49,10 +57,10 @@ export default function Navbar() {
         className="fixed inset-x-0 top-0 z-[100]"
       >
         <div
-          className={`relative pt-[env(safe-area-inset-top)] transition-all duration-500 ease-luxe ${
+          className={`relative bg-bg-primary pt-[env(safe-area-inset-top)] transition-all duration-500 ease-luxe before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-[240px] before:bg-bg-primary before:content-[''] ${
             scrolled || open
-              ? "border-b border-border-gold bg-bg-primary before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-[240px] before:bg-bg-primary before:content-['']"
-              : 'border-b border-transparent bg-transparent'
+              ? 'border-b border-border-gold'
+              : 'border-b border-transparent'
           }`}
         >
           <nav className="mx-auto flex max-w-container items-center justify-between px-6 py-5 md:px-12">
